@@ -1,0 +1,455 @@
+/* ============================================================
+   VOLTIA — Hoja de estilos
+   ------------------------------------------------------------
+   Para cambiar COLORES y TIPOGRAFÍAS edita las variables de
+   abajo (en :root). Todo lo demás se actualiza solo.
+   ============================================================ */
+
+:root {
+  /* --- Colores --- */
+  --bg:        #0a0e0c;   /* fondo principal (casi negro verdoso) */
+  --bg-soft:   #10161300; /* transparente para capas */
+  --surface:   #121815;   /* tarjetas */
+  --surface-2: #182019;   /* tarjetas alt */
+  --text:      #eef2ee;   /* texto principal */
+  --muted:     #9aa69d;   /* texto secundario */
+  --line:      #283029;   /* bordes sutiles */
+
+  --volt:      #c7f94e;   /* acento "voltaje" (verde lima) */
+  --volt-deep: #8fd000;   /* acento profundo */
+  --signal:    #6fe3c4;   /* secundario (verde agua) */
+
+  /* --- Tipografías --- */
+  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-body:    "Hanken Grotesk", sans-serif;
+  --font-serif:   "Instrument Serif", serif;
+
+  /* --- Layout --- */
+  --maxw: 1180px;
+  --pad:  clamp(1.25rem, 5vw, 4rem);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  /* fondo con halo radial sutil */
+  background-image:
+    radial-gradient(60rem 40rem at 80% -10%, rgba(199, 249, 78, 0.07), transparent 60%),
+    radial-gradient(50rem 35rem at -10% 20%, rgba(111, 227, 196, 0.05), transparent 60%);
+  background-attachment: fixed;
+}
+
+/* Capa de grano para textura */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ===================== NAVEGACIÓN ===================== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem var(--pad);
+  background: rgba(10, 14, 12, 0.7);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+}
+
+.brand-mark {
+  width: 14px; height: 14px;
+  border-radius: 4px;
+  background: var(--volt);
+  box-shadow: 0 0 18px var(--volt);
+  transform: rotate(45deg);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2.2rem);
+  font-size: 0.97rem;
+}
+.nav-links a { color: var(--muted); transition: color 0.2s; }
+.nav-links a:hover { color: var(--text); }
+
+.nav-cta {
+  color: var(--bg) !important;
+  background: var(--volt);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(199,249,78,0.25); }
+
+@media (max-width: 720px) {
+  .nav-links a:not(.nav-cta) { display: none; }
+}
+
+/* ===================== HERO ===================== */
+.hero {
+  position: relative;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: clamp(4rem, 12vw, 8rem) var(--pad) clamp(3rem, 8vw, 6rem);
+  z-index: 2;
+}
+
+.hero-glow {
+  position: absolute;
+  top: -10%; right: -5%;
+  width: 38rem; height: 38rem;
+  background: radial-gradient(circle, rgba(199,249,78,0.16), transparent 65%);
+  filter: blur(20px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--volt);
+  margin-bottom: 1.4rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.6rem, 7vw, 5.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  max-width: 16ch;
+  margin-bottom: 1.6rem;
+}
+.title-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--volt);
+  letter-spacing: 0;
+}
+
+.hero-sub {
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  color: var(--muted);
+  max-width: 52ch;
+  margin-bottom: 2.2rem;
+}
+
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-bottom: 3.6rem; }
+
+/* Botones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s, border-color 0.2s;
+}
+.btn-primary {
+  background: var(--volt);
+  color: var(--bg);
+  box-shadow: 0 10px 30px rgba(199,249,78,0.18);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(199,249,78,0.3); }
+.btn-ghost { border: 1px solid var(--line); color: var(--text); }
+.btn-ghost:hover { border-color: var(--volt); color: var(--volt); }
+
+/* Métricas */
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--line);
+}
+.stat { display: flex; flex-direction: column; }
+.stat-num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.stat-label { font-size: 0.92rem; color: var(--muted); }
+
+/* ===================== SECCIONES ===================== */
+.section {
+  position: relative;
+  z-index: 2;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: clamp(4rem, 10vw, 7rem) var(--pad);
+}
+.section-dark {
+  max-width: none;
+  background: linear-gradient(180deg, transparent, rgba(18,24,21,0.6), transparent);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.section-dark .section-head,
+.section-dark .sectors { max-width: var(--maxw); margin-inline: auto; }
+
+.section-head { margin-bottom: 3rem; }
+.section-kicker {
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--signal);
+}
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  margin-top: 0.6rem;
+  max-width: 18ch;
+}
+.section-title em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--volt);
+}
+
+/* ===================== TARJETAS DE SERVICIOS ===================== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.1rem;
+}
+.card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1.8rem;
+  overflow: hidden;
+  transition: transform 0.25s, border-color 0.25s, background 0.25s;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(20rem 12rem at 100% 0%, rgba(199,249,78,0.08), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.card:hover { transform: translateY(-4px); border-color: #3a4639; }
+.card:hover::before { opacity: 1; }
+.card-index {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--volt);
+  display: block;
+  margin-bottom: 0.9rem;
+}
+.card h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+}
+.card p { color: var(--muted); font-size: 0.98rem; }
+
+.card-feature {
+  background: linear-gradient(160deg, var(--surface-2), var(--surface));
+  border-color: #3a4a2a;
+}
+.card-tag {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--volt);
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* ===================== SECTORES ===================== */
+.sectors {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.4rem 2rem;
+}
+.sector {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+  letter-spacing: -0.01em;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--line);
+  transition: color 0.2s, padding-left 0.2s;
+}
+.sector:hover { color: var(--volt); padding-left: 0.5rem; }
+.sector-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--signal);
+  flex: none;
+  box-shadow: 0 0 12px var(--signal);
+}
+
+/* ===================== PROCESO ===================== */
+.steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+  counter-reset: step;
+}
+.step { position: relative; padding-top: 1.4rem; border-top: 2px solid var(--line); }
+.step-num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 2.6rem;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--volt-deep);
+  display: block;
+  margin-bottom: 0.6rem;
+  line-height: 1;
+}
+.step h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+.step p { color: var(--muted); font-size: 0.97rem; }
+
+/* ===================== CTA ===================== */
+.cta { text-align: center; }
+.cta-inner {
+  background: linear-gradient(160deg, #141b16, #0c110e);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: clamp(2.5rem, 7vw, 5rem) clamp(1.5rem, 5vw, 4rem);
+  position: relative;
+  overflow: hidden;
+}
+.cta-inner::after {
+  content: "";
+  position: absolute;
+  bottom: -50%; left: 50%;
+  transform: translateX(-50%);
+  width: 40rem; height: 30rem;
+  background: radial-gradient(circle, rgba(199,249,78,0.12), transparent 65%);
+  pointer-events: none;
+}
+.cta-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 6vw, 3.6rem);
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+  margin: 0.8rem 0 1rem;
+  position: relative;
+}
+.cta-sub {
+  color: var(--muted);
+  max-width: 48ch;
+  margin: 0 auto 2rem;
+  position: relative;
+}
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  justify-content: center;
+  position: relative;
+}
+
+/* ===================== FOOTER ===================== */
+.footer {
+  position: relative;
+  z-index: 2;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 2.5rem var(--pad) 3.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+}
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+}
+.footer-note { color: var(--muted); font-size: 0.88rem; }
+
+/* ===================== ANIMACIONES (reveal al cargar/scroll) ===================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(var(--d, 0) * 0.12s);
+}
+@keyframes rise {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Reveal en scroll (lo activa script.js añadiendo .in-view) */
+.section-head, .card, .sector, .step, .cta-inner {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.in-view { opacity: 1 !important; transform: none !important; }
+
+/* Respeta a quien prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  .reveal, .section-head, .card, .sector, .step, .cta-inner { opacity: 1; transform: none; }
+}
