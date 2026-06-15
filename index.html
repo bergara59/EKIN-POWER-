@@ -292,9 +292,11 @@
 
         <!--
           FORMULARIO DE CONTACTO
-          Por ahora abre el correo del visitante con el mensaje listo.
-          Para recibir los mensajes automáticamente (sin abrir correo),
-          el asistente puede activarte Formspree (gratis) en 1 paso.
+          Estado actual: al enviar, abre el correo del visitante con los datos.
+          PARA RECIBIR CORREOS AUTOMÁTICOS (Formspree): cuando tengas tu código,
+          cambia la línea de <form ...> por:
+            <form class="contact-form" action="https://formspree.io/f/TU_CODIGO" method="POST">
+          y listo.
         -->
         <form class="contact-form" action="mailto:contactekinpower@gmail.com" method="post" enctype="text/plain">
           <div class="form-row">
