@@ -17,6 +17,16 @@
   <title>EKIN POWER · Soluciones Energéticas, Solar y BESS</title>
   <meta name="description" content="EKIN POWER: soluciones energéticas para industria y comercio. Operación y mantenimiento, generación solar, almacenamiento BESS y modelos de financiamiento sin inversión inicial." />
 
+  <!-- Ícono de la pestaña (favicon) -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Vista previa al compartir el enlace (WhatsApp, redes, etc.) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="EKIN POWER · Soluciones Energéticas, Solar y BESS" />
+  <meta property="og:description" content="Reducimos tu factura eléctrica con operación y mantenimiento, generación solar y almacenamiento BESS. Hasta 35% de ahorro." />
+  <meta property="og:url" content="https://ekin-power.vercel.app" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <!-- Tipografías distintivas -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,6 +48,7 @@
       <a href="#servicios">Servicios</a>
       <a href="#bess">BESS</a>
       <a href="#financiamiento">Financiamiento</a>
+      <a href="#proyectos">Proyectos</a>
       <a href="#nosotros">Nosotros</a>
       <a href="#contacto" class="nav-cta">Diagnóstico gratis</a>
     </nav>
@@ -192,11 +203,53 @@
       </ul>
     </section>
 
+    <!-- ===================== PROYECTOS ===================== -->
+    <!-- PROYECTOS: reemplaza estos ejemplos por tus proyectos reales cuando los tengas -->
+    <section class="section" id="proyectos">
+      <div class="section-head">
+        <span class="section-kicker">05 — Proyectos</span>
+        <h2 class="section-title">Energía que <em>ya está rindiendo</em>.</h2>
+      </div>
+
+      <div class="projects">
+        <article class="project">
+          <div class="project-tag">Manufactura</div>
+          <h3>Planta industrial</h3>
+          <p>Generación solar + BESS para recortar picos de demanda y asegurar continuidad de proceso.</p>
+          <ul class="project-specs">
+            <li><span>1.2 MWp</span> solar</li>
+            <li><span>500 kWh</span> BESS</li>
+            <li><span>32%</span> ahorro</li>
+          </ul>
+        </article>
+        <article class="project">
+          <div class="project-tag">Hotelería</div>
+          <h3>Hotel &amp; resort</h3>
+          <p>Eficiencia en climatización e iluminación con monitoreo 24/7 y respaldo ante cortes.</p>
+          <ul class="project-specs">
+            <li><span>800 kWp</span> solar</li>
+            <li><span>24/7</span> monitoreo</li>
+            <li><span>28%</span> ahorro</li>
+          </ul>
+        </article>
+        <article class="project">
+          <div class="project-tag">Retail</div>
+          <h3>Cadena de supermercados</h3>
+          <p>Modelo ESCO sin inversión inicial: optimización de tarifa y refrigeración.</p>
+          <ul class="project-specs">
+            <li><span>$0</span> inversión</li>
+            <li><span>ESCO</span> reparto</li>
+            <li><span>35%</span> ahorro</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
     <!-- ===================== NOSOTROS ===================== -->
-    <section class="section" id="nosotros">
+    <section class="section section-dark" id="nosotros">
       <div class="about">
         <div class="about-text">
-          <span class="section-kicker">05 — Nosotros</span>
+          <span class="section-kicker">06 — Nosotros</span>
           <h2 class="section-title">Ingeniería que <em>se mide</em>.</h2>
           <p class="about-p">
             En <strong>EKIN POWER</strong> combinamos ingeniería energética y
@@ -228,17 +281,36 @@
     </section>
 
     <!-- ===================== CONTACTO / CTA ===================== -->
-    <!-- CONTACTO: cambia el WhatsApp por tu número (el correo ya está puesto) -->
     <section class="section cta" id="contacto">
       <div class="cta-inner">
-        <p class="section-kicker">06 — Empecemos</p>
+        <p class="section-kicker">07 — Empecemos</p>
         <h2 class="cta-title">¿Cuánto estás pagando de más?</h2>
         <p class="cta-sub">
-          Te entregamos un diagnóstico inicial sin costo. Solo necesitamos
-          tus últimas facturas eléctricas para mostrarte tu potencial de ahorro.
+          Te entregamos un diagnóstico inicial sin costo. Déjanos tus datos
+          y te contactamos, o escríbenos directo.
         </p>
+
+        <!--
+          FORMULARIO DE CONTACTO
+          Por ahora abre el correo del visitante con el mensaje listo.
+          Para recibir los mensajes automáticamente (sin abrir correo),
+          el asistente puede activarte Formspree (gratis) en 1 paso.
+        -->
+        <form class="contact-form" action="mailto:contactekinpower@gmail.com" method="post" enctype="text/plain">
+          <div class="form-row">
+            <input type="text" name="Nombre" placeholder="Tu nombre" required />
+            <input type="email" name="Correo" placeholder="Tu correo" required />
+          </div>
+          <div class="form-row">
+            <input type="text" name="Empresa" placeholder="Empresa" />
+            <input type="tel" name="Telefono" placeholder="Teléfono / WhatsApp" />
+          </div>
+          <textarea name="Mensaje" rows="3" placeholder="Cuéntanos sobre tu consumo o proyecto"></textarea>
+          <button type="submit" class="btn btn-primary form-submit">Solicitar diagnóstico gratis</button>
+        </form>
+
         <div class="cta-actions">
-          <a href="mailto:contactekinpower@gmail.com?subject=Quiero%20un%20diagn%C3%B3stico%20energ%C3%A9tico" class="btn btn-primary">contactekinpower@gmail.com</a>
+          <a href="mailto:contactekinpower@gmail.com?subject=Quiero%20un%20diagn%C3%B3stico%20energ%C3%A9tico" class="btn btn-ghost">contactekinpower@gmail.com</a>
           <a href="https://wa.me/525643647693" class="btn btn-ghost">WhatsApp</a>
         </div>
       </div>

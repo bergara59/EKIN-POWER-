@@ -15,5 +15,5 @@ const observer = new IntersectionObserver(
 );
 
 document
-  .querySelectorAll(".section-head, .card, .sector, .step, .cta-inner")
+  .querySelectorAll(".section-head, .card, .sector, .step, .project, .cta-inner")
   .forEach((el) => observer.observe(el));
