@@ -1,8 +1,10 @@
-# Voltia — Landing de Eficiencia Energética
+# GU ENERGEERING — Landing de Soluciones Energéticas
 
-Página web (landing) para una empresa de asesoría en eficiencia energética
-dirigida a grandes consumidores (hoteles, manufactura, retail, cines, etc.),
-con servicios de auditoría, optimización, almacenamiento **BESS** y proyectos **C&I**.
+Página web (landing) para **GU ENERGEERING**, empresa de soluciones energéticas
+para industria y comercio: operación y mantenimiento, generación solar,
+almacenamiento **BESS** y modelos de financiamiento (CAPEX, leasing, ESCO).
+
+Inspirada en el estilo de certaelectric.com y skyclope.com.
 
 Sitio **estático** (HTML + CSS + JS), sin dependencias. Se publica gratis en Vercel.
 
@@ -16,7 +18,7 @@ Sitio **estático** (HTML + CSS + JS), sin dependencias. Se publica gratis en Ve
 
 ## Cómo personalizarla
 
-1. **Nombre de la empresa:** abre `index.html`, busca `Voltia` y reemplázalo.
+1. **Nombre de la empresa:** abre `index.html`, busca `GU ENERGEERING`.
 2. **Textos:** edítalos directamente en `index.html`.
 3. **Correo / WhatsApp:** busca la sección `CONTACTO` en `index.html`.
 4. **Colores y tipografías:** edita las variables al inicio de `styles.css`.

@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <!--
   ============================================================
-  LANDING — Asesoría en Eficiencia Energética
+  GU ENERGEERING — Landing de soluciones energéticas
   ============================================================
-  Cómo personalizar (puntos clave, búscalos con Ctrl+F):
-   1. El NOMBRE de la empresa: busca "Voltia" y reemplázalo por el tuyo.
-   2. Los textos: están en español, cámbialos directamente aquí.
-   3. El correo/teléfono: busca "CONTACTO" más abajo.
-   4. Los colores y tipografías: están en el archivo styles.css (arriba del todo).
+  Cómo personalizar (búscalos con Ctrl+F):
+   1. Nombre de la marca: busca "GU ENERGEERING" / "GU Energeering".
+   2. Textos: están en español, cámbialos aquí mismo.
+   3. Correo / WhatsApp: busca "CONTACTO" más abajo.
+   4. Colores y tipografías: en styles.css (variables de arriba).
   ============================================================
 -->
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Voltia · Eficiencia Energética para Grandes Consumidores</title>
-  <meta name="description" content="Asesoría en eficiencia energética para hoteles, manufactura, retail y más. Reducimos tu factura eléctrica con auditorías, optimización, BESS y proyectos C&I." />
+  <title>GU ENERGEERING · Soluciones Energéticas, Solar y BESS</title>
+  <meta name="description" content="GU ENERGEERING: soluciones energéticas para industria y comercio. Operación y mantenimiento, generación solar, almacenamiento BESS y modelos de financiamiento sin inversión inicial." />
 
-  <!-- Tipografías distintivas (Bricolage Grotesque + Hanken Grotesk + Instrument Serif) -->
+  <!-- Tipografías distintivas -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
@@ -26,19 +26,19 @@
 </head>
 <body>
 
-  <!-- Capa de textura (grano) que da profundidad al fondo -->
   <div class="grain" aria-hidden="true"></div>
 
   <!-- ===================== NAVEGACIÓN ===================== -->
   <header class="nav" id="top">
     <a class="brand" href="#top">
       <span class="brand-mark" aria-hidden="true"></span>
-      Voltia
+      <span class="brand-name"><strong>GU</strong> Energeering</span>
     </a>
     <nav class="nav-links">
       <a href="#servicios">Servicios</a>
-      <a href="#sectores">Sectores</a>
-      <a href="#proceso">Proceso</a>
+      <a href="#bess">BESS</a>
+      <a href="#financiamiento">Financiamiento</a>
+      <a href="#nosotros">Nosotros</a>
       <a href="#contacto" class="nav-cta">Diagnóstico gratis</a>
     </nav>
   </header>
@@ -47,35 +47,33 @@
     <!-- ===================== HERO ===================== -->
     <section class="hero">
       <div class="hero-glow" aria-hidden="true"></div>
-      <p class="eyebrow reveal">Eficiencia energética · BESS · C&amp;I</p>
+      <p class="eyebrow reveal">Energía · Ingeniería · BESS</p>
       <h1 class="hero-title reveal" style="--d:1">
-        Tu energía cuesta
-        <span class="title-accent">demasiado.</span>
-        Nosotros lo arreglamos.
+        Convertimos tu energía en
+        <span class="title-accent">ahorro y confianza.</span>
       </h1>
       <p class="hero-sub reveal" style="--d:2">
-        Ayudamos a grandes consumidores —hoteles, fábricas, supermercados, cines—
-        a reducir su factura eléctrica y sus emisiones con datos, ingeniería
-        y tecnología de almacenamiento.
+        Soluciones energéticas para industria y comercio: operación y mantenimiento,
+        generación solar y almacenamiento <strong>BESS</strong>. Reducimos tu factura
+        eléctrica y aseguramos la continuidad de tu operación.
       </p>
       <div class="hero-actions reveal" style="--d:3">
         <a href="#contacto" class="btn btn-primary">Solicitar diagnóstico</a>
-        <a href="#servicios" class="btn btn-ghost">Ver qué hacemos →</a>
+        <a href="#servicios" class="btn btn-ghost">Ver soluciones →</a>
       </div>
 
-      <!-- Métricas de impacto -->
       <div class="hero-stats reveal" style="--d:4">
         <div class="stat">
-          <span class="stat-num">15–40%</span>
-          <span class="stat-label">ahorro típico en factura</span>
+          <span class="stat-num">Hasta 35%</span>
+          <span class="stat-label">reducción de factura eléctrica</span>
         </div>
         <div class="stat">
-          <span class="stat-num">&lt;24 m</span>
-          <span class="stat-label">retorno de inversión</span>
+          <span class="stat-num">24/7</span>
+          <span class="stat-label">monitoreo y control</span>
         </div>
         <div class="stat">
-          <span class="stat-num">100%</span>
-          <span class="stat-label">medido y verificado</span>
+          <span class="stat-num">$0</span>
+          <span class="stat-label">inversión inicial (modelo ESCO)</span>
         </div>
       </div>
     </section>
@@ -84,46 +82,93 @@
     <section class="section" id="servicios">
       <div class="section-head">
         <span class="section-kicker">01 — Servicios</span>
-        <h2 class="section-title">De la factura al ahorro, <em>paso a paso</em>.</h2>
+        <h2 class="section-title">Tres soluciones, <em>una sola energía</em>.</h2>
       </div>
 
-      <div class="cards">
+      <div class="cards cards-3">
         <article class="card">
           <span class="card-index">01</span>
-          <h3>Auditoría energética</h3>
-          <p>Medimos consumos, identificamos fugas y construimos la línea base.
-             Sabrás exactamente dónde se va cada kWh.</p>
+          <h3>Operación &amp; Mantenimiento</h3>
+          <p>Gestión integral de tus sistemas eléctricos: mantenimiento preventivo
+             y correctivo para máxima disponibilidad y vida útil de tus activos.</p>
         </article>
         <article class="card">
           <span class="card-index">02</span>
-          <h3>Optimización &amp; eficiencia</h3>
-          <p>Iluminación, climatización, motores, tarifas y horarios.
-             Acciones priorizadas por retorno de inversión.</p>
+          <h3>Generación Solar</h3>
+          <p>Sistemas fotovoltaicos a la medida de tu consumo. Diseño, ingeniería,
+             instalación y puesta en marcha para producir tu propia energía limpia.</p>
         </article>
         <article class="card card-feature">
           <span class="card-index">03</span>
           <h3>Almacenamiento BESS</h3>
-          <p>Baterías para gestionar picos de demanda, arbitraje tarifario
-             y respaldo. Diseñamos el sistema y el caso de negocio.</p>
+          <p>Baterías que gestionan tu demanda, te respaldan ante cortes y maximizan
+             el aprovechamiento solar. Diseño, ingeniería, instalación y soporte.</p>
           <span class="card-tag">Nuestra especialidad</span>
         </article>
+      </div>
+    </section>
+
+    <!-- ===================== APLICACIONES BESS ===================== -->
+    <section class="section section-dark" id="bess">
+      <div class="section-head">
+        <span class="section-kicker">02 — Almacenamiento BESS</span>
+        <h2 class="section-title">Una batería, <em>cuatro formas de ganar</em>.</h2>
+      </div>
+
+      <ol class="steps">
+        <li class="step">
+          <span class="step-num">01</span>
+          <h3>Arbitraje</h3>
+          <p>Carga cuando la energía es barata y descarga en horas caras.
+             Optimiza el costo según la tarifa horaria.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">02</span>
+          <h3>Peak Shaving</h3>
+          <p>Recorta los picos de demanda para reducir los cargos
+             por capacidad en tu factura.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">03</span>
+          <h3>Respaldo</h3>
+          <p>Transferencia rápida ante cortes: tu operación sigue
+             funcionando sin interrupciones.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">04</span>
+          <h3>Integración renovable</h3>
+          <p>Estabiliza la generación solar variable y aprovecha
+             al máximo cada kWh producido.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===================== FINANCIAMIENTO ===================== -->
+    <section class="section" id="financiamiento">
+      <div class="section-head">
+        <span class="section-kicker">03 — Financiamiento</span>
+        <h2 class="section-title">Tú eliges <em>cómo invertir</em>.</h2>
+      </div>
+
+      <div class="cards cards-3">
         <article class="card">
-          <span class="card-index">04</span>
-          <h3>Proyectos C&amp;I</h3>
-          <p>Soluciones comerciales e industriales llave en mano:
-             generación, gestión y monitoreo a la medida de tu operación.</p>
+          <span class="card-index">01</span>
+          <h3>Compra directa (CAPEX)</h3>
+          <p>Adquieres el sistema y capturas el 100% del ahorro desde
+             el primer día. Máximo retorno a largo plazo.</p>
         </article>
         <article class="card">
-          <span class="card-index">05</span>
-          <h3>Monitoreo continuo</h3>
-          <p>Tableros en tiempo real y reportes mensuales. El ahorro
-             se mantiene porque se vigila.</p>
+          <span class="card-index">02</span>
+          <h3>Arrendamiento financiero</h3>
+          <p>Accede a la tecnología con pagos fijos y previsibles,
+             sin descapitalizar tu empresa.</p>
         </article>
-        <article class="card">
-          <span class="card-index">06</span>
-          <h3>Cumplimiento &amp; ESG</h3>
-          <p>Reducción de emisiones documentada para tus reportes
-             de sostenibilidad y certificaciones.</p>
+        <article class="card card-feature">
+          <span class="card-index">03</span>
+          <h3>Inversión cero (ESCO)</h3>
+          <p>Nosotros invertimos, tú compartes el ahorro generado.
+             Empiezas a ahorrar sin desembolso inicial.</p>
+          <span class="card-tag">Sin inversión</span>
         </article>
       </div>
     </section>
@@ -131,65 +176,69 @@
     <!-- ===================== SECTORES ===================== -->
     <section class="section section-dark" id="sectores">
       <div class="section-head">
-        <span class="section-kicker">02 — Sectores</span>
+        <span class="section-kicker">04 — Sectores</span>
         <h2 class="section-title">Hechos para quienes <em>consumen en serio</em>.</h2>
       </div>
 
       <ul class="sectors">
-        <li class="sector"><span class="sector-dot"></span>Hoteles &amp; resorts</li>
         <li class="sector"><span class="sector-dot"></span>Manufactura &amp; fábricas</li>
+        <li class="sector"><span class="sector-dot"></span>Hoteles &amp; resorts</li>
         <li class="sector"><span class="sector-dot"></span>Supermercados &amp; retail</li>
         <li class="sector"><span class="sector-dot"></span>Cines &amp; entretenimiento</li>
         <li class="sector"><span class="sector-dot"></span>Centros logísticos</li>
         <li class="sector"><span class="sector-dot"></span>Hospitales &amp; clínicas</li>
-        <li class="sector"><span class="sector-dot"></span>Oficinas corporativas</li>
         <li class="sector"><span class="sector-dot"></span>Plantas de proceso</li>
+        <li class="sector"><span class="sector-dot"></span>Oficinas corporativas</li>
       </ul>
     </section>
 
-    <!-- ===================== PROCESO ===================== -->
-    <section class="section" id="proceso">
-      <div class="section-head">
-        <span class="section-kicker">03 — Cómo trabajamos</span>
-        <h2 class="section-title">Cuatro pasos. <em>Cero adivinanzas.</em></h2>
+    <!-- ===================== NOSOTROS ===================== -->
+    <section class="section" id="nosotros">
+      <div class="about">
+        <div class="about-text">
+          <span class="section-kicker">05 — Nosotros</span>
+          <h2 class="section-title">Ingeniería que <em>se mide</em>.</h2>
+          <p class="about-p">
+            En <strong>GU ENERGEERING</strong> combinamos ingeniería energética y
+            tecnología para que cada proyecto se traduzca en ahorro real y verificable.
+            Diseñamos, construimos y operamos sistemas de energía con un solo objetivo:
+            convertir tu energía en confianza.
+          </p>
+          <a href="#contacto" class="btn btn-primary">Hablemos de tu proyecto</a>
+        </div>
+        <div class="about-grid">
+          <div class="about-stat">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">ahorro medido y verificado</span>
+          </div>
+          <div class="about-stat">
+            <span class="stat-num">24/7</span>
+            <span class="stat-label">software de monitoreo</span>
+          </div>
+          <div class="about-stat">
+            <span class="stat-num">Llave</span>
+            <span class="stat-label">en mano: diseño a operación</span>
+          </div>
+          <div class="about-stat">
+            <span class="stat-num">ESG</span>
+            <span class="stat-label">reducción de emisiones documentada</span>
+          </div>
+        </div>
       </div>
-
-      <ol class="steps">
-        <li class="step">
-          <span class="step-num">01</span>
-          <h3>Diagnóstico</h3>
-          <p>Analizamos tus facturas y operación. Sin costo, sin compromiso.</p>
-        </li>
-        <li class="step">
-          <span class="step-num">02</span>
-          <h3>Plan de acción</h3>
-          <p>Medidas priorizadas por ahorro y retorno, con números claros.</p>
-        </li>
-        <li class="step">
-          <span class="step-num">03</span>
-          <h3>Implementación</h3>
-          <p>Ejecutamos: eficiencia, BESS y proyectos C&amp;I llave en mano.</p>
-        </li>
-        <li class="step">
-          <span class="step-num">04</span>
-          <h3>Verificación</h3>
-          <p>Medimos el ahorro real y lo mantenemos en el tiempo.</p>
-        </li>
-      </ol>
     </section>
 
     <!-- ===================== CONTACTO / CTA ===================== -->
-    <!-- CONTACTO: cambia el correo y el teléfono por los tuyos -->
+    <!-- CONTACTO: cambia el correo y el WhatsApp por los tuyos -->
     <section class="section cta" id="contacto">
       <div class="cta-inner">
-        <p class="section-kicker">04 — Empecemos</p>
+        <p class="section-kicker">06 — Empecemos</p>
         <h2 class="cta-title">¿Cuánto estás pagando de más?</h2>
         <p class="cta-sub">
           Te entregamos un diagnóstico inicial sin costo. Solo necesitamos
-          tus últimas facturas eléctricas para mostrarte el potencial de ahorro.
+          tus últimas facturas eléctricas para mostrarte tu potencial de ahorro.
         </p>
         <div class="cta-actions">
-          <a href="mailto:hola@voltia.com?subject=Quiero%20un%20diagn%C3%B3stico%20energ%C3%A9tico" class="btn btn-primary">Escríbenos: hola@voltia.com</a>
+          <a href="mailto:contacto@guenergeering.com?subject=Quiero%20un%20diagn%C3%B3stico%20energ%C3%A9tico" class="btn btn-primary">contacto@guenergeering.com</a>
           <a href="https://wa.me/000000000000" class="btn btn-ghost">WhatsApp</a>
         </div>
       </div>
@@ -200,9 +249,9 @@
   <footer class="footer">
     <div class="footer-brand">
       <span class="brand-mark" aria-hidden="true"></span>
-      <span>Voltia</span>
+      <span><strong>GU</strong> Energeering</span>
     </div>
-    <p class="footer-note">Eficiencia energética · BESS · C&amp;I — © <span id="year"></span> Voltia. Todos los derechos reservados.</p>
+    <p class="footer-note">Soluciones energéticas · Solar · BESS — © <span id="year"></span> GU ENERGEERING. Todos los derechos reservados.</p>
   </footer>
 
   <script src="script.js" defer></script>
