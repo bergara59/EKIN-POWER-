@@ -18,14 +18,25 @@ navLinks.querySelectorAll("a").forEach((link) => {
   });
 });
 
-/* Acordeón de sectores: despliegue suave de servicios */
-document.querySelectorAll(".sector-acc-btn").forEach((btn) => {
+/* Acordeón de sectores: solo uno abierto a la vez */
+const sectorAccs = document.querySelectorAll(".sector-acc");
+sectorAccs.forEach((acc) => {
+  const btn = acc.querySelector(".sector-acc-btn");
+  const panel = acc.querySelector(".sector-acc-panel");
   btn.addEventListener("click", () => {
-    const acc = btn.closest(".sector-acc");
-    const panel = acc.querySelector(".sector-acc-panel");
-    const isOpen = acc.classList.toggle("open");
-    btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    panel.style.maxHeight = isOpen ? panel.scrollHeight + "px" : "";
+    const willOpen = !acc.classList.contains("open");
+    // Cierra todos los demás
+    sectorAccs.forEach((other) => {
+      if (other !== acc) {
+        other.classList.remove("open");
+        other.querySelector(".sector-acc-btn").setAttribute("aria-expanded", "false");
+        other.querySelector(".sector-acc-panel").style.maxHeight = "";
+      }
+    });
+    // Alterna el actual
+    acc.classList.toggle("open", willOpen);
+    btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+    panel.style.maxHeight = willOpen ? panel.scrollHeight + "px" : "";
   });
 });
 
