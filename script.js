@@ -18,6 +18,27 @@ navLinks.querySelectorAll("a").forEach((link) => {
   });
 });
 
+/* Resalta en el menú la sección que se está viendo (scroll-spy) */
+const spyLinks = Array.from(navLinks.querySelectorAll('a[href^="#"]'));
+const spyTargets = spyLinks
+  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter(Boolean);
+
+const spyObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = "#" + entry.target.id;
+        spyLinks.forEach((link) =>
+          link.classList.toggle("active", link.getAttribute("href") === id)
+        );
+      }
+    });
+  },
+  { rootMargin: "-45% 0px -50% 0px" }
+);
+spyTargets.forEach((t) => spyObserver.observe(t));
+
 /* Aparición de elementos al hacer scroll */
 const observer = new IntersectionObserver(
   (entries) => {
