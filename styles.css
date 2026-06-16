@@ -686,6 +686,85 @@ a { color: inherit; text-decoration: none; }
 }
 .about-stat .stat-label { color: var(--muted); font-size: 0.9rem; }
 
+/* ===================== ACORDEÓN DE SECTORES ===================== */
+.section-lead { color: var(--muted); margin-top: 0.8rem; font-size: 1.02rem; }
+
+.sector-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.7rem;
+}
+@media (min-width: 820px) { .sector-list { grid-template-columns: 1fr 1fr; gap: 0.8rem; align-items: start; } }
+
+.sector-acc {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.25s, background 0.25s;
+}
+.sector-acc.open { border-color: #3a4a2a; }
+.sector-acc-btn {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 1.15rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  color: var(--text);
+  position: relative;
+}
+.sector-acc-head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+  padding-right: 2rem;
+}
+.sector-acc-btn::after {
+  content: "+";
+  position: absolute;
+  top: 1rem; right: 1.2rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--volt);
+  transition: transform 0.3s;
+}
+.sector-acc.open .sector-acc-btn::after { transform: rotate(45deg); }
+.sector-acc-tag { color: var(--muted); font-size: 0.9rem; padding-left: 1.4rem; }
+
+.sector-acc-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.sector-acc-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.2rem 1.3rem 1.4rem;
+}
+.chip {
+  font-size: 0.84rem;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--line);
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.chip:hover {
+  border-color: var(--volt);
+  color: var(--volt);
+  background: rgba(199, 249, 78, 0.06);
+}
+
 /* ===================== PROYECTOS ===================== */
 .projects {
   display: grid;

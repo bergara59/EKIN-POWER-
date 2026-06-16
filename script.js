@@ -18,6 +18,17 @@ navLinks.querySelectorAll("a").forEach((link) => {
   });
 });
 
+/* Acordeón de sectores: despliegue suave de servicios */
+document.querySelectorAll(".sector-acc-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const acc = btn.closest(".sector-acc");
+    const panel = acc.querySelector(".sector-acc-panel");
+    const isOpen = acc.classList.toggle("open");
+    btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    panel.style.maxHeight = isOpen ? panel.scrollHeight + "px" : "";
+  });
+});
+
 /* Barra de progreso de scroll */
 const progressBar = document.getElementById("scrollProgress");
 function updateProgress() {
