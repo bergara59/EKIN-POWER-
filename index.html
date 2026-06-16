@@ -60,7 +60,7 @@
   <!-- Tipografías distintivas -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -71,9 +71,8 @@
 
   <!-- ===================== NAVEGACIÓN ===================== -->
   <header class="nav" id="top">
-    <a class="brand" href="#top">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span class="brand-name"><strong>EKIN</strong> Power</span>
+    <a class="brand" href="#top" aria-label="EKIN POWER — inicio">
+      <span class="logo-word">e<svg class="logo-k" viewBox="0 0 66 100" aria-hidden="true"><defs><linearGradient id="kgNav" x1="0" y1="100" x2="0" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3f7a00"/><stop offset="1" stop-color="#c2f24e"/></linearGradient></defs><rect x="8" y="6" width="15" height="88" rx="7" fill="url(#kgNav)"/><path d="M34 56 L58 25" stroke="url(#kgNav)" stroke-width="15" stroke-linecap="round"/><path d="M34 56 L60 94" stroke="url(#kgNav)" stroke-width="15" stroke-linecap="round"/></svg>in</span><span class="logo-power">POWER</span>
     </a>
     <!-- Botón de menú para móvil -->
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
@@ -103,7 +102,7 @@
       <div class="hero-orb" aria-hidden="true"></div>
 
       <div class="hero-inner">
-        <p class="eyebrow reveal">Energía · Ingeniería · BESS</p>
+        <p class="eyebrow reveal">Consultoría de eficiencia energética</p>
         <h1 class="hero-title reveal" style="--d:1">
           Convertimos tu energía en
           <span class="title-accent">ahorro y confianza.</span>
@@ -707,16 +706,21 @@
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
-    <div class="footer-brand">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span><strong>EKIN</strong> Power</span>
+    <div class="footer-top">
+      <div class="footer-brand-block">
+        <span class="brand" aria-label="EKIN POWER">
+          <span class="logo-word">e<svg class="logo-k" viewBox="0 0 66 100" aria-hidden="true"><defs><linearGradient id="kgFoot" x1="0" y1="100" x2="0" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3f7a00"/><stop offset="1" stop-color="#c2f24e"/></linearGradient></defs><rect x="8" y="6" width="15" height="88" rx="7" fill="url(#kgFoot)"/><path d="M34 56 L58 25" stroke="url(#kgFoot)" stroke-width="15" stroke-linecap="round"/><path d="M34 56 L60 94" stroke="url(#kgFoot)" stroke-width="15" stroke-linecap="round"/></svg>in</span><span class="logo-power">POWER</span>
+        </span>
+        <p class="footer-slogan">ekin significa actuar.</p>
+        <p class="footer-roots">Raíces vascas · Energía global</p>
+      </div>
+      <nav class="footer-links">
+        <a href="mailto:contactekinpower@gmail.com">contactekinpower@gmail.com</a>
+        <a href="https://wa.me/525643647693" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="aviso-privacidad.html">Aviso de Privacidad</a>
+      </nav>
     </div>
-    <nav class="footer-links">
-      <a href="mailto:contactekinpower@gmail.com">contactekinpower@gmail.com</a>
-      <a href="https://wa.me/525643647693" target="_blank" rel="noopener">WhatsApp</a>
-      <a href="aviso-privacidad.html">Aviso de Privacidad</a>
-    </nav>
-    <p class="footer-note">Soluciones energéticas · Solar · BESS — © <span id="year"></span> EKIN POWER. Todos los derechos reservados.</p>
+    <p class="footer-note">Consultoría de eficiencia energética · Solar · BESS — © <span id="year"></span> EKIN POWER. La transición energética no espera.</p>
   </footer>
 
   <!-- Botón flotante de WhatsApp -->
