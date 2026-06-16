@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+  CANAL ÉTICO / COMPLIANCE — EKIN POWER
+  El formulario usa el mismo endpoint de Formspree con un asunto propio.
+  Revisa/ajusta el texto con criterio legal antes de un uso definitivo.
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Canal Ético / Compliance · EKIN POWER</title>
+  <meta name="description" content="Canal ético y de cumplimiento de EKIN POWER: reporta de forma confidencial cualquier conducta contraria a nuestros principios." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="brand" href="index.html" aria-label="EKIN POWER — inicio">
+      <span class="logo-word">e<svg class="logo-k" viewBox="0 0 66 100" aria-hidden="true"><defs><linearGradient id="kgEtic" x1="0" y1="100" x2="0" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3f7a00"/><stop offset="1" stop-color="#c2f24e"/></linearGradient></defs><rect x="8" y="6" width="15" height="88" rx="7" fill="url(#kgEtic)"/><path d="M34 56 L58 25" stroke="url(#kgEtic)" stroke-width="15" stroke-linecap="round"/><path d="M34 56 L60 94" stroke="url(#kgEtic)" stroke-width="15" stroke-linecap="round"/></svg>in</span><span class="logo-power">POWER</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-cta">← Volver al inicio</a>
+    </nav>
+  </header>
+
+  <main class="legal">
+    <span class="section-kicker">Compliance</span>
+    <h1 class="legal-title">Canal Ético</h1>
+    <p class="legal-updated">Ética, integridad y cumplimiento · EKIN POWER</p>
+
+    <p>En <strong>EKIN POWER</strong> trabajamos con rigor técnico y honestidad. Este canal
+      permite a empleados, clientes, proveedores y colaboradores comunicar, de forma
+      <strong>confidencial</strong>, cualquier conducta que pueda ser contraria a la
+      legislación o a nuestros principios éticos.</p>
+
+    <h2>¿Qué puedes reportar?</h2>
+    <p>Fraude o corrupción, conflictos de interés, incumplimientos normativos o de seguridad,
+      malas prácticas con datos, conductas inapropiadas, o cualquier irregularidad relacionada
+      con nuestra actividad.</p>
+
+    <h2>Confidencialidad y no represalias</h2>
+    <p>Tratamos cada comunicación con confidencialidad. No se tolerará ninguna represalia
+      contra quien reporte de buena fe. Si lo prefieres, puedes enviar tu comunicación de
+      forma anónima (omitiendo tus datos de contacto).</p>
+
+    <h2>Enviar una comunicación</h2>
+    <form class="contact-form" action="https://formspree.io/f/mvznlezk" method="POST">
+      <input type="hidden" name="_subject" value="Canal Ético · comunicación confidencial" />
+      <div class="form-row">
+        <input type="text" name="nombre" placeholder="Nombre (opcional)" />
+        <input type="email" name="email" placeholder="Correo (opcional)" />
+      </div>
+      <textarea name="mensaje" rows="5" placeholder="Describe la situación con el mayor detalle posible" required></textarea>
+      <button type="submit" class="btn btn-primary form-submit">Enviar de forma confidencial</button>
+    </form>
+
+    <p class="legal-note">También puedes escribir directamente a
+      <a href="mailto:contactekinpower@gmail.com?subject=Canal%20%C3%A9tico%20-%20confidencial">contactekinpower@gmail.com</a>
+      indicando “Canal ético” en el asunto. Este documento es una base y debe revisarse con
+      criterio legal antes de su uso definitivo.</p>
+
+    <a href="index.html" class="btn btn-ghost">← Volver al inicio</a>
+  </main>
+
+  <footer class="footer on-dark">
+    <p class="footer-note">ekin significa actuar · © <span id="year"></span> EKIN POWER. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

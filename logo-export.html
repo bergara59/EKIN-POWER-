@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EKIN POWER — Generador de logo (PNG)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;800;900&family=Space+Mono:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#16140f; --card:#201d16; --line:#332f25; --text:#f4f1e9; --muted:#b0a995; --volt:#c2f24e; }
+    * { box-sizing: border-box; margin: 0; }
+    body { background: var(--bg); color: var(--text); font-family: "Archivo", sans-serif; padding: 2.5rem 1.5rem; line-height: 1.6; }
+    .wrap { max-width: 920px; margin: 0 auto; }
+    h1 { font-weight: 900; font-size: 1.8rem; letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+    p.lead { color: var(--muted); margin-bottom: 2rem; }
+    .grid { display: grid; gap: 1.2rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 1.2rem; }
+    .card h2 { font-size: 1rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .card small { color: var(--muted); display: block; margin-bottom: 1rem; font-size: 0.82rem; }
+    .preview { background: repeating-conic-gradient(#2a261d 0% 25%, #242017 0% 50%) 50% / 24px 24px; border-radius: 10px; display: flex; align-items: center; justify-content: center; padding: 1rem; margin-bottom: 1rem; }
+    canvas { max-width: 100%; height: auto; border-radius: 8px; }
+    button { width: 100%; font-family: inherit; font-weight: 700; font-size: 0.95rem; color: var(--bg); background: var(--volt); border: none; border-radius: 999px; padding: 0.8rem; cursor: pointer; transition: transform .15s; }
+    button:hover { transform: translateY(-2px); }
+    .note { margin-top: 2rem; padding: 1rem 1.2rem; border: 1px solid var(--line); border-radius: 12px; color: var(--muted); font-size: 0.9rem; }
+    .note b { color: var(--text); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Generador de logo · EKIN POWER</h1>
+    <p class="lead">Haz clic en “Descargar PNG” en la versión que necesites. Para LinkedIn (logo de empresa) usa el <b>avatar cuadrado</b>.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Avatar cuadrado</h2>
+        <small>1000 × 1000 px · fondo carbón · para LinkedIn / redes</small>
+        <div class="preview"><canvas id="cAvatar" width="1000" height="1000" style="width:230px"></canvas></div>
+        <button onclick="dl('cAvatar','ekin-power-avatar.png')">Descargar PNG</button>
+      </div>
+
+      <div class="card">
+        <h2>Isotipo “k” transparente</h2>
+        <small>1000 × 1000 px · fondo transparente</small>
+        <div class="preview"><canvas id="cIso" width="1000" height="1000" style="width:230px"></canvas></div>
+        <button onclick="dl('cIso','ekin-power-isotipo.png')">Descargar PNG</button>
+      </div>
+
+      <div class="card">
+        <h2>Logo horizontal</h2>
+        <small>1600 × 480 px · fondo carbón · para webs / banners</small>
+        <div class="preview"><canvas id="cLock" width="1600" height="480" style="width:100%"></canvas></div>
+        <button onclick="dl('cLock','ekin-power-logo.png')">Descargar PNG</button>
+      </div>
+    </div>
+
+    <div class="note">
+      <b>Cómo usarlo en LinkedIn:</b> al crear la página de empresa, en “Logotipo” sube
+      <b>ekin-power-avatar.png</b> (cuadrado, 300×300 mínimo — este tiene 1000×1000). El archivo se
+      guarda en tu carpeta de Descargas.
+    </div>
+  </div>
+
+  <script>
+    // Dibuja el glifo "k" (degradado lima) en un contexto canvas.
+    // x,yTop = esquina superior-izquierda del glifo; h = altura total.
+    function drawK(ctx, x, yTop, h) {
+      const s = h / 100;
+      const grad = ctx.createLinearGradient(0, yTop + 94 * s, 0, yTop + 6 * s);
+      grad.addColorStop(0, "#3f7a00");
+      grad.addColorStop(1, "#c2f24e");
+      // Asta (rect redondeado)
+      ctx.fillStyle = grad;
+      const sx = x + 8 * s, sy = yTop + 6 * s, sw = 15 * s, sh = 88 * s, r = 7 * s;
+      ctx.beginPath();
+      ctx.roundRect(sx, sy, sw, sh, r);
+      ctx.fill();
+      // Brazos
+      ctx.strokeStyle = grad;
+      ctx.lineWidth = 15 * s;
+      ctx.lineCap = "round";
+      ctx.lineJoin = "round";
+      ctx.beginPath();
+      ctx.moveTo(x + 34 * s, yTop + 56 * s);
+      ctx.lineTo(x + 58 * s, yTop + 25 * s);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(x + 34 * s, yTop + 56 * s);
+      ctx.lineTo(x + 60 * s, yTop + 94 * s);
+      ctx.stroke();
+    }
+
+    function drawAvatar(transparent) {
+      const c = document.getElementById(transparent ? "cIso" : "cAvatar");
+      const ctx = c.getContext("2d");
+      ctx.clearRect(0, 0, 1000, 1000);
+      if (!transparent) { ctx.fillStyle = "#16140f"; ctx.fillRect(0, 0, 1000, 1000); }
+      // k centrada, altura 520
+      drawK(ctx, 304, 240, 520);
+    }
+
+    function drawLockup() {
+      const c = document.getElementById("cLock");
+      const ctx = c.getContext("2d");
+      ctx.clearRect(0, 0, 1600, 480);
+      ctx.fillStyle = "#16140f";
+      ctx.fillRect(0, 0, 1600, 480);
+
+      const baseline = 300;       // línea base del texto
+      const fs = 170;             // tamaño de "ekin"
+      ctx.textBaseline = "alphabetic";
+      ctx.fillStyle = "#f4f1e9";
+      ctx.font = "800 " + fs + "px Archivo";
+
+      let x = 200;
+      // "e"
+      ctx.fillText("e", x, baseline);
+      x += ctx.measureText("e").width + 6;
+      // glifo k (altura ~ ascendente)
+      const hk = fs * 1.04;
+      const yTopK = baseline - 0.94 * hk;
+      drawK(ctx, x, yTopK, hk);
+      x += hk * 0.66 + 6;
+      // "in"
+      ctx.fillStyle = "#f4f1e9";
+      ctx.font = "800 " + fs + "px Archivo";
+      ctx.fillText("in", x, baseline);
+      x += ctx.measureText("in").width + 36;
+      // "POWER" en Space Mono
+      ctx.font = "700 64px 'Space Mono'";
+      if ("letterSpacing" in ctx) ctx.letterSpacing = "10px";
+      ctx.fillStyle = "#f4f1e9";
+      ctx.fillText("POWER", x, baseline - 6);
+      if ("letterSpacing" in ctx) ctx.letterSpacing = "0px";
+    }
+
+    function renderAll() {
+      drawAvatar(false);
+      drawAvatar(true);
+      drawLockup();
+    }
+
+    function dl(canvasId, filename) {
+      const c = document.getElementById(canvasId);
+      c.toBlob(function (blob) {
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = filename;
+        a.click();
+        URL.revokeObjectURL(a.href);
+      }, "image/png");
+    }
+
+    // Esperar a que las fuentes carguen antes de dibujar el texto
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.load('800 170px Archivo').then(() => document.fonts.load("700 64px 'Space Mono'")).then(renderAll);
+      document.fonts.ready.then(renderAll);
+    }
+    renderAll();
+  </script>
+</body>
+</html>
