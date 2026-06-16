@@ -92,7 +92,9 @@
   <main>
     <!-- ===================== HERO ===================== -->
     <section class="hero">
+      <div class="hero-grid" aria-hidden="true"></div>
       <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-orb" aria-hidden="true"></div>
       <p class="eyebrow reveal">Energía · Ingeniería · BESS</p>
       <h1 class="hero-title reveal" style="--d:1">
         Convertimos tu energía en
@@ -110,11 +112,11 @@
 
       <div class="hero-stats reveal" style="--d:4">
         <div class="stat">
-          <span class="stat-num">35%</span>
+          <span class="stat-num" data-count="35" data-suffix="%">35%</span>
           <span class="stat-label">de reducción del recibo eléctrico</span>
         </div>
         <div class="stat">
-          <span class="stat-num">15 años</span>
+          <span class="stat-num" data-count="15" data-suffix=" años">15 años</span>
           <span class="stat-label">de servicio y logros</span>
         </div>
         <div class="stat">
@@ -133,18 +135,27 @@
 
       <div class="cards cards-3">
         <article class="card">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.7 2.7-2.1-2.1z"/></svg>
+          </span>
           <span class="card-index">01</span>
           <h3>Operación &amp; Mantenimiento</h3>
           <p>Gestión integral de tus sistemas eléctricos: mantenimiento preventivo
              y correctivo para máxima disponibilidad y vida útil de tus activos.</p>
         </article>
         <article class="card">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg>
+          </span>
           <span class="card-index">02</span>
           <h3>Generación Solar</h3>
           <p>Sistemas fotovoltaicos a la medida de tu consumo. Diseño, ingeniería,
              instalación y puesta en marcha para producir tu propia energía limpia.</p>
         </article>
         <article class="card card-feature">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="16" height="10" rx="2"/><path d="M22 10v4"/><path d="m11 9-2 3h3l-2 3"/></svg>
+          </span>
           <span class="card-index">03</span>
           <h3>Almacenamiento BESS</h3>
           <p>Baterías que gestionan tu demanda, te respaldan ante cortes y maximizan
@@ -198,18 +209,27 @@
 
       <div class="cards cards-3">
         <article class="card">
+          <span class="card-icon icon-teal" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5h4a1.5 1.5 0 0 1 0 3h-3a1.5 1.5 0 0 0 0 3h4"/></svg>
+          </span>
           <span class="card-index">01</span>
           <h3>Compra directa (CAPEX)</h3>
           <p>Adquieres el sistema y capturas el 100% del ahorro desde
              el primer día. Máximo retorno a largo plazo.</p>
         </article>
         <article class="card">
+          <span class="card-icon icon-teal" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>
+          </span>
           <span class="card-index">02</span>
           <h3>Arrendamiento financiero</h3>
           <p>Accede a la tecnología con pagos fijos y previsibles,
              sin descapitalizar tu empresa.</p>
         </article>
         <article class="card card-feature">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5 5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></svg>
+          </span>
           <span class="card-index">03</span>
           <h3>Inversión cero (ESCO)</h3>
           <p>Nosotros invertimos, tú compartes el ahorro generado.
@@ -296,7 +316,7 @@
         </div>
         <div class="about-grid">
           <div class="about-stat">
-            <span class="stat-num">15 años</span>
+            <span class="stat-num" data-count="15" data-suffix=" años">15 años</span>
             <span class="stat-label">de servicio y logros</span>
           </div>
           <div class="about-stat">
@@ -304,7 +324,7 @@
             <span class="stat-label">software de monitoreo</span>
           </div>
           <div class="about-stat">
-            <span class="stat-num">~6 meses</span>
+            <span class="stat-num" data-count="6" data-prefix="~" data-suffix=" meses">~6 meses</span>
             <span class="stat-label">retorno promedio del proyecto</span>
           </div>
           <div class="about-stat">
@@ -324,31 +344,49 @@
 
       <div class="reasons">
         <article class="reason">
+          <span class="reason-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4"/><path d="m4.9 7 3.5 2M15.6 15l3.5 2M4.9 17l3.5-2M15.6 9l3.5-2"/><circle cx="12" cy="12" r="3.2"/></svg>
+          </span>
           <h3>Ingeniería real</h3>
           <p>No vendemos cajas: diseñamos la solución para tu operación,
              con criterio técnico y números que se sostienen.</p>
         </article>
         <article class="reason">
+          <span class="reason-icon icon-teal" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.3 8 10 4.6-1.7 8-5 8-10V5z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
           <h3>Ahorro verificado</h3>
           <p>Medimos antes y después. Lo que prometemos se comprueba
              con datos, no con promesas.</p>
         </article>
         <article class="reason">
+          <span class="reason-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="4"/><path d="m11 11 8 8M16 16l2-2M19 19l2-2"/></svg>
+          </span>
           <h3>Llave en mano</h3>
           <p>Del diagnóstico a la operación: un solo responsable
              para todo el proyecto. Sin intermediarios.</p>
         </article>
         <article class="reason">
+          <span class="reason-icon icon-teal" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </span>
           <h3>Soporte 24/7</h3>
           <p>Monitoreo continuo y respuesta rápida. El ahorro
              se mantiene porque alguien lo vigila.</p>
         </article>
         <article class="reason">
+          <span class="reason-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="13" rx="2"/><path d="M16 12h2.5"/><path d="M2.5 10h19"/></svg>
+          </span>
           <h3>Sin inversión inicial</h3>
           <p>Con el modelo ESCO empiezas a ahorrar sin desembolso:
              nosotros invertimos, tú compartes el ahorro.</p>
         </article>
         <article class="reason">
+          <span class="reason-icon icon-teal" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15 5 17 4 19 2c1 2 2 7-1 11a7 7 0 0 1-7 7z"/><path d="M11 20c0-3 1-7 5-10"/></svg>
+          </span>
           <h3>Enfoque ESG</h3>
           <p>Reducimos tus emisiones y te entregamos la documentación
              para tus reportes de sostenibilidad.</p>

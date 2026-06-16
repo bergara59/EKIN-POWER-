@@ -39,6 +39,41 @@ const spyObserver = new IntersectionObserver(
 );
 spyTargets.forEach((t) => spyObserver.observe(t));
 
+/* Números que cuentan hacia arriba al entrar en pantalla */
+const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function animateCount(el) {
+  const target = parseInt(el.dataset.count, 10);
+  const prefix = el.dataset.prefix || "";
+  const suffix = el.dataset.suffix || "";
+  if (prefersReduced) {
+    el.textContent = prefix + target + suffix;
+    return;
+  }
+  const duration = 1400;
+  const start = performance.now();
+  function tick(now) {
+    const p = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+    el.textContent = prefix + Math.round(eased * target) + suffix;
+    if (p < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+const countObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateCount(entry.target);
+        countObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.6 }
+);
+document.querySelectorAll("[data-count]").forEach((el) => countObserver.observe(el));
+
 /* Aparición de elementos al hacer scroll */
 const observer = new IntersectionObserver(
   (entries) => {

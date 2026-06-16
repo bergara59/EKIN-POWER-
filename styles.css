@@ -236,6 +236,7 @@ a { color: inherit; text-decoration: none; }
   font-weight: 400;
   color: var(--volt);
   letter-spacing: 0;
+  text-shadow: 0 0 38px rgba(199, 249, 78, 0.35);
 }
 
 .hero-sub {
@@ -661,6 +662,78 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: -0.02em;
 }
 
+/* ===================== HERO: FONDO ANIMADO ===================== */
+.hero-glow {
+  animation: glow-float 9s ease-in-out infinite alternate;
+}
+@keyframes glow-float {
+  0%   { transform: translate(0, 0) scale(1); opacity: 0.9; }
+  100% { transform: translate(-3rem, 2rem) scale(1.15); opacity: 1; }
+}
+/* Segundo orbe de color (teal) para dar más vida y color */
+.hero-orb {
+  position: absolute;
+  bottom: -8%; left: -6%;
+  width: 30rem; height: 30rem;
+  background: radial-gradient(circle, rgba(111, 227, 196, 0.14), transparent 65%);
+  filter: blur(20px);
+  pointer-events: none;
+  z-index: -1;
+  animation: orb-float 11s ease-in-out infinite alternate;
+}
+@keyframes orb-float {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(4rem, -2rem) scale(1.2); }
+}
+/* Rejilla sutil de "energía" en movimiento */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(199, 249, 78, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(199, 249, 78, 0.05) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 30%, transparent 75%);
+  animation: grid-pan 20s linear infinite;
+}
+@keyframes grid-pan {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 46px 46px, 46px 46px; }
+}
+
+/* ===================== ÍCONOS ===================== */
+.card-icon, .reason-icon {
+  width: 46px; height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(199, 249, 78, 0.08);
+  border: 1px solid rgba(199, 249, 78, 0.18);
+  color: var(--volt);
+  margin-bottom: 1.1rem;
+}
+.card-icon svg, .reason-icon svg { width: 24px; height: 24px; }
+/* Variante teal para alternar color */
+.icon-teal {
+  background: rgba(111, 227, 196, 0.08);
+  border-color: rgba(111, 227, 196, 0.2);
+  color: var(--signal);
+}
+/* En servicios, el número pasa a una esquina tenue */
+.card { position: relative; }
+.card .card-index {
+  position: absolute;
+  top: 1.4rem; right: 1.5rem;
+  margin: 0;
+  font-size: 1.1rem;
+  opacity: 0.4;
+}
+.reason-icon { margin-bottom: 1rem; margin-left: 0.6rem; }
+
 /* ===================== POR QUÉ EKIN POWER ===================== */
 .reasons {
   display: grid;
@@ -676,14 +749,6 @@ a { color: inherit; text-decoration: none; }
   padding: 1.7rem;
   position: relative;
   transition: background 0.25s;
-}
-.reason::before {
-  content: "";
-  position: absolute;
-  top: 1.7rem; left: 0;
-  width: 3px; height: 1.4rem;
-  background: var(--volt);
-  border-radius: 0 3px 3px 0;
 }
 .reason:hover { background: var(--surface-2); }
 .reason h3 {
