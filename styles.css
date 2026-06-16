@@ -48,6 +48,46 @@ body {
   background-attachment: fixed;
 }
 
+/* Barra de progreso de scroll */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  z-index: 100;
+  background: linear-gradient(90deg, var(--signal), var(--volt));
+  box-shadow: 0 0 12px rgba(199, 249, 78, 0.6);
+  transition: width 0.1s linear;
+}
+
+/* Foco de luz que sigue al cursor dentro de tarjetas */
+.card, .reason, .project, .faq-item {
+  --mx: 50%;
+  --my: 50%;
+}
+.card::after, .reason::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle 16rem at var(--mx) var(--my), rgba(199, 249, 78, 0.1), transparent 45%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.card:hover::after, .reason:hover::after { opacity: 1; }
+.reason { overflow: hidden; }
+
+/* Inclinación 3D de tarjetas (lo activa el JS con variables) */
+.tilt {
+  transition: transform 0.15s ease-out;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Botón magnético: transición suave al volver a su sitio */
+.btn-primary { will-change: transform; }
+
 /* Capa de grano para textura */
 .grain {
   position: fixed;
@@ -211,7 +251,7 @@ a { color: inherit; text-decoration: none; }
 /* Foto de fondo con zoom lento (efecto cine / Ken Burns) */
 .hero-photo {
   position: absolute;
-  inset: 0;
+  inset: -40px;
   z-index: 0;
   overflow: hidden;
 }

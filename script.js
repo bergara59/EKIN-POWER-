@@ -18,6 +18,77 @@ navLinks.querySelectorAll("a").forEach((link) => {
   });
 });
 
+/* Barra de progreso de scroll */
+const progressBar = document.getElementById("scrollProgress");
+function updateProgress() {
+  const h = document.documentElement;
+  const scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight);
+  progressBar.style.width = Math.min(scrolled * 100, 100) + "%";
+}
+window.addEventListener("scroll", updateProgress, { passive: true });
+updateProgress();
+
+/* Efectos de cursor (solo en dispositivos con mouse y sin reduced-motion) */
+const finePointer = window.matchMedia("(pointer: fine)").matches;
+if (finePointer && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+
+  /* Foco de luz que sigue al cursor dentro de tarjetas */
+  document.querySelectorAll(".card, .reason").forEach((el) => {
+    el.addEventListener("mousemove", (e) => {
+      const r = el.getBoundingClientRect();
+      el.style.setProperty("--mx", e.clientX - r.left + "px");
+      el.style.setProperty("--my", e.clientY - r.top + "px");
+    });
+  });
+
+  /* Inclinación 3D de tarjetas y proyectos */
+  document.querySelectorAll(".card, .project").forEach((el) => {
+    el.classList.add("tilt");
+    el.addEventListener("mousemove", (e) => {
+      const r = el.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - 0.5;
+      const py = (e.clientY - r.top) / r.height - 0.5;
+      el.style.transform =
+        `perspective(900px) rotateX(${(-py * 6).toFixed(2)}deg) rotateY(${(px * 6).toFixed(2)}deg) translateY(-4px)`;
+    });
+    el.addEventListener("mouseleave", () => { el.style.transform = ""; });
+  });
+
+  /* Botones primarios magnéticos */
+  document.querySelectorAll(".btn-primary").forEach((btn) => {
+    btn.addEventListener("mousemove", (e) => {
+      const r = btn.getBoundingClientRect();
+      const x = e.clientX - r.left - r.width / 2;
+      const y = e.clientY - r.top - r.height / 2;
+      btn.style.transform = `translate(${x * 0.25}px, ${y * 0.35}px)`;
+    });
+    btn.addEventListener("mouseleave", () => { btn.style.transform = ""; });
+  });
+
+  /* Parallax del hero según el movimiento del cursor */
+  const heroSection = document.querySelector(".hero");
+  const heroPhoto = document.querySelector(".hero-photo");
+  const heroInner = document.querySelector(".hero-inner");
+  if (heroSection && heroPhoto) {
+    let raf = null;
+    heroSection.addEventListener("mousemove", (e) => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        const r = heroSection.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        heroPhoto.style.transform = `translate(${px * -18}px, ${py * -18}px) scale(1.06)`;
+        if (heroInner) heroInner.style.transform = `translate(${px * 8}px, ${py * 8}px)`;
+        raf = null;
+      });
+    });
+    heroSection.addEventListener("mouseleave", () => {
+      heroPhoto.style.transform = "";
+      if (heroInner) heroInner.style.transform = "";
+    });
+  }
+}
+
 /* Resalta en el menú la sección que se está viendo (scroll-spy) */
 const spyLinks = Array.from(navLinks.querySelectorAll('a[href^="#"]'));
 const spyTargets = spyLinks
