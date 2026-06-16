@@ -761,6 +761,135 @@ a { color: inherit; text-decoration: none; }
 }
 .about-stat .stat-label { color: var(--muted); font-size: 0.9rem; }
 
+/* ===================== DIAGRAMA INTERACTIVO BESS ===================== */
+.bess-diagram { margin-top: 1rem; }
+.bess-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+.bess-tab {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.bess-tab:hover { color: var(--text); }
+.bess-tab.is-active {
+  color: var(--bg);
+  background: var(--volt);
+  border-color: var(--volt);
+  font-weight: 700;
+}
+.bess-stage {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1.5rem;
+}
+@media (min-width: 900px) { .bess-stage { grid-template-columns: 1.5fr 1fr; gap: 2.2rem; } }
+
+.bess-chart { width: 100%; height: auto; display: block; }
+.bess-chart .axis { stroke: var(--line); stroke-width: 1.5; }
+.bess-chart .zlabel {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  fill: var(--muted);
+  letter-spacing: 0.04em;
+}
+.bess-chart .zlabel.strong { fill: var(--text); font-size: 14px; }
+.bess-chart .axis-y { fill: var(--muted); font-size: 11px; }
+.bess-chart .area { fill: rgba(194, 242, 78, 0.07); }
+.bess-chart .curve {
+  fill: none;
+  stroke: var(--volt);
+  stroke-width: 3;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.bess-chart .zone { rx: 6; }
+.bess-chart .zone-good { fill: rgba(155, 199, 58, 0.16); }
+.bess-chart .zone-hot  { fill: rgba(194, 242, 78, 0.16); }
+.bess-chart .zone-out  { fill: rgba(240, 90, 60, 0.18); }
+.bess-chart .shave {
+  stroke: var(--volt);
+  stroke-width: 2.5;
+  stroke-dasharray: 6 6;
+}
+.bess-chart .sun { fill: var(--volt); }
+
+/* Mostrar solo las anotaciones del modo activo */
+.bess-chart [class^="ann-"] { display: none; }
+.bess-diagram[data-mode="arbitraje"] .ann-charge,
+.bess-diagram[data-mode="arbitraje"] .ann-discharge,
+.bess-diagram[data-mode="peak"] .ann-shave,
+.bess-diagram[data-mode="respaldo"] .ann-outage,
+.bess-diagram[data-mode="solar"] .ann-solar { display: block; }
+
+.bess-caption {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.bess-caption strong { color: var(--volt); font-weight: 700; }
+
+/* ===================== TABLA COMPARATIVA ===================== */
+.compare-wrap {
+  margin-top: 2.5rem;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+.compare {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.compare th, .compare td {
+  padding: 1rem 1.2rem;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+.compare thead th {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--surface);
+}
+.compare tbody th {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 400;
+  white-space: nowrap;
+}
+.compare td { color: var(--text); }
+.compare tbody tr:last-child th,
+.compare tbody tr:last-child td { border-bottom: none; }
+.compare .yes { color: var(--volt); font-weight: 700; }
+/* Columna destacada (ESCO) */
+.compare .is-feature {
+  background: rgba(194, 242, 78, 0.05);
+  border-left: 1px solid rgba(194, 242, 78, 0.18);
+  border-right: 1px solid rgba(194, 242, 78, 0.18);
+}
+.compare thead .is-feature { color: var(--volt); }
+
 /* ===================== ACORDEÓN DE SECTORES ===================== */
 .section-lead { color: var(--muted); margin-top: 0.8rem; font-size: 1.02rem; }
 

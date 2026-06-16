@@ -18,6 +18,32 @@ navLinks.querySelectorAll("a").forEach((link) => {
   });
 });
 
+/* Diagrama interactivo BESS: pestañas que cambian curva y texto */
+const bessDiagram = document.querySelector(".bess-diagram");
+if (bessDiagram) {
+  const bessCaption = document.getElementById("bessCaption");
+  const bessText = {
+    arbitraje:
+      "<strong>Arbitraje.</strong> La batería se carga de madrugada, cuando la energía es barata, y descarga en las horas pico, cuando es cara. Pagas menos por la misma energía.",
+    peak:
+      "<strong>Peak Shaving.</strong> La batería recorta los picos de demanda: en lugar de pagar caros cargos por capacidad, la energía sale de la batería y aplanas tu curva.",
+    respaldo:
+      "<strong>Respaldo.</strong> Ante un corte de red, la batería entra en milisegundos y cubre tu operación. Cero interrupciones en procesos críticos.",
+    solar:
+      "<strong>Integración solar.</strong> El excedente de generación solar de mediodía se guarda en la batería y se usa después, aprovechando cada kWh producido.",
+  };
+  bessDiagram.querySelectorAll(".bess-tab").forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const mode = tab.dataset.mode;
+      bessDiagram.dataset.mode = mode;
+      bessDiagram.querySelectorAll(".bess-tab").forEach((t) =>
+        t.classList.toggle("is-active", t === tab)
+      );
+      if (bessText[mode]) bessCaption.innerHTML = bessText[mode];
+    });
+  });
+}
+
 /* Acordeón de sectores: solo uno abierto a la vez */
 const sectorAccs = document.querySelectorAll(".sector-acc");
 sectorAccs.forEach((acc) => {

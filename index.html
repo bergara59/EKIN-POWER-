@@ -203,32 +203,68 @@
         <h2 class="section-title">Una batería, <em>cuatro formas de ganar</em>.</h2>
       </div>
 
-      <ol class="steps">
-        <li class="step">
-          <span class="step-num">01</span>
-          <h3>Arbitraje</h3>
-          <p>Carga cuando la energía es barata y descarga en horas caras.
-             Optimiza el costo según la tarifa horaria.</p>
-        </li>
-        <li class="step">
-          <span class="step-num">02</span>
-          <h3>Peak Shaving</h3>
-          <p>Recorta los picos de demanda para reducir los cargos
-             por capacidad en tu factura.</p>
-        </li>
-        <li class="step">
-          <span class="step-num">03</span>
-          <h3>Respaldo</h3>
-          <p>Transferencia rápida ante cortes: tu operación sigue
-             funcionando sin interrupciones.</p>
-        </li>
-        <li class="step">
-          <span class="step-num">04</span>
-          <h3>Integración renovable</h3>
-          <p>Estabiliza la generación solar variable y aprovecha
-             al máximo cada kWh producido.</p>
-        </li>
-      </ol>
+      <p class="section-lead">Una sola batería, cuatro formas de ganar. Elige una para ver cómo trabaja a lo largo del día.</p>
+
+      <div class="bess-diagram" data-mode="arbitraje">
+        <div class="bess-tabs" role="tablist">
+          <button class="bess-tab is-active" data-mode="arbitraje">01 · Arbitraje</button>
+          <button class="bess-tab" data-mode="peak">02 · Peak Shaving</button>
+          <button class="bess-tab" data-mode="respaldo">03 · Respaldo</button>
+          <button class="bess-tab" data-mode="solar">04 · Integración solar</button>
+        </div>
+
+        <div class="bess-stage">
+          <svg class="bess-chart" viewBox="0 0 720 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Curva de precio de la energía a lo largo del día">
+            <!-- eje -->
+            <line class="axis" x1="40" y1="250" x2="690" y2="250"/>
+            <text class="zlabel" x="40"  y="272">00 h</text>
+            <text class="zlabel" x="178" y="272">06 h</text>
+            <text class="zlabel" x="328" y="272">12 h</text>
+            <text class="zlabel" x="478" y="272">18 h</text>
+            <text class="zlabel" x="612" y="272">24 h</text>
+            <text class="zlabel axis-y" x="14" y="70" transform="rotate(-90 14 70)">Precio €/kWh</text>
+
+            <!-- área + curva del precio -->
+            <polygon class="area" points="40,250 40,210 115,225 190,205 265,150 340,170 415,150 490,85 565,110 640,205 640,250"/>
+            <polyline class="curve" points="40,210 115,225 190,205 265,150 340,170 415,150 490,85 565,110 640,205"/>
+
+            <!-- Arbitraje: cargar (valle) + descargar (pico) -->
+            <g class="ann-charge">
+              <rect class="zone zone-good" x="40" y="60" width="100" height="190"/>
+              <text class="zlabel strong" x="48" y="50">▼ Cargar barato</text>
+            </g>
+            <g class="ann-discharge">
+              <rect class="zone zone-hot" x="455" y="60" width="85" height="190"/>
+              <text class="zlabel strong" x="455" y="50">▲ Descargar caro</text>
+            </g>
+
+            <!-- Peak shaving: recorte del pico -->
+            <g class="ann-shave">
+              <rect class="zone zone-hot" x="455" y="60" width="85" height="190"/>
+              <line class="shave" x1="450" y1="150" x2="545" y2="150"/>
+              <text class="zlabel strong" x="430" y="50">Recorte de pico de demanda</text>
+            </g>
+
+            <!-- Respaldo: corte de red cubierto por batería -->
+            <g class="ann-outage">
+              <rect class="zone zone-out" x="470" y="60" width="44" height="190"/>
+              <text class="zlabel strong" x="430" y="50">Corte de red → la batería cubre</text>
+            </g>
+
+            <!-- Integración solar: excedente solar a mediodía -->
+            <g class="ann-solar">
+              <rect class="zone zone-good" x="255" y="60" width="120" height="190"/>
+              <circle class="sun" cx="315" cy="92" r="11"/>
+              <text class="zlabel strong" x="255" y="50">Excedente solar → carga</text>
+            </g>
+          </svg>
+
+          <p class="bess-caption" id="bessCaption">
+            <strong>Arbitraje.</strong> La batería se carga de madrugada, cuando la energía es barata,
+            y descarga en las horas pico, cuando es cara. Pagas menos por la misma energía.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- ===================== FINANCIAMIENTO ===================== -->
@@ -267,6 +303,58 @@
              Empiezas a ahorrar sin desembolso inicial.</p>
           <span class="card-tag">Sin inversión</span>
         </article>
+      </div>
+
+      <!-- Tabla comparativa de modelos de financiamiento -->
+      <div class="compare-wrap">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Compra (CAPEX)</th>
+              <th>Arrendamiento</th>
+              <th class="is-feature">Inversión cero (ESCO)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Inversión inicial</th>
+              <td>Alta</td>
+              <td>Media</td>
+              <td class="is-feature"><span class="yes">Cero</span></td>
+            </tr>
+            <tr>
+              <th>Ahorro que capturas</th>
+              <td><span class="yes">100%</span></td>
+              <td>Alto</td>
+              <td class="is-feature">Compartido</td>
+            </tr>
+            <tr>
+              <th>Propiedad del sistema</th>
+              <td>Tuya desde el día 1</td>
+              <td>Tuya al final</td>
+              <td class="is-feature">De EKIN POWER</td>
+            </tr>
+            <tr>
+              <th>Mantenimiento incluido</th>
+              <td>Opcional</td>
+              <td><span class="yes">Sí</span></td>
+              <td class="is-feature"><span class="yes">Sí</span></td>
+            </tr>
+            <tr>
+              <th>Empiezas a ahorrar</th>
+              <td>Tras la inversión</td>
+              <td>Desde el inicio</td>
+              <td class="is-feature"><span class="yes">Desde el día 1</span></td>
+            </tr>
+            <tr>
+              <th>Ideal para</th>
+              <td>Máximo retorno a largo plazo</td>
+              <td>Cuidar tu liquidez</td>
+              <td class="is-feature">Ahorrar sin arriesgar capital</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
