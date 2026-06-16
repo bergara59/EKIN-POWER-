@@ -597,6 +597,80 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: -0.02em;
 }
 
+/* ===================== POR QUÉ EKIN POWER ===================== */
+.reasons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+}
+.reason {
+  background: var(--surface);
+  padding: 1.7rem;
+  position: relative;
+  transition: background 0.25s;
+}
+.reason::before {
+  content: "";
+  position: absolute;
+  top: 1.7rem; left: 0;
+  width: 3px; height: 1.4rem;
+  background: var(--volt);
+  border-radius: 0 3px 3px 0;
+}
+.reason:hover { background: var(--surface-2); }
+.reason h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  padding-left: 0.6rem;
+}
+.reason p { color: var(--muted); font-size: 0.96rem; padding-left: 0.6rem; }
+
+/* ===================== PREGUNTAS FRECUENTES (FAQ) ===================== */
+.faq { max-width: 820px; }
+.faq-item {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  margin-bottom: 0.7rem;
+  background: var(--surface);
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.faq-item[open] { border-color: #3a4639; }
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 1.1rem 1.3rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.08rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+";
+  font-size: 1.5rem;
+  color: var(--volt);
+  font-family: var(--font-body);
+  line-height: 1;
+  transition: transform 0.25s;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p {
+  color: var(--muted);
+  padding: 0 1.3rem 1.2rem;
+  font-size: 0.98rem;
+  max-width: 70ch;
+}
+
 /* ===================== FORMULARIO DE CONTACTO ===================== */
 .contact-form {
   position: relative;
@@ -647,7 +721,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* Reveal en scroll (lo activa script.js añadiendo .in-view) */
-.section-head, .card, .sector, .step, .project, .cta-inner {
+.section-head, .card, .sector, .step, .project, .reason, .faq-item, .cta-inner {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
@@ -657,5 +731,5 @@ a { color: inherit; text-decoration: none; }
 /* Respeta a quien prefiere menos movimiento */
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
-  .reveal, .section-head, .card, .sector, .step, .project, .cta-inner { opacity: 1; transform: none; }
+  .reveal, .section-head, .card, .sector, .step, .project, .reason, .faq-item, .cta-inner { opacity: 1; transform: none; }
 }
