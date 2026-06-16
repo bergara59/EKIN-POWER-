@@ -92,39 +92,70 @@
   <main>
     <!-- ===================== HERO ===================== -->
     <section class="hero">
+      <!-- Foto de fondo a pantalla completa con efecto de zoom lento -->
+      <div class="hero-photo" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1680355065203-43ad84bb6e69?auto=format&fit=crop&w=2400&q=72" alt="" fetchpriority="high" />
+      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-grid" aria-hidden="true"></div>
       <div class="hero-glow" aria-hidden="true"></div>
       <div class="hero-orb" aria-hidden="true"></div>
-      <p class="eyebrow reveal">Energía · Ingeniería · BESS</p>
-      <h1 class="hero-title reveal" style="--d:1">
-        Convertimos tu energía en
-        <span class="title-accent">ahorro y confianza.</span>
-      </h1>
-      <p class="hero-sub reveal" style="--d:2">
-        Soluciones energéticas para industria y comercio: operación y mantenimiento,
-        generación solar y almacenamiento <strong>BESS</strong>. Reducimos tu factura
-        eléctrica y aseguramos la continuidad de tu operación.
-      </p>
-      <div class="hero-actions reveal" style="--d:3">
-        <a href="#contacto" class="btn btn-primary">Solicitar diagnóstico</a>
-        <a href="#servicios" class="btn btn-ghost">Ver soluciones →</a>
-      </div>
 
-      <div class="hero-stats reveal" style="--d:4">
-        <div class="stat">
-          <span class="stat-num" data-count="35" data-suffix="%">35%</span>
-          <span class="stat-label">de reducción del recibo eléctrico</span>
+      <div class="hero-inner">
+        <p class="eyebrow reveal">Energía · Ingeniería · BESS</p>
+        <h1 class="hero-title reveal" style="--d:1">
+          Convertimos tu energía en
+          <span class="title-accent">ahorro y confianza.</span>
+        </h1>
+        <p class="hero-sub reveal" style="--d:2">
+          Soluciones energéticas para industria y comercio: operación y mantenimiento,
+          generación solar y almacenamiento <strong>BESS</strong>. Reducimos tu factura
+          eléctrica y aseguramos la continuidad de tu operación.
+        </p>
+        <div class="hero-actions reveal" style="--d:3">
+          <a href="#contacto" class="btn btn-primary">Solicitar diagnóstico</a>
+          <a href="#servicios" class="btn btn-ghost">Ver soluciones →</a>
         </div>
-        <div class="stat">
-          <span class="stat-num" data-count="15" data-suffix=" años">15 años</span>
-          <span class="stat-label">de servicio y logros</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">24/7</span>
-          <span class="stat-label">monitoreo y control</span>
+
+        <div class="hero-stats reveal" style="--d:4">
+          <div class="stat">
+            <span class="stat-num" data-count="35" data-suffix="%">35%</span>
+            <span class="stat-label">de reducción del recibo eléctrico</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="15" data-suffix=" años">15 años</span>
+            <span class="stat-label">de servicio y logros</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">24/7</span>
+            <span class="stat-label">monitoreo y control</span>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- ===================== CINTA ANIMADA DE SECTORES ===================== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Hoteles</span><span class="dot">◆</span>
+        <span>Manufactura</span><span class="dot">◆</span>
+        <span>Supermercados</span><span class="dot">◆</span>
+        <span>Cines</span><span class="dot">◆</span>
+        <span>Fábricas</span><span class="dot">◆</span>
+        <span>Hospitales</span><span class="dot">◆</span>
+        <span>Logística</span><span class="dot">◆</span>
+        <span>BESS</span><span class="dot">◆</span>
+        <!-- duplicado para bucle infinito -->
+        <span>Hoteles</span><span class="dot">◆</span>
+        <span>Manufactura</span><span class="dot">◆</span>
+        <span>Supermercados</span><span class="dot">◆</span>
+        <span>Cines</span><span class="dot">◆</span>
+        <span>Fábricas</span><span class="dot">◆</span>
+        <span>Hospitales</span><span class="dot">◆</span>
+        <span>Logística</span><span class="dot">◆</span>
+        <span>BESS</span><span class="dot">◆</span>
+      </div>
+    </div>
 
     <!-- ===================== SERVICIOS ===================== -->
     <section class="section" id="servicios">
@@ -239,6 +270,19 @@
       </div>
     </section>
 
+    <!-- ===================== BANDA PARALLAX ===================== -->
+    <section class="showcase" aria-label="Energía a gran escala">
+      <div class="showcase-img" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1756913455724-6b3a2ae0130b?auto=format&fit=crop&w=2400&q=72" alt="" loading="lazy" />
+      </div>
+      <div class="showcase-overlay" aria-hidden="true"></div>
+      <div class="showcase-content">
+        <p class="showcase-kicker">Energía a gran escala</p>
+        <h2 class="showcase-title">Cada <em>kWh</em> cuenta.<br/>Nosotros nos aseguramos de eso.</h2>
+        <a href="#contacto" class="btn btn-primary">Habla con un experto</a>
+      </div>
+    </section>
+
     <!-- ===================== SECTORES ===================== -->
     <section class="section section-dark" id="sectores">
       <div class="section-head">
@@ -268,34 +312,49 @@
 
       <div class="projects">
         <article class="project">
-          <div class="project-tag">Manufactura</div>
-          <h3>Planta industrial</h3>
-          <p>Generación solar + BESS para recortar picos de demanda y asegurar continuidad de proceso.</p>
-          <ul class="project-specs">
-            <li><span>1.2 MWp</span> solar</li>
-            <li><span>500 kWh</span> BESS</li>
-            <li><span>32%</span> ahorro</li>
-          </ul>
+          <div class="project-photo">
+            <img src="https://images.unsplash.com/photo-1642285709726-f9eb035b034b?auto=format&fit=crop&w=900&q=70" alt="Planta industrial iluminada de noche" loading="lazy" />
+            <span class="project-tag">Manufactura</span>
+          </div>
+          <div class="project-body">
+            <h3>Planta industrial</h3>
+            <p>Generación solar + BESS para recortar picos de demanda y asegurar continuidad de proceso.</p>
+            <ul class="project-specs">
+              <li><span>1.2 MWp</span> solar</li>
+              <li><span>500 kWh</span> BESS</li>
+              <li><span>32%</span> ahorro</li>
+            </ul>
+          </div>
         </article>
         <article class="project">
-          <div class="project-tag">Hotelería</div>
-          <h3>Hotel &amp; resort</h3>
-          <p>Eficiencia en climatización e iluminación con monitoreo 24/7 y respaldo ante cortes.</p>
-          <ul class="project-specs">
-            <li><span>800 kWp</span> solar</li>
-            <li><span>24/7</span> monitoreo</li>
-            <li><span>28%</span> ahorro</li>
-          </ul>
+          <div class="project-photo">
+            <img src="https://images.unsplash.com/photo-1756913453779-ea366264b54a?auto=format&fit=crop&w=900&q=70" alt="Campo de paneles solares bajo cielo despejado" loading="lazy" />
+            <span class="project-tag">Hotelería</span>
+          </div>
+          <div class="project-body">
+            <h3>Hotel &amp; resort</h3>
+            <p>Eficiencia en climatización e iluminación con monitoreo 24/7 y respaldo ante cortes.</p>
+            <ul class="project-specs">
+              <li><span>800 kWp</span> solar</li>
+              <li><span>24/7</span> monitoreo</li>
+              <li><span>28%</span> ahorro</li>
+            </ul>
+          </div>
         </article>
         <article class="project">
-          <div class="project-tag">Retail</div>
-          <h3>Cadena de supermercados</h3>
-          <p>Modelo ESCO sin inversión inicial: optimización de tarifa y refrigeración.</p>
-          <ul class="project-specs">
-            <li><span>$0</span> inversión</li>
-            <li><span>ESCO</span> reparto</li>
-            <li><span>35%</span> ahorro</li>
-          </ul>
+          <div class="project-photo">
+            <img src="https://images.unsplash.com/photo-1756913454165-246d96a20b67?auto=format&fit=crop&w=900&q=70" alt="Vista aérea de una planta solar fotovoltaica" loading="lazy" />
+            <span class="project-tag">Retail</span>
+          </div>
+          <div class="project-body">
+            <h3>Cadena de supermercados</h3>
+            <p>Modelo ESCO sin inversión inicial: optimización de tarifa y refrigeración.</p>
+            <ul class="project-specs">
+              <li><span>$0</span> inversión</li>
+              <li><span>ESCO</span> reparto</li>
+              <li><span>35%</span> ahorro</li>
+            </ul>
+          </div>
         </article>
       </div>
     </section>
