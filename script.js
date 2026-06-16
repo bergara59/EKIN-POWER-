@@ -18,6 +18,18 @@ navLinks.querySelectorAll("a").forEach((link) => {
   });
 });
 
+/* Reloj "live" del board de Experiencia */
+const boardClock = document.getElementById("boardClock");
+if (boardClock) {
+  const tick = () => {
+    const n = new Date();
+    const p = (x) => String(x).padStart(2, "0");
+    boardClock.textContent = `${p(n.getHours())}:${p(n.getMinutes())}:${p(n.getSeconds())}`;
+  };
+  tick();
+  setInterval(tick, 1000);
+}
+
 /* Diagrama interactivo BESS: pestañas que cambian curva y texto */
 const bessDiagram = document.querySelector(".bess-diagram");
 if (bessDiagram) {
