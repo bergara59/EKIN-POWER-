@@ -475,9 +475,12 @@ a { color: inherit; text-decoration: none; }
 .card p { color: var(--muted); font-size: 0.98rem; }
 
 .card-feature {
-  background: linear-gradient(160deg, var(--surface-2), var(--surface));
-  border-color: #3a4a2a;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='150' viewBox='0 0 48 60' fill='none' stroke='%23c2f24e' stroke-opacity='0.16' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 24 24 6l18 18'/%3E%3Cpath d='M6 40 24 22l18 18'/%3E%3Cpath d='M6 56 24 38l18 18'/%3E%3C/svg%3E") no-repeat top -10px right -20px,
+    linear-gradient(160deg, var(--surface-2), var(--surface));
+  background-size: 120px auto, auto;
 }
+.card-feature::before { opacity: 0.06; }
 .card-tag {
   display: inline-block;
   margin-top: 1rem;
@@ -566,6 +569,35 @@ a { color: inherit; text-decoration: none; }
   background: radial-gradient(circle, rgba(194, 242, 78,0.12), transparent 65%);
   pointer-events: none;
 }
+.cta-urgency {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--volt);
+  background: rgba(194, 242, 78, 0.08);
+  border: 1px solid rgba(194, 242, 78, 0.25);
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+}
+.cta-pulse {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--volt);
+  box-shadow: 0 0 0 0 rgba(194, 242, 78, 0.6);
+  animation: pulse-dot 1.8s ease-out infinite;
+}
+@keyframes pulse-dot {
+  0% { box-shadow: 0 0 0 0 rgba(194, 242, 78, 0.6); }
+  70% { box-shadow: 0 0 0 9px rgba(194, 242, 78, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(194, 242, 78, 0); }
+}
+
 .cta-title {
   font-family: var(--font-display);
   font-weight: 800;
@@ -945,6 +977,93 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
   margin: 0 auto;
   padding: clamp(3rem, 8vw, 5rem) var(--pad);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+@media (min-width: 880px) {
+  .showcase-content { grid-template-columns: 1.1fr 0.9fr; gap: 3rem; }
+}
+
+/* Indicador de impacto (estilo Brand Book) */
+.impact-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, rgba(32,29,22,0.92), rgba(22,20,15,0.92));
+  border: 1px solid #3a4a2a;
+  border-radius: 22px;
+  padding: 2rem;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+  max-width: 380px;
+}
+.impact-chevrons {
+  position: absolute;
+  top: -8px; right: 10px;
+  width: 80px; height: 100px;
+  color: var(--volt);
+  opacity: 0.12;
+}
+.impact-chevrons svg { width: 100%; height: 100%; }
+.impact-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 0.8rem;
+}
+.impact-pct {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(3.4rem, 9vw, 5rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: var(--volt);
+  display: block;
+  text-shadow: 0 0 40px rgba(194,242,78,0.3);
+}
+.impact-label {
+  display: block;
+  color: var(--text);
+  font-weight: 600;
+  margin: 0.3rem 0 1.4rem;
+}
+.impact-rows {
+  display: flex;
+  gap: 1.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+  margin-bottom: 1.2rem;
+}
+.impact-rows strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+.impact-rows span {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.impact-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--volt);
+  font-weight: 700;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
 }
 .showcase-kicker {
   font-family: var(--font-mono);
