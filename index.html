@@ -414,23 +414,21 @@
         </p>
 
         <!--
-          FORMULARIO DE CONTACTO
-          Estado actual: al enviar, abre el correo del visitante con los datos.
-          PARA RECIBIR CORREOS AUTOMÁTICOS (Formspree): cuando tengas tu código,
-          cambia la línea de <form ...> por:
-            <form class="contact-form" action="https://formspree.io/f/TU_CODIGO" method="POST">
-          y listo.
+          FORMULARIO DE CONTACTO (Formspree) — ACTIVADO ✅
+          Los mensajes llegan a contactekinpower@gmail.com.
+          El endpoint es tu formulario en Formspree (código: mvznlezk).
         -->
-        <form class="contact-form" action="mailto:contactekinpower@gmail.com" method="post" enctype="text/plain">
+        <form class="contact-form" action="https://formspree.io/f/mvznlezk" method="POST">
+          <input type="hidden" name="_subject" value="Nuevo diagnóstico solicitado · EKIN POWER" />
           <div class="form-row">
-            <input type="text" name="Nombre" placeholder="Tu nombre" required />
-            <input type="email" name="Correo" placeholder="Tu correo" required />
+            <input type="text" name="nombre" placeholder="Tu nombre" required />
+            <input type="email" name="email" placeholder="Tu correo" required />
           </div>
           <div class="form-row">
-            <input type="text" name="Empresa" placeholder="Empresa" />
-            <input type="tel" name="Telefono" placeholder="Teléfono / WhatsApp" />
+            <input type="text" name="empresa" placeholder="Empresa" />
+            <input type="tel" name="telefono" placeholder="Teléfono / WhatsApp" />
           </div>
-          <textarea name="Mensaje" rows="3" placeholder="Cuéntanos sobre tu consumo o proyecto"></textarea>
+          <textarea name="mensaje" rows="3" placeholder="Cuéntanos sobre tu consumo o proyecto"></textarea>
           <button type="submit" class="btn btn-primary form-submit">Solicitar diagnóstico gratis</button>
         </form>
 
