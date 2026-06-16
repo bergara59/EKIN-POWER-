@@ -18,6 +18,60 @@ navLinks.querySelectorAll("a").forEach((link) => {
   });
 });
 
+/* Terminal de inteligencia energética (hero) */
+const termBoot = document.getElementById("termBoot");
+const termClock = document.getElementById("termClock");
+if (termBoot) {
+  const lines = [
+    ['EKIN POWER SYSTEM INITIALIZING', 'bl'],
+    ['LOAD DATA CONNECTED', 'ok'],
+    ['TARIFF ENGINE ONLINE', 'ok'],
+    ['BESS OPTIMIZER ACTIVE', 'ok'],
+    ['SAVINGS MODEL READY', 'ok'],
+  ];
+  let i = 0;
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function boot() {
+    if (i < lines.length) {
+      const [txt, cls] = lines[i];
+      const mark = cls === 'ok' ? '<span class="ok">✓</span> ' : '<span class="bl">▸</span> ';
+      termBoot.insertAdjacentHTML("beforeend", `<div>${mark}${txt}</div>`);
+      // mantener solo las últimas 3 líneas
+      while (termBoot.children.length > 3) termBoot.removeChild(termBoot.firstChild);
+      i++;
+      setTimeout(boot, reduced ? 0 : 520);
+    } else {
+      termBoot.insertAdjacentHTML("beforeend", '<div><span class="term-cursor">█</span> awaiting site data…</div>');
+      while (termBoot.children.length > 3) termBoot.removeChild(termBoot.firstChild);
+    }
+  }
+  boot();
+
+  if (termClock) {
+    const p = (x) => String(x).padStart(2, "0");
+    const tickT = () => {
+      const n = new Date();
+      termClock.textContent = `${p(n.getHours())}:${p(n.getMinutes())}:${p(n.getSeconds())}`;
+    };
+    tickT(); setInterval(tickT, 1000);
+  }
+
+  /* Datos "vivos" sutiles */
+  if (!reduced) {
+    const ttCost = document.getElementById("ttCost");
+    const ttSoc = document.getElementById("ttSoc");
+    const ttSocBar = document.getElementById("ttSocBar");
+    let soc = 78, cost = 142;
+    setInterval(() => {
+      soc = Math.max(70, Math.min(88, soc + (Math.random() * 6 - 3)));
+      cost = Math.max(128, Math.min(156, cost + (Math.random() * 8 - 4)));
+      if (ttSoc) ttSoc.textContent = Math.round(soc);
+      if (ttSocBar) ttSocBar.style.width = Math.round(soc) + "%";
+      if (ttCost) ttCost.textContent = Math.round(cost);
+    }, 2200);
+  }
+}
+
 /* Reloj "live" del board de Experiencia */
 const boardClock = document.getElementById("boardClock");
 if (boardClock) {

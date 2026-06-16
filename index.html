@@ -70,7 +70,7 @@
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
   <!-- ===================== NAVEGACIÓN ===================== -->
-  <header class="nav" id="top">
+  <header class="nav on-dark" id="top">
     <a class="brand" href="#top" aria-label="EKIN POWER — inicio">
       <span class="logo-word">e<svg class="logo-k" viewBox="0 0 66 100" aria-hidden="true"><defs><linearGradient id="kgNav" x1="0" y1="100" x2="0" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3f7a00"/><stop offset="1" stop-color="#c2f24e"/></linearGradient></defs><rect x="8" y="6" width="15" height="88" rx="7" fill="url(#kgNav)"/><path d="M34 56 L58 25" stroke="url(#kgNav)" stroke-width="15" stroke-linecap="round"/><path d="M34 56 L60 94" stroke="url(#kgNav)" stroke-width="15" stroke-linecap="round"/></svg>in</span><span class="logo-power">POWER</span>
     </a>
@@ -80,12 +80,32 @@
     </button>
 
     <nav class="nav-links" id="navLinks">
-      <a href="#servicios">Servicios</a>
-      <a href="#bess">BESS</a>
-      <a href="#financiamiento">Financiamiento</a>
-      <a href="#experiencia">Experiencia</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contacto" class="nav-cta">Diagnóstico gratis</a>
+      <div class="nav-item">
+        <a href="#servicios" class="nav-top">Servicios ▾</a>
+        <div class="nav-drop">
+          <a href="#servicios">Diagnóstico &amp; inteligencia</a>
+          <a href="#servicios">Eficiencia &amp; ahorro</a>
+          <a href="#servicios">Energía limpia, BESS &amp; ESG</a>
+          <a href="#impacto">Impacto medible</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#bess" class="nav-top">BESS &amp; financiación ▾</a>
+        <div class="nav-drop">
+          <a href="#bess">Cómo funciona el BESS</a>
+          <a href="#financiamiento">CAPEX · Lease · ESCO</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#experiencia" class="nav-top">Compañía ▾</a>
+        <div class="nav-drop">
+          <a href="#experiencia">Track record</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#sectores">Clientes</a>
+        </div>
+      </div>
+      <a href="#faq" class="nav-top">FAQ</a>
+      <a href="#contacto" class="nav-cta">Energy Assessment</a>
     </nav>
   </header>
 
@@ -102,33 +122,67 @@
       <div class="hero-orb" aria-hidden="true"></div>
 
       <div class="hero-inner">
-        <p class="eyebrow reveal">Consultoría de eficiencia energética</p>
-        <h1 class="hero-title reveal" style="--d:1">
-          Convertimos tu energía en
-          <span class="title-accent">ahorro y confianza.</span>
-        </h1>
-        <p class="hero-sub reveal" style="--d:2">
-          Consultoría de eficiencia energética para industria y comercio: auditorías,
-          ahorro de electricidad y agua, energía limpia, almacenamiento <strong>BESS</strong>
-          y estrategia <strong>ESG</strong>. Convertimos tus datos en ahorro y menos huella.
-        </p>
-        <div class="hero-actions reveal" style="--d:3">
-          <a href="#contacto" class="btn btn-primary">Solicitar diagnóstico</a>
-          <a href="#servicios" class="btn btn-ghost">Ver soluciones →</a>
+        <div class="hero-copy">
+          <p class="eyebrow reveal">Inteligencia energética · BESS · ESG</p>
+          <h1 class="hero-title reveal" style="--d:1">
+            Convertimos energía en
+            <span class="title-accent">ahorro verificable.</span>
+          </h1>
+          <p class="hero-sub reveal" style="--d:2">
+            Centro de inteligencia energética para industria y comercio: auditorías,
+            ahorro de electricidad y agua, almacenamiento <strong>BESS</strong> y estrategia
+            <strong>ESG</strong>. Menos factura, menos riesgo, más control — con datos defendibles.
+          </p>
+          <div class="hero-actions reveal" style="--d:3">
+            <a href="#contacto" class="btn btn-primary">Solicitar Energy Assessment</a>
+            <a href="#servicios" class="btn btn-ghost">Ver capacidades →</a>
+          </div>
+
+          <div class="hero-stats reveal" style="--d:4">
+            <div class="stat">
+              <span class="stat-num" data-count="35" data-suffix="%">35%</span>
+              <span class="stat-label">reducción del recibo eléctrico</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-count="100" data-suffix="%">100%</span>
+              <span class="stat-label">medido y verificado · IPMVP</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">ESG</span>
+              <span class="stat-label">menos factura y menos huella</span>
+            </div>
+          </div>
         </div>
 
-        <div class="hero-stats reveal" style="--d:4">
-          <div class="stat">
-            <span class="stat-num" data-count="35" data-suffix="%">35%</span>
-            <span class="stat-label">de reducción del recibo eléctrico</span>
+        <!-- Terminal de inteligencia energética -->
+        <div class="terminal reveal" style="--d:3" aria-hidden="true">
+          <div class="term-bar">
+            <span class="term-dot"></span>
+            <span class="term-title">EKIN · ENERGY INTELLIGENCE</span>
+            <span class="term-clock" id="termClock">--:--:--</span>
           </div>
-          <div class="stat">
-            <span class="stat-num" data-count="100" data-suffix="%">100%</span>
-            <span class="stat-label">medido y verificado (IPMVP)</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">ESG</span>
-            <span class="stat-label">menos factura y menos huella</span>
+          <div class="term-boot" id="termBoot"></div>
+          <div class="term-grid">
+            <div class="term-tile">
+              <span class="tt-label">ENERGY COST INDEX</span>
+              <span class="tt-value"><span id="ttCost">142</span> <small>€/MWh</small></span>
+              <svg class="tt-spark" viewBox="0 0 120 28" preserveAspectRatio="none"><polyline points="0,20 15,16 30,22 45,10 60,15 75,7 90,13 105,5 120,9"/></svg>
+            </div>
+            <div class="term-tile">
+              <span class="tt-label">BESS STATE OF CHARGE</span>
+              <span class="tt-value blue"><span id="ttSoc">78</span><small>%</small></span>
+              <span class="tt-track"><i id="ttSocBar"></i></span>
+            </div>
+            <div class="term-tile is-alert">
+              <span class="tt-label">PEAK DEMAND ALERT</span>
+              <span class="tt-value amber">1.42 <small>MW</small></span>
+              <span class="tt-sub">demand charge risk</span>
+            </div>
+            <div class="term-tile">
+              <span class="tt-label">SAVINGS POTENTIAL</span>
+              <span class="tt-value green">18–35<small>%</small></span>
+              <span class="tt-sub">peak shaving + solar</span>
+            </div>
           </div>
         </div>
       </div>
