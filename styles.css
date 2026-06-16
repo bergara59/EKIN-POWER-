@@ -910,7 +910,57 @@ a { color: inherit; text-decoration: none; }
 }
 .compare thead .is-feature { color: var(--volt); }
 
-/* ===================== ACORDEÓN DE SECTORES ===================== */
+/* ===================== CLIENTES (rejilla) ===================== */
+.client-grid {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+@media (min-width: 760px) { .client-grid { grid-template-columns: repeat(4, 1fr); } }
+.client-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.4rem;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), border-color 0.3s, box-shadow 0.3s;
+}
+.client-card::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 1.4rem; bottom: 1.4rem;
+  width: 3px;
+  background: var(--volt);
+  border-radius: 0 3px 3px 0;
+  transform: scaleY(0.25);
+  transform-origin: top;
+  opacity: 0.5;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.client-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  border-color: rgba(92, 154, 0, 0.35);
+  box-shadow: 0 20px 44px rgba(27, 26, 23, 0.08);
+}
+.client-card:hover::before { transform: scaleY(1); opacity: 1; }
+.client-name {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.08rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.4rem;
+  padding-left: 0.6rem;
+}
+.client-tag {
+  display: block;
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding-left: 0.6rem;
+}
+
+/* ===================== ACORDEÓN DE SECTORES (legado) ===================== */
 .section-lead { color: var(--muted); margin-top: 0.8rem; font-size: 1.02rem; }
 
 .sector-list {
