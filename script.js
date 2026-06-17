@@ -75,6 +75,30 @@ if (liveCanvas && !window.matchMedia("(prefers-reduced-motion: reduce)").matches
   io.observe(liveCanvas);
 }
 
+/* Pronóstico energético: datos vivos */
+const fcIrr = document.getElementById("fcIrr");
+if (fcIrr && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const fcTemp = document.getElementById("fcTemp");
+  const fcWind = document.getElementById("fcWind");
+  const fcSolar = document.getElementById("fcSolar");
+  const sparks = document.querySelectorAll(".fc-spark i");
+  let irr = 820, temp = 28, wind = 14;
+  setInterval(() => {
+    irr = Math.max(680, Math.min(960, irr + (Math.random() * 60 - 30)));
+    temp = Math.max(22, Math.min(34, temp + (Math.random() * 1.6 - 0.8)));
+    wind = Math.max(6, Math.min(28, wind + (Math.random() * 4 - 2)));
+    const solar = Math.round(irr / 9.6);
+    fcIrr.textContent = Math.round(irr);
+    fcTemp.textContent = Math.round(temp);
+    fcWind.textContent = Math.round(wind);
+    fcSolar.textContent = solar;
+    if (sparks[0]) sparks[0].style.width = Math.round((irr / 960) * 100) + "%";
+    if (sparks[1]) sparks[1].style.width = Math.round((temp / 40) * 100) + "%";
+    if (sparks[2]) sparks[2].style.width = Math.round((wind / 30) * 100) + "%";
+    if (sparks[3]) sparks[3].style.width = solar + "%";
+  }, 2400);
+}
+
 /* Investment memo (financiación) */
 const finmemo = document.getElementById("finmemo");
 if (finmemo) {
