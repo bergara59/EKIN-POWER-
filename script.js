@@ -75,6 +75,46 @@ if (liveCanvas && !window.matchMedia("(prefers-reduced-motion: reduce)").matches
   io.observe(liveCanvas);
 }
 
+/* Selector de industrias */
+const industry = document.getElementById("industry");
+if (industry) {
+  const data = [
+    { n: "MANUFACTURA & FÁBRICAS", pain: "Picos de demanda y bajo factor de potencia que disparan los cargos por capacidad.", var: "kWh / unidad producida", sol: "Optimización + BESS (peak shaving) + PPA + corrección de cos φ.", met: "€/MWh · €/unidad" },
+    { n: "HOTELES & RESORTS", pain: "Climatización y agua caliente con ocupación variable; consumo difícil de controlar.", var: "kWh / cuarto ocupado", sol: "Control de demanda + solar autoconsumo + eficiencia térmica + ESG.", met: "kWh/cuarto · €/noche" },
+    { n: "SUPERMERCADOS & RETAIL", pain: "Refrigeración 24/7 y decenas de sedes sin visibilidad comparada.", var: "kWh / m²", sol: "Optimización de frío + solar distribuida + benchmark multisede.", met: "kWh/m² · €/tienda" },
+    { n: "CINES & ENTRETENIMIENTO", pain: "Climatización dimensionada al pico, con ocupación intermitente.", var: "kWh / sesión", sol: "Gestión por ocupación + programación de cargas + tarifas.", met: "kWh/asiento" },
+    { n: "CENTROS LOGÍSTICOS", pain: "Operación 24/7, naves enormes y electrificación de flotas.", var: "kWh / m² + movilidad", sol: "Iluminación industrial + solar + infraestructura de recarga EV.", met: "kWh/m² · €/pallet" },
+    { n: "HOSPITALES & CLÍNICAS", pain: "La continuidad es crítica: un corte no es una opción.", var: "Disponibilidad + kWh/cama", sol: "Respaldo (BESS) + calidad de energía + eficiencia en áreas críticas.", met: "Uptime · kWh/cama" },
+    { n: "PLANTAS DE PROCESO", pain: "Vapor, aire comprimido y motores que se comen la factura.", var: "kWh / tonelada", sol: "Recuperación de calor + variadores + integración renovable.", met: "kWh/ton" },
+    { n: "OFICINAS CORPORATIVAS", pain: "HVAC, iluminación y presión ESG sin datos para decidir.", var: "kWh/m² + kgCO₂", sol: "Edificios inteligentes + solar + certificación LEED/ESG.", met: "kWh/m² · tCO₂" },
+  ];
+  const panel = industry.querySelector(".ind-panel");
+  const elName = document.getElementById("indName");
+  const elPain = document.getElementById("indPain");
+  const elVar = document.getElementById("indVar");
+  const elSol = document.getElementById("indSol");
+  const elMet = document.getElementById("indMet");
+  function render(i) {
+    const d = data[i];
+    panel.classList.add("switching");
+    setTimeout(() => {
+      elName.textContent = d.n;
+      elPain.textContent = d.pain;
+      elVar.textContent = d.var;
+      elSol.textContent = d.sol;
+      elMet.textContent = d.met;
+      panel.classList.remove("switching");
+    }, 180);
+  }
+  industry.querySelectorAll(".ind-tab").forEach((tab) => {
+    tab.addEventListener("click", () => {
+      industry.querySelectorAll(".ind-tab").forEach((t) => t.classList.toggle("is-active", t === tab));
+      render(+tab.dataset.i);
+    });
+  });
+  render(0);
+}
+
 /* Calculadora de ahorro */
 const calcBill = document.getElementById("calcBill");
 if (calcBill) {
