@@ -967,88 +967,137 @@ a { color: inherit; text-decoration: none; }
 }
 .about-stat .stat-label { color: var(--muted); font-size: 0.9rem; }
 
-/* ===================== DIAGRAMA INTERACTIVO BESS ===================== */
-.bess-diagram { margin-top: 1rem; }
-.bess-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-bottom: 1.5rem;
+/* ===================== SIMULADOR BESS (pantalla de control) ===================== */
+.bess-screen {
+  margin-top: 1rem;
+  background: #14130f;
+  border: 1px solid #2c2a22;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 26px 60px rgba(27, 26, 23, 0.13);
 }
+.screen-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.8rem 1.2rem;
+  border-bottom: 1px solid #2c2a22;
+  font-family: var(--font-mono);
+  background: rgba(255,255,255,0.02);
+}
+.screen-bar .term-title { font-size: 0.72rem; letter-spacing: 0.18em; color: #cfd6e0; }
+.bess-alert {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  color: #0f0e0c;
+  background: var(--amber);
+  font-weight: 700;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+}
+
+.bess-tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 1rem 1.2rem 0; }
 .bess-tab {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  color: var(--muted);
-  background: var(--surface);
-  border: 1px solid var(--line);
-  padding: 0.6rem 1rem;
-  border-radius: 999px;
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  color: var(--steel);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid #2c2a22;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
   cursor: pointer;
-  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), color 0.2s, border-color 0.2s, background 0.2s;
 }
-.bess-tab:hover { color: var(--text); }
+.bess-tab:hover { color: #eef2f7; transform: translateY(-2px) scale(1.04); }
 .bess-tab.is-active {
-  color: var(--bg);
-  background: var(--volt);
-  border-color: var(--volt);
+  color: #0f0e0c;
+  background: var(--blue);
+  border-color: var(--blue);
   font-weight: 700;
 }
-.bess-stage {
+
+.bess-body {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
-  align-items: center;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 1.5rem;
+  gap: 1.3rem;
+  padding: 1.2rem;
 }
-@media (min-width: 900px) { .bess-stage { grid-template-columns: 1.5fr 1fr; gap: 2.2rem; } }
+@media (min-width: 900px) { .bess-body { grid-template-columns: 1.6fr 1fr; gap: 1.6rem; align-items: stretch; } }
 
-.bess-chart { width: 100%; height: auto; display: block; }
-.bess-chart .axis { stroke: var(--line); stroke-width: 1.5; }
-.bess-chart .zlabel {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  fill: var(--muted);
-  letter-spacing: 0.04em;
+.bess-plot {
+  background: #0f0e0c;
+  border: 1px solid #221f19;
+  border-radius: 12px;
+  padding: 1rem 1rem 0.7rem;
 }
-.bess-chart .zlabel.strong { fill: var(--text); font-size: 14px; }
-.bess-chart .axis-y { fill: var(--muted); font-size: 11px; }
-.bess-chart .area { fill: rgba(194, 242, 78, 0.07); }
-.bess-chart .curve {
-  fill: none;
-  stroke: var(--volt);
-  stroke-width: 3;
-  stroke-linejoin: round;
-  stroke-linecap: round;
+.bess-chart {
+  width: 100%; height: auto; display: block;
+  background-image: linear-gradient(rgba(59,158,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(59,158,255,0.05) 1px, transparent 1px);
+  background-size: 48px 38px;
 }
+.bess-chart .axis { stroke: #2c2a22; stroke-width: 1.5; }
+.bess-chart .zlabel { font-family: var(--font-mono); font-size: 12px; fill: var(--steel); letter-spacing: 0.04em; }
+.bess-chart .zlabel.strong { fill: #eef2f7; font-size: 12px; }
+.bess-chart .area { fill: rgba(138,147,163,0.08); }
+.bess-chart .demand-line { fill: none; stroke: #cfd6e0; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.bess-chart .solar-line { fill: none; stroke: var(--amber); stroke-width: 2; stroke-dasharray: 5 4; stroke-linejoin: round; }
+.bess-chart .soc-line { fill: none; stroke: var(--blue); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
 .bess-chart .zone { rx: 6; }
-.bess-chart .zone-good { fill: rgba(155, 199, 58, 0.16); }
-.bess-chart .zone-hot  { fill: rgba(194, 242, 78, 0.16); }
-.bess-chart .zone-out  { fill: rgba(240, 90, 60, 0.18); }
-.bess-chart .shave {
-  stroke: var(--volt);
-  stroke-width: 2.5;
-  stroke-dasharray: 6 6;
-}
-.bess-chart .sun { fill: var(--volt); }
-
-/* Mostrar solo las anotaciones del modo activo */
+.bess-chart .zone-good { fill: rgba(61,220,132,0.15); }
+.bess-chart .zone-hot  { fill: rgba(255,176,32,0.16); }
+.bess-chart .zone-out  { fill: rgba(240,90,60,0.2); }
+.bess-chart .shave { stroke: var(--volt-bright); stroke-width: 2.5; stroke-dasharray: 6 6; }
+.bess-chart .sun { fill: var(--amber); }
 .bess-chart [class^="ann-"] { display: none; }
-.bess-diagram[data-mode="arbitraje"] .ann-charge,
-.bess-diagram[data-mode="arbitraje"] .ann-discharge,
-.bess-diagram[data-mode="peak"] .ann-shave,
-.bess-diagram[data-mode="respaldo"] .ann-outage,
-.bess-diagram[data-mode="solar"] .ann-solar { display: block; }
+.bess-screen[data-mode="arbitraje"] .ann-charge,
+.bess-screen[data-mode="arbitraje"] .ann-discharge,
+.bess-screen[data-mode="peak"] .ann-shave,
+.bess-screen[data-mode="respaldo"] .ann-outage,
+.bess-screen[data-mode="solar"] .ann-solar { display: block; }
+
+.bess-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  margin-top: 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  color: var(--steel);
+}
+.bess-legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
+.lg { width: 14px; height: 0; border-top: 2px solid; display: inline-block; }
+.lg-demand { color: #cfd6e0; }
+.lg-solar { color: var(--amber); border-top-style: dashed; }
+.lg-price { color: #6b6a60; }
+.lg-soc { color: var(--blue); }
+
+/* Lecturas (readouts) */
+.bess-readouts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: #2c2a22;
+  border: 1px solid #2c2a22;
+  border-radius: 12px;
+  overflow: hidden;
+  align-content: start;
+}
+.ro { background: #14130f; padding: 1rem; display: flex; flex-direction: column; gap: 0.35rem; }
+.ro-k { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.1em; color: var(--steel); }
+.ro-v { font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; color: #eef2f7; letter-spacing: -0.01em; }
+.ro-v.up { color: #3ddc84; }
 
 .bess-caption {
-  color: var(--muted);
-  font-size: 1rem;
+  color: var(--steel);
+  font-size: 0.98rem;
   line-height: 1.6;
+  padding: 0 1.2rem 1.3rem;
 }
-.bess-caption strong { color: var(--volt); font-weight: 700; }
+.bess-caption strong { color: var(--blue); font-weight: 700; }
 
 /* ===================== TABLA COMPARATIVA ===================== */
 .compare-wrap {

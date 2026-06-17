@@ -317,73 +317,86 @@
     </section>
 
     <!-- ===================== APLICACIONES BESS ===================== -->
-    <section class="section section-dark" id="bess">
+    <section class="section" id="bess">
       <div class="section-head">
-        <span class="section-kicker">02 — Almacenamiento BESS</span>
-        <h2 class="section-title">Una batería, <em>cuatro formas de ganar</em>.</h2>
+        <span class="section-kicker">02 — BESS Optimizer</span>
+        <h2 class="section-title">Mira cómo la batería <em>gana dinero</em>.</h2>
+        <p class="section-lead">Simulación operativa de un día. Elige el caso de uso y observa demanda, solar, precio y estado de carga.</p>
       </div>
 
-      <p class="section-lead">Una sola batería, cuatro formas de ganar. Elige una para ver cómo trabaja a lo largo del día.</p>
+      <div class="bess-screen" data-mode="arbitraje">
+        <div class="screen-bar">
+          <span class="term-dot"></span>
+          <span class="term-title">BESS OPTIMIZER · LIVE SIMULATION</span>
+          <span class="bess-alert" id="bessAlert">DEMAND CHARGE AVOIDED</span>
+        </div>
 
-      <div class="bess-diagram" data-mode="arbitraje">
         <div class="bess-tabs" role="tablist">
-          <button class="bess-tab is-active" data-mode="arbitraje">01 · Arbitraje</button>
-          <button class="bess-tab" data-mode="peak">02 · Peak Shaving</button>
-          <button class="bess-tab" data-mode="respaldo">03 · Respaldo</button>
-          <button class="bess-tab" data-mode="solar">04 · Integración solar</button>
+          <button class="bess-tab is-active" data-mode="arbitraje">Arbitraje</button>
+          <button class="bess-tab" data-mode="peak">Peak Shaving</button>
+          <button class="bess-tab" data-mode="respaldo">Backup</button>
+          <button class="bess-tab" data-mode="solar">Solar Firming</button>
         </div>
 
-        <div class="bess-stage">
-          <svg class="bess-chart" viewBox="0 0 720 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Curva de precio de la energía a lo largo del día">
-            <!-- eje -->
-            <line class="axis" x1="40" y1="250" x2="690" y2="250"/>
-            <text class="zlabel" x="40"  y="272">00 h</text>
-            <text class="zlabel" x="178" y="272">06 h</text>
-            <text class="zlabel" x="328" y="272">12 h</text>
-            <text class="zlabel" x="478" y="272">18 h</text>
-            <text class="zlabel" x="612" y="272">24 h</text>
-            <text class="zlabel axis-y" x="14" y="70" transform="rotate(-90 14 70)">Precio €/kWh</text>
+        <div class="bess-body">
+          <div class="bess-plot">
+            <svg class="bess-chart" viewBox="0 0 720 300" preserveAspectRatio="none" role="img" aria-label="Simulación de demanda, solar, precio y estado de carga del BESS">
+              <line class="axis" x1="40" y1="250" x2="700" y2="250"/>
+              <text class="zlabel" x="40"  y="272">00h</text>
+              <text class="zlabel" x="190" y="272">06h</text>
+              <text class="zlabel" x="340" y="272">12h</text>
+              <text class="zlabel" x="490" y="272">18h</text>
+              <text class="zlabel" x="636" y="272">24h</text>
 
-            <!-- área + curva del precio -->
-            <polygon class="area" points="40,250 40,210 115,225 190,205 265,150 340,170 415,150 490,85 565,110 640,205 640,250"/>
-            <polyline class="curve" points="40,210 115,225 190,205 265,150 340,170 415,150 490,85 565,110 640,205"/>
+              <!-- Precio (área de referencia) -->
+              <polygon class="area" points="40,250 40,210 115,225 190,205 265,150 340,170 415,150 490,85 565,110 640,205 700,210 700,250"/>
+              <!-- Generación solar (bell) -->
+              <polyline class="solar-line" points="40,250 150,248 220,215 290,165 360,140 430,165 500,215 570,248 640,250"/>
+              <!-- Demanda (carga del sitio) -->
+              <polyline class="demand-line" points="40,212 115,226 190,206 265,150 340,172 415,150 490,86 565,112 640,206 700,212"/>
+              <!-- Estado de carga del BESS -->
+              <polyline class="soc-line" points="40,236 135,150 455,150 540,236 700,236"/>
 
-            <!-- Arbitraje: cargar (valle) + descargar (pico) -->
-            <g class="ann-charge">
-              <rect class="zone zone-good" x="40" y="60" width="100" height="190"/>
-              <text class="zlabel strong" x="48" y="50">▼ Cargar barato</text>
-            </g>
-            <g class="ann-discharge">
-              <rect class="zone zone-hot" x="455" y="60" width="85" height="190"/>
-              <text class="zlabel strong" x="455" y="50">▲ Descargar caro</text>
-            </g>
+              <!-- Zonas por modo -->
+              <g class="ann-charge">
+                <rect class="zone zone-good" x="40" y="60" width="100" height="190"/>
+                <text class="zlabel strong" x="48" y="50">▼ CARGA · barato</text>
+              </g>
+              <g class="ann-discharge">
+                <rect class="zone zone-hot" x="455" y="60" width="85" height="190"/>
+                <text class="zlabel strong" x="455" y="50">▲ DESCARGA · caro</text>
+              </g>
+              <g class="ann-shave">
+                <rect class="zone zone-hot" x="455" y="60" width="85" height="190"/>
+                <line class="shave" x1="450" y1="150" x2="545" y2="150"/>
+                <text class="zlabel strong" x="430" y="50">PICO RECORTADO</text>
+              </g>
+              <g class="ann-outage">
+                <rect class="zone zone-out" x="470" y="60" width="44" height="190"/>
+                <text class="zlabel strong" x="430" y="50">CORTE → batería cubre</text>
+              </g>
+              <g class="ann-solar">
+                <rect class="zone zone-good" x="255" y="60" width="120" height="190"/>
+                <circle class="sun" cx="315" cy="92" r="11"/>
+                <text class="zlabel strong" x="255" y="50">EXCEDENTE SOLAR → carga</text>
+              </g>
+            </svg>
 
-            <!-- Peak shaving: recorte del pico -->
-            <g class="ann-shave">
-              <rect class="zone zone-hot" x="455" y="60" width="85" height="190"/>
-              <line class="shave" x1="450" y1="150" x2="545" y2="150"/>
-              <text class="zlabel strong" x="430" y="50">Recorte de pico de demanda</text>
-            </g>
+            <div class="bess-legend">
+              <span><i class="lg lg-demand"></i>Demanda</span>
+              <span><i class="lg lg-solar"></i>Solar</span>
+              <span><i class="lg lg-price"></i>Precio</span>
+              <span><i class="lg lg-soc"></i>SOC batería</span>
+            </div>
+          </div>
 
-            <!-- Respaldo: corte de red cubierto por batería -->
-            <g class="ann-outage">
-              <rect class="zone zone-out" x="470" y="60" width="44" height="190"/>
-              <text class="zlabel strong" x="430" y="50">Corte de red → la batería cubre</text>
-            </g>
-
-            <!-- Integración solar: excedente solar a mediodía -->
-            <g class="ann-solar">
-              <rect class="zone zone-good" x="255" y="60" width="120" height="190"/>
-              <circle class="sun" cx="315" cy="92" r="11"/>
-              <text class="zlabel strong" x="255" y="50">Excedente solar → carga</text>
-            </g>
-          </svg>
-
-          <p class="bess-caption" id="bessCaption">
-            <strong>Arbitraje.</strong> La batería se carga de madrugada, cuando la energía es barata,
-            y descarga en las horas pico, cuando es cara. Pagas menos por la misma energía.
-          </p>
+          <div class="bess-readouts" id="bessReadouts"></div>
         </div>
+
+        <p class="bess-caption" id="bessCaption">
+          <strong>Arbitraje.</strong> La batería se carga de madrugada, cuando la energía es barata,
+          y descarga en las horas pico, cuando es cara. Pagas menos por la misma energía.
+        </p>
       </div>
     </section>
 

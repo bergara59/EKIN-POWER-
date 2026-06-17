@@ -84,30 +84,55 @@ if (boardClock) {
   setInterval(tick, 1000);
 }
 
-/* Diagrama interactivo BESS: pestañas que cambian curva y texto */
-const bessDiagram = document.querySelector(".bess-diagram");
-if (bessDiagram) {
+/* Simulador BESS: pestañas que cambian curva, texto, lecturas y alerta */
+const bessScreen = document.querySelector(".bess-screen");
+if (bessScreen) {
   const bessCaption = document.getElementById("bessCaption");
-  const bessText = {
-    arbitraje:
-      "<strong>Arbitraje.</strong> La batería se carga de madrugada, cuando la energía es barata, y descarga en las horas pico, cuando es cara. Pagas menos por la misma energía.",
-    peak:
-      "<strong>Peak Shaving.</strong> La batería recorta los picos de demanda: en lugar de pagar caros cargos por capacidad, la energía sale de la batería y aplanas tu curva.",
-    respaldo:
-      "<strong>Respaldo.</strong> Ante un corte de red, la batería entra en milisegundos y cubre tu operación. Cero interrupciones en procesos críticos.",
-    solar:
-      "<strong>Integración solar.</strong> El excedente de generación solar de mediodía se guarda en la batería y se usa después, aprovechando cada kWh producido.",
+  const bessAlert = document.getElementById("bessAlert");
+  const bessReadouts = document.getElementById("bessReadouts");
+
+  const bessData = {
+    arbitraje: {
+      text: "<strong>Arbitraje.</strong> La batería se carga de madrugada, cuando la energía es barata, y descarga en las horas pico, cuando es cara. Pagas menos por la misma energía.",
+      alert: "PRICE ARBITRAGE ACTIVE",
+      reads: [["BUY @", "€78/MWh", ""], ["SELL @", "€142/MWh", ""], ["SPREAD", "▲ +82%", "up"], ["CYCLES/DAY", "1.0", ""]],
+    },
+    peak: {
+      text: "<strong>Peak Shaving.</strong> La batería recorta los picos de demanda: en vez de pagar caros cargos por capacidad, la energía sale de la batería y aplanas tu curva.",
+      alert: "DEMAND CHARGE AVOIDED",
+      reads: [["PEAK BEFORE", "1.42 MW", ""], ["PEAK AFTER", "0.98 MW", ""], ["DEMAND SAVED", "▲ 31%", "up"], ["WINDOW", "18–21h", ""]],
+    },
+    respaldo: {
+      text: "<strong>Backup.</strong> Ante un corte de red, la batería entra en milisegundos y cubre tu operación. Cero interrupciones en procesos críticos.",
+      alert: "OUTAGE COVERED · 0 ms",
+      reads: [["TRANSFER", "< 20 ms", ""], ["AUTONOMY", "4 h", ""], ["CRITICAL LOADS", "100%", "up"], ["UPTIME", "▲ 99.98%", "up"]],
+    },
+    solar: {
+      text: "<strong>Solar Firming.</strong> El excedente solar de mediodía se guarda en la batería y se usa después, estabilizando la generación y aprovechando cada kWh.",
+      alert: "SOLAR FIRMING ON",
+      reads: [["SOLAR USE", "▲ +24%", "up"], ["GRID EXPORT", "▼ −60%", "up"], ["MIDDAY CHARGE", "11–15h", ""], ["SELF-SUFF.", "▲ 68%", "up"]],
+    },
   };
-  bessDiagram.querySelectorAll(".bess-tab").forEach((tab) => {
+
+  function renderReadouts(mode) {
+    if (!bessReadouts) return;
+    bessReadouts.innerHTML = bessData[mode].reads
+      .map(([k, v, c]) => `<div class="ro"><span class="ro-k">${k}</span><span class="ro-v ${c}">${v}</span></div>`)
+      .join("");
+  }
+  function setMode(mode) {
+    bessScreen.dataset.mode = mode;
+    if (bessCaption) bessCaption.innerHTML = bessData[mode].text;
+    if (bessAlert) bessAlert.textContent = bessData[mode].alert;
+    renderReadouts(mode);
+  }
+  bessScreen.querySelectorAll(".bess-tab").forEach((tab) => {
     tab.addEventListener("click", () => {
-      const mode = tab.dataset.mode;
-      bessDiagram.dataset.mode = mode;
-      bessDiagram.querySelectorAll(".bess-tab").forEach((t) =>
-        t.classList.toggle("is-active", t === tab)
-      );
-      if (bessText[mode]) bessCaption.innerHTML = bessText[mode];
+      bessScreen.querySelectorAll(".bess-tab").forEach((t) => t.classList.toggle("is-active", t === tab));
+      setMode(tab.dataset.mode);
     });
   });
+  setMode("arbitraje");
 }
 
 /* Acordeón de sectores: solo uno abierto a la vez */
