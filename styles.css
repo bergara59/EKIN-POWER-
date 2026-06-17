@@ -7,35 +7,35 @@
    ============================================================ */
 
 :root {
-  /* --- TEMA CLARO (por defecto · proporción Brand Book 70/22/8) --- */
-  --bg:        #f5f2ea;   /* hueso (fondo principal) */
-  --bg-soft:   #f5f2ea00; /* transparente para capas */
-  --surface:   #ffffff;   /* tarjetas */
-  --surface-2: #ece8dd;   /* niebla (bandas alternas, tarjetas alt) */
-  --text:      #1b1a17;   /* carbón (texto principal) */
-  --muted:     #6f6b60;   /* grafito (texto secundario) */
-  --line:      #e4dfd2;   /* bordes sutiles claros */
+  /* --- TEMA OSCURO CONTINUO · Energy Intelligence Firm --- */
+  --bg:        #0c0b09;   /* negro carbón profundo */
+  --bg-soft:   #0c0b0900; /* transparente para capas */
+  --surface:   #14130f;   /* grafito (tarjetas) */
+  --surface-2: #1b1914;   /* gris petróleo (bandas alternas) */
+  --text:      #f2efe7;   /* blanco roto */
+  --muted:     #9a958a;   /* gris claro */
+  --line:      #262219;   /* bordes finos */
 
-  --volt:        #5c9a00; /* lima profundo (acento legible sobre claro) */
-  --volt-deep:   #3f7a00;
-  --volt-bright: #c2f24e; /* lima brillo (para fondos oscuros) */
+  --volt:        #9bd62f; /* verde EKIN (acento principal) */
+  --volt-deep:   #5ba017;
+  --volt-bright: #c2f24e; /* verde brillo */
   --volt-grad-0: #3f7a00; /* degradado de la k */
   --volt-grad-1: #c2f24e;
-  --signal:      #5c9a00;
+  --signal:      #9bd62f;
 
-  --btn-bg: #1b1a17;      /* botón primario: carbón sobre claro */
-  --btn-fg: #f5f2ea;
+  --btn-bg: #9bd62f;      /* botón primario: verde EKIN */
+  --btn-fg: #0c0b09;
 
-  /* Acentos de inteligencia energética (terminal/SCADA) */
-  --blue:  #3b9eff;       /* azul eléctrico — datos/terminal */
-  --amber: #ffb020;       /* ámbar — alertas */
-  --steel: #8a93a3;       /* gris acero */
-  --carbon: #0f0e0c;      /* negro carbono (terminal) */
+  /* Acentos técnicos (verde de datos · ámbar solo para alertas) */
+  --blue:  #7bd4a0;       /* verde-data (KPIs, terminal) */
+  --amber: #ffb020;       /* ámbar — solo alertas */
+  --steel: #8a877d;       /* gris acero */
+  --carbon: #0c0b09;      /* negro carbono */
 
-  /* --- Tipografías de marca --- */
+  /* --- Tipografías --- */
   --font-display: "Archivo", sans-serif;
   --font-body:    "Archivo", sans-serif;
-  --font-serif:   "Archivo", sans-serif;   /* acentos en itálica Archivo */
+  --font-serif:   "Archivo", sans-serif;
   --font-mono:    "Space Mono", monospace; /* datos · etiquetas · detalle */
 
   /* --- Layout --- */
@@ -43,21 +43,8 @@
   --pad:  clamp(1.25rem, 4vw, 3rem);
 }
 
-/* --- ÁMBITO OSCURO (hero, banda parallax, cierre, footer) --- */
-.on-dark {
-  --bg:        #16140f;
-  --surface:   #201d16;
-  --surface-2: #2a261d;
-  --text:      #f4f1e9;
-  --muted:     #b0a995;
-  --line:      #332f25;
-  --volt:        #c2f24e;
-  --volt-deep:   #5c9a00;
-  --signal:      #9bc73a;
-  --btn-bg: #c2f24e;
-  --btn-fg: #16140f;
-  color: var(--text);
-}
+/* Web 100% oscura continua: on-dark ya no cambia de tema */
+.on-dark { color: var(--text); }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -233,7 +220,7 @@ a { color: inherit; text-decoration: none; }
   transition: transform 0.18s cubic-bezier(0.22,1,0.36,1), background 0.18s, color 0.18s;
 }
 .nav-drop a:hover {
-  background: rgba(59, 158, 255, 0.1);
+  background: rgba(123, 212, 160, 0.1);
   color: var(--text);
   transform: scale(1.06);
 }
@@ -407,7 +394,7 @@ a { color: inherit; text-decoration: none; }
 .term-dot {
   width: 8px; height: 8px; border-radius: 50%;
   background: var(--blue);
-  box-shadow: 0 0 0 0 rgba(59,158,255,0.6);
+  box-shadow: 0 0 0 0 rgba(123,212,160,0.6);
   animation: pulse-dot 1.8s ease-out infinite;
 }
 .term-title { font-size: 0.68rem; letter-spacing: 0.18em; color: #cfd6e0; }
@@ -588,11 +575,9 @@ a { color: inherit; text-decoration: none; }
 .btn-primary {
   background: var(--btn-bg);
   color: var(--btn-fg);
-  box-shadow: 0 10px 30px rgba(27, 26, 23, 0.12);
+  box-shadow: 0 8px 28px rgba(155, 214, 47, 0.18);
 }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(27, 26, 23, 0.2); }
-.on-dark .btn-primary { box-shadow: 0 10px 30px rgba(194, 242, 78, 0.18); }
-.on-dark .btn-primary:hover { box-shadow: 0 16px 40px rgba(194, 242, 78, 0.3); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(155, 214, 47, 0.32); }
 .btn-ghost { border: 1px solid var(--line); color: var(--text); }
 .btn-ghost:hover { border-color: var(--volt); color: var(--volt); }
 
@@ -959,6 +944,13 @@ a { color: inherit; text-decoration: none; }
 }
 @media (min-width: 880px) { .about { grid-template-columns: 1.05fr 1fr; gap: 4rem; } }
 
+.merged-head { margin-bottom: 2.4rem; }
+.merged-stats { display: grid; grid-template-columns: 1fr; gap: 0.7rem; align-self: center; }
+@media (min-width: 600px) { .merged-stats { grid-template-columns: repeat(3, 1fr); } }
+.ms { border-left: 2px solid var(--volt); padding-left: 0.9rem; }
+.ms-n { display: block; font-family: var(--font-display); font-weight: 800; font-size: 1.35rem; letter-spacing: -0.02em; color: var(--text); }
+.ms-l { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
 .about-text .section-title { margin-bottom: 1.2rem; }
 .about-p { color: var(--muted); margin-bottom: 1.8rem; max-width: 46ch; }
 .about-p strong { color: var(--text); }
@@ -997,7 +989,7 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid #2c2a22;
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 26px 60px rgba(27, 26, 23, 0.13);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.13);
 }
 .screen-bar {
   display: flex;
@@ -1058,7 +1050,7 @@ a { color: inherit; text-decoration: none; }
 }
 .bess-chart {
   width: 100%; height: auto; display: block;
-  background-image: linear-gradient(rgba(59,158,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(59,158,255,0.05) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(123,212,160,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(123,212,160,0.05) 1px, transparent 1px);
   background-size: 48px 38px;
 }
 .bess-chart .axis { stroke: #2c2a22; stroke-width: 1.5; }
@@ -1123,7 +1115,7 @@ a { color: inherit; text-decoration: none; }
 .bess-caption strong { color: var(--blue); font-weight: 700; }
 
 /* ===================== INVESTMENT MEMO (financiación) ===================== */
-.finmemo { background: #14130f; border: 1px solid #2c2a22; border-radius: 18px; overflow: hidden; box-shadow: 0 26px 60px rgba(27,26,23,0.13); }
+.finmemo { background: #14130f; border: 1px solid #2c2a22; border-radius: 18px; overflow: hidden; box-shadow: 0 26px 60px rgba(0,0,0,0.13); }
 .fin-tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 1.1rem 1.3rem 0; }
 .fin-tab {
   font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.04em;
@@ -1270,7 +1262,7 @@ a { color: inherit; text-decoration: none; }
 .client-card:hover {
   transform: translateY(-6px) scale(1.05);
   border-color: rgba(92, 154, 0, 0.35);
-  box-shadow: 0 28px 56px rgba(27, 26, 23, 0.14);
+  box-shadow: 0 28px 56px rgba(0, 0, 0, 0.14);
   z-index: 3;
 }
 .client-card:hover::before { transform: scaleY(1); opacity: 1; }
@@ -1401,7 +1393,7 @@ a { color: inherit; text-decoration: none; }
 .module::before {
   content: "";
   position: absolute; inset: 0;
-  background: radial-gradient(20rem 12rem at 100% 0%, rgba(59,158,255,0.1), transparent 55%);
+  background: radial-gradient(20rem 12rem at 100% 0%, rgba(123,212,160,0.1), transparent 55%);
   opacity: 0; transition: opacity 0.35s;
 }
 .module:hover, .module:focus-visible { background: #181610; transform: scale(1.03); z-index: 2; box-shadow: 0 24px 50px rgba(0,0,0,0.5); }
@@ -1451,7 +1443,7 @@ a { color: inherit; text-decoration: none; }
 .svc-group:hover {
   transform: translateY(-6px) scale(1.035);
   border-color: rgba(92,154,0,0.35);
-  box-shadow: 0 30px 60px rgba(27, 26, 23, 0.12);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
 }
 .svc-icon {
   width: 48px; height: 48px;
@@ -1505,7 +1497,7 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
   background: #16140f;            /* "pantalla" contenida (intencional) */
   border: 1px solid #2a2720;
-  box-shadow: 0 26px 60px rgba(27, 26, 23, 0.13);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.13);
 }
 .board::after {           /* líneas de barrido sutiles */
   content: "";
@@ -1825,7 +1817,7 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid var(--line);
   border-radius: 22px;
   padding: 2rem;
-  box-shadow: 0 18px 44px rgba(27, 26, 23, 0.07);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.07);
   max-width: 400px;
 }
 .impact-upto {
@@ -1962,8 +1954,8 @@ a { color: inherit; text-decoration: none; }
   z-index: 2;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(59, 158, 255, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59, 158, 255, 0.07) 1px, transparent 1px);
+    linear-gradient(rgba(123, 212, 160, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(123, 212, 160, 0.07) 1px, transparent 1px);
   background-size: 44px 44px;
   mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 30%, transparent 75%);
   -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 30%, transparent 75%);
@@ -2021,7 +2013,7 @@ a { color: inherit; text-decoration: none; }
 .reason:hover {
   transform: translateY(-6px) scale(1.035);
   border-color: rgba(92,154,0,0.35);
-  box-shadow: 0 26px 54px rgba(27,26,23,0.1);
+  box-shadow: 0 26px 54px rgba(0,0,0,0.1);
   z-index: 2;
 }
 .reason h3 {
@@ -2049,7 +2041,7 @@ a { color: inherit; text-decoration: none; }
   height: max-content;
   transition: border-color 0.25s, transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s;
 }
-.faq-item:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(27,26,23,0.07); }
+.faq-item:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(0,0,0,0.07); }
 .faq-item[open] { border-color: rgba(92,154,0,0.4); box-shadow: inset 3px 0 0 var(--volt); }
 .faq-item summary {
   cursor: pointer;
