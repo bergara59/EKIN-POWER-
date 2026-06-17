@@ -162,6 +162,23 @@
             <span class="term-clock" id="termClock">--:--:--</span>
           </div>
           <div class="term-boot" id="termBoot"></div>
+          <div class="term-chart">
+            <div class="tc-head">
+              <span class="tc-label">SAVINGS TREND · 12M</span>
+              <span class="tc-trend">▲ BULLISH</span>
+            </div>
+            <svg class="tc-svg" viewBox="0 0 320 90" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="tcFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#3ddc84" stop-opacity="0.35"/>
+                  <stop offset="1" stop-color="#3ddc84" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <polygon class="tc-area" points="0,78 0,72 40,68 80,60 120,58 160,46 200,40 240,28 280,20 320,8 320,90 0,90"/>
+              <polyline class="tc-line" points="0,72 40,68 80,60 120,58 160,46 200,40 240,28 280,20 320,8"/>
+              <circle class="tc-pt" cx="320" cy="8" r="3"/>
+            </svg>
+          </div>
           <div class="term-grid">
             <div class="term-tile">
               <span class="tt-label">ENERGY COST INDEX</span>
@@ -180,13 +197,38 @@
             </div>
             <div class="term-tile">
               <span class="tt-label">SAVINGS POTENTIAL</span>
-              <span class="tt-value green">18–35<small>%</small></span>
+              <span class="tt-value green">▲ 18–35<small>%</small></span>
               <span class="tt-sub">peak shaving + solar</span>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- ===================== TICKER BURSÁTIL ===================== -->
+    <div class="ticker on-dark" aria-hidden="true">
+      <div class="ticker-track">
+        <span class="tk"><b>SAVINGS</b> <i class="up">▲ +35%</i></span>
+        <span class="tk"><b>BESS SOC</b> <i class="up">▲ 78%</i></span>
+        <span class="tk"><b>PEAK DEMAND</b> <i class="warn">▼ 1.42 MW</i></span>
+        <span class="tk"><b>TARIFF</b> <i class="up">▼ €142/MWh</i></span>
+        <span class="tk"><b>CO₂ AVOIDED</b> <i class="up">▲ 1.8 kt</i></span>
+        <span class="tk"><b>ROI</b> <i class="up">▲ 3.4x</i></span>
+        <span class="tk"><b>PAYBACK</b> <i class="up">▼ 22 mo</i></span>
+        <span class="tk"><b>LOAD FACTOR</b> <i class="up">▲ 0.74</i></span>
+        <span class="tk"><b>TREND</b> <i class="up">▲ BULLISH</i></span>
+        <!-- duplicado para bucle -->
+        <span class="tk"><b>SAVINGS</b> <i class="up">▲ +35%</i></span>
+        <span class="tk"><b>BESS SOC</b> <i class="up">▲ 78%</i></span>
+        <span class="tk"><b>PEAK DEMAND</b> <i class="warn">▼ 1.42 MW</i></span>
+        <span class="tk"><b>TARIFF</b> <i class="up">▼ €142/MWh</i></span>
+        <span class="tk"><b>CO₂ AVOIDED</b> <i class="up">▲ 1.8 kt</i></span>
+        <span class="tk"><b>ROI</b> <i class="up">▲ 3.4x</i></span>
+        <span class="tk"><b>PAYBACK</b> <i class="up">▼ 22 mo</i></span>
+        <span class="tk"><b>LOAD FACTOR</b> <i class="up">▲ 0.74</i></span>
+        <span class="tk"><b>TREND</b> <i class="up">▲ BULLISH</i></span>
+      </div>
+    </div>
 
     <!-- ===================== CINTA ANIMADA DE SECTORES ===================== -->
     <div class="marquee" aria-hidden="true">
