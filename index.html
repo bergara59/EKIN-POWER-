@@ -72,7 +72,7 @@
   <!-- ===================== NAVEGACIÓN ===================== -->
   <header class="nav on-dark" id="top">
     <a class="brand" href="#top" aria-label="EKIN POWER — inicio">
-      <span class="logo-word">e<svg class="logo-k" viewBox="0 0 66 100" aria-hidden="true"><defs><linearGradient id="kgNav" x1="0" y1="100" x2="0" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3f7a00"/><stop offset="1" stop-color="#c2f24e"/></linearGradient></defs><rect x="8" y="6" width="15" height="88" rx="7" fill="url(#kgNav)"/><path d="M34 56 L58 25" stroke="url(#kgNav)" stroke-width="15" stroke-linecap="round"/><path d="M34 56 L60 94" stroke="url(#kgNav)" stroke-width="15" stroke-linecap="round"/></svg>in</span><span class="logo-power">POWER</span>
+      <span class="logo-word">e<svg class="logo-k" viewBox="0 0 128 140" aria-hidden="true"><defs><linearGradient id="kgNavM" x1="0" y1="140" x2="0" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2f6e00"/><stop offset=".55" stop-color="#5ba017"/><stop offset="1" stop-color="#86c93a"/></linearGradient><linearGradient id="kgNavT" x1="0" y1="84" x2="0" y2="20" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6fb023"/><stop offset="1" stop-color="#f3fae7"/></linearGradient></defs><polygon points="20,132 44,132 60,40 36,40" fill="url(#kgNavM)"/><polygon points="48,96 70,96 96,132 74,132" fill="url(#kgNavM)"/><polygon points="50,96 72,96 92,66 70,66" fill="url(#kgNavM)"/><polygon points="74,84 96,84 116,28 94,28" fill="url(#kgNavT)"/></svg>in</span><span class="logo-power">POWER</span>
     </a>
     <!-- Botón de menú para móvil -->
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
@@ -230,33 +230,21 @@
       </div>
     </div>
 
-    <!-- ===================== CINTA ANIMADA DE SECTORES ===================== -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>Hoteles</span><span class="dot">◆</span>
-        <span>Manufactura</span><span class="dot">◆</span>
-        <span>Supermercados</span><span class="dot">◆</span>
-        <span>Cines</span><span class="dot">◆</span>
-        <span>Fábricas</span><span class="dot">◆</span>
-        <span>Hospitales</span><span class="dot">◆</span>
-        <span>Logística</span><span class="dot">◆</span>
-        <span>BESS</span><span class="dot">◆</span>
-        <!-- duplicado para bucle infinito -->
-        <span>Hoteles</span><span class="dot">◆</span>
-        <span>Manufactura</span><span class="dot">◆</span>
-        <span>Supermercados</span><span class="dot">◆</span>
-        <span>Cines</span><span class="dot">◆</span>
-        <span>Fábricas</span><span class="dot">◆</span>
-        <span>Hospitales</span><span class="dot">◆</span>
-        <span>Logística</span><span class="dot">◆</span>
-        <span>BESS</span><span class="dot">◆</span>
+    <!-- ===================== BANDA EN VIVO (mercado energético) ===================== -->
+    <section class="livefeed on-dark" aria-label="Inteligencia energética en tiempo real">
+      <canvas class="livefeed-canvas" id="liveCanvas" aria-hidden="true"></canvas>
+      <div class="livefeed-overlay" aria-hidden="true"></div>
+      <div class="livefeed-content">
+        <span class="livefeed-kicker"><span class="term-dot"></span>EKIN LIVE · ENERGY MARKET</span>
+        <h2 class="livefeed-title">Leemos el mercado <em>en tiempo real</em>.</h2>
+        <p class="livefeed-sub">Precio horario, demanda, generación solar y estado de tus baterías — convertidos en decisiones.</p>
       </div>
-    </div>
+    </section>
 
     <!-- ===================== SERVICIOS ===================== -->
     <section class="section" id="servicios">
       <div class="section-head">
-        <span class="section-kicker">01 — Servicios</span>
+        <span class="section-kicker">Servicios</span>
         <h2 class="section-title">Consultoría que <em>se traduce en ahorro</em>.</h2>
         <p class="section-lead">Tres frentes de trabajo. Cero humo: datos, estrategia y resultados verificables.</p>
       </div>
@@ -319,7 +307,7 @@
     <!-- ===================== APLICACIONES BESS ===================== -->
     <section class="section" id="bess">
       <div class="section-head">
-        <span class="section-kicker">02 — BESS Optimizer</span>
+        <span class="section-kicker">BESS Optimizer</span>
         <h2 class="section-title">Mira cómo la batería <em>gana dinero</em>.</h2>
         <p class="section-lead">Simulación operativa de un día. Elige el caso de uso y observa demanda, solar, precio y estado de carga.</p>
       </div>
@@ -403,7 +391,7 @@
     <!-- ===================== FINANCIAMIENTO ===================== -->
     <section class="section" id="financiamiento">
       <div class="section-head">
-        <span class="section-kicker">03 — Financiamiento</span>
+        <span class="section-kicker">Financiamiento</span>
         <h2 class="section-title">Tú eliges <em>cómo invertir</em>.</h2>
       </div>
 
@@ -520,7 +508,7 @@
     <!-- ===================== SECTORES ===================== -->
     <section class="section section-dark" id="sectores">
       <div class="section-head">
-        <span class="section-kicker">04 — Clientes</span>
+        <span class="section-kicker">Clientes</span>
         <h2 class="section-title">Para quienes <em>consumen en serio</em>.</h2>
         <p class="section-lead">Grandes consumidores de energía donde un punto porcentual pesa de verdad.</p>
       </div>
@@ -564,7 +552,7 @@
     <!-- ===================== EXPERIENCIA ===================== -->
     <section class="section" id="experiencia">
       <div class="section-head">
-        <span class="section-kicker">05 — Experiencia</span>
+        <span class="section-kicker">Experiencia</span>
         <h2 class="section-title">Nuevos, pero <em>no improvisados</em>.</h2>
         <p class="section-lead">
           EKIN POWER es una empresa joven, fundada por un equipo que no lo es. Nuestros socios
@@ -621,7 +609,7 @@
     <section class="section section-dark" id="nosotros">
       <div class="about">
         <div class="about-text">
-          <span class="section-kicker">06 — Nosotros</span>
+          <span class="section-kicker">Nosotros</span>
           <h2 class="section-title">Ingeniería que <em>se mide</em>.</h2>
           <p class="about-p">
             En <strong>EKIN POWER</strong> unimos ingeniería energética, datos y estrategia
@@ -654,7 +642,7 @@
     <!-- ===================== POR QUÉ EKIN POWER ===================== -->
     <section class="section" id="porque">
       <div class="section-head">
-        <span class="section-kicker">07 — Por qué EKIN POWER</span>
+        <span class="section-kicker">Por qué EKIN POWER</span>
         <h2 class="section-title">Razones para <em>elegirnos</em>.</h2>
       </div>
 
@@ -713,7 +701,7 @@
     <!-- ===================== PREGUNTAS FRECUENTES ===================== -->
     <section class="section section-dark" id="faq">
       <div class="section-head">
-        <span class="section-kicker">08 — Preguntas frecuentes</span>
+        <span class="section-kicker">Preguntas frecuentes</span>
         <h2 class="section-title">Lo que más <em>nos preguntan</em>.</h2>
       </div>
 
@@ -760,21 +748,50 @@
     <!-- ===================== CONTACTO / CTA ===================== -->
     <section class="section cta" id="contacto">
       <div class="cta-inner">
-        <p class="section-kicker">09 — Empecemos</p>
-        <span class="cta-urgency"><span class="cta-pulse"></span>Plazas limitadas de diagnóstico este trimestre</span>
-        <h2 class="cta-title">¿Cuánto estás pagando de más?</h2>
-        <p class="cta-sub">
-          Te entregamos un diagnóstico inicial sin costo. Déjanos tus datos
-          y te contactamos, o escríbenos directo.
-        </p>
+        <p class="section-kicker">Calculadora de ahorro</p>
+        <h2 class="cta-title">¿Cuánto puedes <em>dejar de pagar</em>?</h2>
+        <p class="cta-sub">Estimación en segundos. El cálculo exacto, con tus facturas reales, en tu Energy Assessment.</p>
 
-        <!--
-          FORMULARIO DE CONTACTO (Formspree) — ACTIVADO ✅
-          Los mensajes llegan a contactekinpower@gmail.com.
-          El endpoint es tu formulario en Formspree (código: mvznlezk).
-        -->
+        <!-- Máquina de cálculo -->
+        <div class="calc">
+          <div class="calc-inputs">
+            <label class="calc-field">
+              <span class="calc-lab">Factura eléctrica mensual</span>
+              <input type="range" id="calcBill" min="2000" max="300000" step="1000" value="40000" />
+              <output class="calc-out" id="calcBillOut">€40,000</output>
+            </label>
+            <label class="calc-field">
+              <span class="calc-lab">Sector</span>
+              <select id="calcSector">
+                <option value="0.30">Manufactura / fábrica</option>
+                <option value="0.28">Hotel / resort</option>
+                <option value="0.33">Supermercado / retail</option>
+                <option value="0.26">Cines / entretenimiento</option>
+                <option value="0.27">Centro logístico</option>
+                <option value="0.24">Hospital / clínica</option>
+                <option value="0.32">Planta de proceso</option>
+                <option value="0.22">Oficinas corporativas</option>
+              </select>
+            </label>
+            <button class="btn btn-primary" id="calcBtn" type="button">Calcular potencial ▸</button>
+          </div>
+
+          <div class="calc-screen" id="calcScreen" data-state="idle">
+            <div class="calc-bar"><span class="term-dot"></span><span class="calc-bar-t">EKIN · SAVINGS ENGINE</span></div>
+            <div class="calc-grid">
+              <div class="calc-cell"><span class="cc-k">AHORRO ANUAL</span><span class="cc-v" id="ccSave">—</span></div>
+              <div class="calc-cell"><span class="cc-k">% FACTURA</span><span class="cc-v green" id="ccPct">—</span></div>
+              <div class="calc-cell"><span class="cc-k">CO₂ EVITADO</span><span class="cc-v" id="ccCo2">—</span></div>
+              <div class="calc-cell"><span class="cc-k">PAYBACK EST.</span><span class="cc-v" id="ccPay">—</span></div>
+            </div>
+            <p class="calc-note" id="calcNote">Ajusta tu factura y sector, y pulsa <b>Calcular</b>. Cifras orientativas.</p>
+          </div>
+        </div>
+
+        <p class="cta-hand">¿Listo para el número exacto? Solicita tu <strong>Energy Assessment</strong>:</p>
+
         <form class="contact-form" action="https://formspree.io/f/mvznlezk" method="POST">
-          <input type="hidden" name="_subject" value="Nuevo diagnóstico solicitado · EKIN POWER" />
+          <input type="hidden" name="_subject" value="Energy Assessment solicitado · EKIN POWER" />
           <div class="form-row">
             <input type="text" name="nombre" placeholder="Tu nombre" required />
             <input type="email" name="email" placeholder="Tu correo" required />
@@ -783,12 +800,12 @@
             <input type="text" name="empresa" placeholder="Empresa" />
             <input type="tel" name="telefono" placeholder="Teléfono / WhatsApp" />
           </div>
-          <textarea name="mensaje" rows="3" placeholder="Cuéntanos sobre tu consumo o proyecto"></textarea>
-          <button type="submit" class="btn btn-primary form-submit">Solicitar diagnóstico gratis</button>
+          <textarea name="mensaje" rows="3" placeholder="Cuéntanos sobre tu consumo (kWh/mes, sedes, sector…)"></textarea>
+          <button type="submit" class="btn btn-primary form-submit">Solicitar mi Energy Assessment</button>
         </form>
 
         <div class="cta-actions">
-          <a href="mailto:contactekinpower@gmail.com?subject=Quiero%20un%20diagn%C3%B3stico%20energ%C3%A9tico" class="btn btn-ghost">contactekinpower@gmail.com</a>
+          <a href="mailto:contactekinpower@gmail.com?subject=Energy%20Assessment" class="btn btn-ghost">contactekinpower@gmail.com</a>
           <a href="https://wa.me/525643647693" class="btn btn-ghost">WhatsApp</a>
         </div>
       </div>
@@ -800,10 +817,10 @@
     <div class="footer-top">
       <div class="footer-brand-block">
         <span class="brand" aria-label="EKIN POWER">
-          <span class="logo-word">e<svg class="logo-k" viewBox="0 0 66 100" aria-hidden="true"><defs><linearGradient id="kgFoot" x1="0" y1="100" x2="0" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3f7a00"/><stop offset="1" stop-color="#c2f24e"/></linearGradient></defs><rect x="8" y="6" width="15" height="88" rx="7" fill="url(#kgFoot)"/><path d="M34 56 L58 25" stroke="url(#kgFoot)" stroke-width="15" stroke-linecap="round"/><path d="M34 56 L60 94" stroke="url(#kgFoot)" stroke-width="15" stroke-linecap="round"/></svg>in</span><span class="logo-power">POWER</span>
+          <span class="logo-word">e<svg class="logo-k" viewBox="0 0 128 140" aria-hidden="true"><defs><linearGradient id="kgFootM" x1="0" y1="140" x2="0" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2f6e00"/><stop offset=".55" stop-color="#5ba017"/><stop offset="1" stop-color="#86c93a"/></linearGradient><linearGradient id="kgFootT" x1="0" y1="84" x2="0" y2="20" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6fb023"/><stop offset="1" stop-color="#f3fae7"/></linearGradient></defs><polygon points="20,132 44,132 60,40 36,40" fill="url(#kgFootM)"/><polygon points="48,96 70,96 96,132 74,132" fill="url(#kgFootM)"/><polygon points="50,96 72,96 92,66 70,66" fill="url(#kgFootM)"/><polygon points="74,84 96,84 116,28 94,28" fill="url(#kgFootT)"/></svg>in</span><span class="logo-power">POWER</span>
         </span>
+        <p class="footer-tagline">Energía · Eficiencia · Impacto</p>
         <p class="footer-slogan">ekin significa actuar.</p>
-        <p class="footer-roots">Raíces vascas · Energía global</p>
       </div>
       <nav class="footer-links">
         <a href="mailto:contactekinpower@gmail.com">contactekinpower@gmail.com</a>
@@ -815,10 +832,26 @@
     <p class="footer-note">Consultoría de eficiencia energética · Solar · BESS — © <span id="year"></span> EKIN POWER. La transición energética no espera.</p>
   </footer>
 
-  <!-- Botón flotante de WhatsApp -->
-  <a class="wa-float" href="https://wa.me/525643647693" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
-    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
-      <path fill="currentColor" d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-4.9 1 1-4.8-.3-.4C5.4 18.3 4.9 16.7 4.9 15 4.9 8.9 9.9 3.9 16 3.9S27.1 8.9 27.1 15 22.1 24.8 16 24.8zm6.1-7.4c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.8.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.7-1.6-1-.9-1.7-2-1.9-2.3-.2-.3 0-.5.1-.7.1-.1.3-.4.5-.6.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6-.1-.2-.8-1.9-1.1-2.6-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9 0 1.7 1.2 3.3 1.4 3.6.2.2 2.4 3.7 5.9 5.2.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.2-.3-.2-.6-.4z"/>
+  <!-- Botón flotante: mascota técnico (asistente energético) -->
+  <a class="wa-float" href="https://wa.me/525643647693" target="_blank" rel="noopener" aria-label="Habla con nuestro asistente por WhatsApp">
+    <span class="wa-bubble" aria-hidden="true">¡Hola! ¿Calculamos tu ahorro?</span>
+    <svg class="wa-mascot" viewBox="0 0 48 48" aria-hidden="true">
+      <!-- hombros / overol -->
+      <path d="M9 46v-3c0-6 6.7-9 15-9s15 3 15 9v3z" fill="#1b3a5c"/>
+      <path d="M24 34c-3 0-5.5 .4-7.5 1.1L24 44l7.5-8.9C29.5 34.4 27 34 24 34z" fill="#e9eef5"/>
+      <!-- cuello -->
+      <rect x="20.5" y="29" width="7" height="6" rx="2" fill="#f1c9a5"/>
+      <!-- cara -->
+      <circle cx="24" cy="22" r="11" fill="#f7d2ad"/>
+      <!-- casco de técnico -->
+      <path d="M11.5 20a12.5 12.5 0 0 1 25 0z" fill="#ffc21f"/>
+      <rect x="10" y="19.5" width="28" height="3.4" rx="1.7" fill="#ffb300"/>
+      <rect x="22.6" y="8.4" width="2.8" height="5" rx="1.4" fill="#ffd968"/>
+      <!-- ojos -->
+      <circle cx="20" cy="22" r="1.6" fill="#3a2c1c"/>
+      <circle cx="28" cy="22" r="1.6" fill="#3a2c1c"/>
+      <!-- sonrisa -->
+      <path d="M19.5 26.5a5 5 0 0 0 9 0" fill="none" stroke="#a05a39" stroke-width="1.8" stroke-linecap="round"/>
     </svg>
   </a>
 

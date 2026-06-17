@@ -1,13 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 140">
   <defs>
-    <linearGradient id="kg" x1="0" y1="58" x2="0" y2="10" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#3f7a00"/>
-      <stop offset="1" stop-color="#c2f24e"/>
+    <linearGradient id="kMain" x1="0" y1="140" x2="0" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2f6e00"/>
+      <stop offset="0.55" stop-color="#5ba017"/>
+      <stop offset="1" stop-color="#86c93a"/>
+    </linearGradient>
+    <linearGradient id="kTop" x1="0" y1="84" x2="0" y2="20" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6fb023"/>
+      <stop offset="1" stop-color="#f3fae7"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="14" fill="#16140f"/>
-  <!-- Isotipo: la k de "ekin" (asta + brazos en degradado lima) -->
-  <rect x="17" y="13" width="9" height="38" rx="4.5" fill="url(#kg)"/>
-  <path d="M33 35 L47 18" stroke="url(#kg)" stroke-width="9" stroke-linecap="round"/>
-  <path d="M33 35 L48 51" stroke="url(#kg)" stroke-width="9" stroke-linecap="round"/>
+  <!-- Limbo izquierdo (ascendente) -->
+  <polygon points="20,132 44,132 60,40 36,40" fill="url(#kMain)"/>
+  <!-- Brazo inferior (desciende a la derecha) -->
+  <polygon points="48,96 70,96 96,132 74,132" fill="url(#kMain)"/>
+  <!-- Brazo superior, barra 1 -->
+  <polygon points="50,96 72,96 92,66 70,66" fill="url(#kMain)"/>
+  <!-- Brazo superior, barra 2 (punta clara, alcista) -->
+  <polygon points="74,84 96,84 116,28 94,28" fill="url(#kTop)"/>
 </svg>

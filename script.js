@@ -18,6 +18,110 @@ navLinks.querySelectorAll("a").forEach((link) => {
   });
 });
 
+/* Banda en vivo: líneas de "mercado energético" fluyendo (canvas) */
+const liveCanvas = document.getElementById("liveCanvas");
+if (liveCanvas && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const ctx = liveCanvas.getContext("2d");
+  let w = 0, h = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const series = [
+    { color: "rgba(59,158,255,0.9)", amp: 0.16, freq: 1.4, sp: 0.6, off: 0.5 },   // precio (azul)
+    { color: "rgba(207,214,224,0.55)", amp: 0.11, freq: 2.1, sp: 0.9, off: 0.45 }, // demanda (gris)
+    { color: "rgba(61,220,132,0.85)", amp: 0.13, freq: 1.0, sp: 0.4, off: 0.6 },   // ahorro (verde)
+  ];
+  function resize() {
+    const r = liveCanvas.getBoundingClientRect();
+    w = r.width; h = r.height;
+    liveCanvas.width = w * dpr; liveCanvas.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  resize();
+  window.addEventListener("resize", resize);
+
+  let t = 0, raf;
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    // rejilla sutil
+    ctx.strokeStyle = "rgba(59,158,255,0.06)";
+    ctx.lineWidth = 1;
+    for (let x = (t * 18) % 48 - 48; x < w; x += 48) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke(); }
+    for (let y = 0; y < h; y += 40) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke(); }
+    // líneas
+    series.forEach((s) => {
+      ctx.beginPath();
+      for (let x = 0; x <= w; x += 6) {
+        const nx = x / w;
+        const y = h * (s.off
+          + s.amp * Math.sin(nx * s.freq * 6.28 + t * s.sp)
+          + s.amp * 0.4 * Math.sin(nx * s.freq * 13 - t * s.sp * 1.7));
+        if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.strokeStyle = s.color;
+      ctx.lineWidth = 2;
+      ctx.shadowColor = s.color;
+      ctx.shadowBlur = 10;
+      ctx.stroke();
+      ctx.shadowBlur = 0;
+    });
+    t += 0.016;
+    raf = requestAnimationFrame(draw);
+  }
+  // pausa fuera de pantalla
+  const io = new IntersectionObserver((es) => {
+    es.forEach((e) => {
+      if (e.isIntersecting) { if (!raf) draw(); }
+      else { cancelAnimationFrame(raf); raf = null; }
+    });
+  });
+  io.observe(liveCanvas);
+}
+
+/* Calculadora de ahorro */
+const calcBill = document.getElementById("calcBill");
+if (calcBill) {
+  const out = document.getElementById("calcBillOut");
+  const sectorSel = document.getElementById("calcSector");
+  const btn = document.getElementById("calcBtn");
+  const screen = document.getElementById("calcScreen");
+  const ccSave = document.getElementById("ccSave");
+  const ccPct = document.getElementById("ccPct");
+  const ccCo2 = document.getElementById("ccCo2");
+  const ccPay = document.getElementById("ccPay");
+  const calcNote = document.getElementById("calcNote");
+  const nf = new Intl.NumberFormat("es-MX");
+
+  const updateBill = () => { out.textContent = "€" + nf.format(+calcBill.value); };
+  calcBill.addEventListener("input", updateBill);
+  updateBill();
+
+  function animateNum(el, target, fmt) {
+    const start = performance.now(), dur = 1100;
+    function tick(now) {
+      const p = Math.min((now - start) / dur, 1);
+      const e = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(Math.round(e * target));
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  btn.addEventListener("click", () => {
+    const bill = +calcBill.value;
+    const annual = bill * 12;
+    const pHigh = parseFloat(sectorSel.value);     // potencial alto del sector
+    const pLow = pHigh * 0.55;
+    const pMid = (pLow + pHigh) / 2;
+    const saving = Math.round(annual * pMid);
+    const kWh = annual / 0.16;                      // ~€/kWh
+    const co2 = Math.round((kWh * pMid * 0.42) / 1000); // toneladas
+    screen.dataset.state = "done";
+    animateNum(ccSave, saving, (v) => "€" + nf.format(v));
+    ccPct.textContent = Math.round(pLow * 100) + "–" + Math.round(pHigh * 100) + "%";
+    animateNum(ccCo2, co2, (v) => nf.format(v) + " t");
+    ccPay.textContent = "1.5–3 años";
+    calcNote.innerHTML = "Estimación orientativa. El <b>cálculo exacto</b> va en tu Energy Assessment.";
+  });
+}
+
 /* Terminal de inteligencia energética (hero) */
 const termBoot = document.getElementById("termBoot");
 const termClock = document.getElementById("termClock");
