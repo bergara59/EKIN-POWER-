@@ -75,6 +75,36 @@ if (liveCanvas && !window.matchMedia("(prefers-reduced-motion: reduce)").matches
   io.observe(liveCanvas);
 }
 
+/* Investment memo (financiación) */
+const finmemo = document.getElementById("finmemo");
+if (finmemo) {
+  const fin = [
+    { name: "CAPEX · COMPRA DIRECTA", badge: "MAX RETORNO", inv: 95, invV: "Alta", sav: 100, savV: "100%", risk: 55, riskV: "Medio", pay: "2–4 años", tir: "18–25%", own: "Día 1", note: "Ideal para quien busca el máximo retorno a largo plazo y puede invertir capital." },
+    { name: "ARRENDAMIENTO FINANCIERO", badge: "LIQUIDEZ", inv: 45, invV: "Media", sav: 80, savV: "Alto", risk: 32, riskV: "Bajo-medio", pay: "Pagos fijos", tir: "12–18%", own: "Al final", note: "Ideal para acceder a la tecnología con pagos previsibles, sin descapitalizar la empresa." },
+    { name: "ESCO · INVERSIÓN CERO", badge: "SIN INVERSIÓN", inv: 5, invV: "Cero", sav: 60, savV: "Compartido", risk: 8, riskV: "Mínimo", pay: "Desde día 1", tir: "—", own: "EKIN POWER", note: "Ideal para ahorrar sin arriesgar capital: nosotros invertimos y compartes el ahorro." },
+  ];
+  const $ = (id) => document.getElementById(id);
+  function setFin(i) {
+    const d = fin[i];
+    $("finName").textContent = d.name;
+    $("finBadge").textContent = d.badge;
+    $("finInv").style.width = d.inv + "%"; $("finInvV").textContent = d.invV;
+    $("finSav").style.width = d.sav + "%"; $("finSavV").textContent = d.savV;
+    $("finRisk").style.width = d.risk + "%"; $("finRiskV").textContent = d.riskV;
+    $("finPay").textContent = d.pay;
+    $("finTir").textContent = d.tir;
+    $("finOwn").textContent = d.own;
+    $("finNote").textContent = d.note;
+  }
+  finmemo.querySelectorAll(".fin-tab").forEach((tab) => {
+    tab.addEventListener("click", () => {
+      finmemo.querySelectorAll(".fin-tab").forEach((t) => t.classList.toggle("is-active", t === tab));
+      setFin(+tab.dataset.f);
+    });
+  });
+  setFin(0);
+}
+
 /* Selector de industrias */
 const industry = document.getElementById("industry");
 if (industry) {
@@ -442,5 +472,10 @@ const observer = new IntersectionObserver(
 );
 
 document
-  .querySelectorAll(".section-head, .card, .sector, .step, .project, .reason, .faq-item, .cta-inner")
-  .forEach((el) => observer.observe(el));
+  .querySelectorAll(
+    ".section-head, .card, .reason, .faq-item, .cta-inner, .module, .ind-tab, .ind-panel, .board, .bess-screen, .impact-card, .compare-wrap, .calc, .client-card, .step, .livefeed-content, .fin-tab, .fin-panel"
+  )
+  .forEach((el, idx) => {
+    el.style.setProperty("--ri", (idx % 6).toString());
+    observer.observe(el);
+  });

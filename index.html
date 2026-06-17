@@ -385,94 +385,36 @@
       </div>
     </section>
 
-    <!-- ===================== FINANCIAMIENTO ===================== -->
+    <!-- ===================== FINANCIAMIENTO · INVESTMENT MEMO ===================== -->
     <section class="section" id="financiamiento">
       <div class="section-head">
-        <span class="section-kicker">Financiamiento</span>
-        <h2 class="section-title">Tú eliges <em>cómo invertir</em>.</h2>
+        <span class="section-kicker">Modelo financiero</span>
+        <h2 class="section-title">Decídelo como un <em>comité de inversión</em>.</h2>
+        <p class="section-lead">Tres formas de financiar tu energía. Compáralas por payback, retorno, propiedad y riesgo.</p>
       </div>
 
-      <div class="cards cards-3">
-        <article class="card">
-          <span class="card-icon icon-teal" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5h4a1.5 1.5 0 0 1 0 3h-3a1.5 1.5 0 0 0 0 3h4"/></svg>
-          </span>
-          <span class="card-index">01</span>
-          <h3>Compra directa (CAPEX)</h3>
-          <p>Adquieres el sistema y capturas el 100% del ahorro desde
-             el primer día. Máximo retorno a largo plazo.</p>
-        </article>
-        <article class="card">
-          <span class="card-icon icon-teal" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>
-          </span>
-          <span class="card-index">02</span>
-          <h3>Arrendamiento financiero</h3>
-          <p>Accede a la tecnología con pagos fijos y previsibles,
-             sin descapitalizar tu empresa.</p>
-        </article>
-        <article class="card card-feature">
-          <span class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5 5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></svg>
-          </span>
-          <span class="card-index">03</span>
-          <h3>Inversión cero (ESCO)</h3>
-          <p>Nosotros invertimos, tú compartes el ahorro generado.
-             Empiezas a ahorrar sin desembolso inicial.</p>
-          <span class="card-tag">Sin inversión</span>
-        </article>
-      </div>
-
-      <!-- Tabla comparativa de modelos de financiamiento -->
-      <div class="compare-wrap">
-        <table class="compare">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Compra (CAPEX)</th>
-              <th>Arrendamiento</th>
-              <th class="is-feature">Inversión cero (ESCO)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>Inversión inicial</th>
-              <td>Alta</td>
-              <td>Media</td>
-              <td class="is-feature"><span class="yes">Cero</span></td>
-            </tr>
-            <tr>
-              <th>Ahorro que capturas</th>
-              <td><span class="yes">100%</span></td>
-              <td>Alto</td>
-              <td class="is-feature">Compartido</td>
-            </tr>
-            <tr>
-              <th>Propiedad del sistema</th>
-              <td>Tuya desde el día 1</td>
-              <td>Tuya al final</td>
-              <td class="is-feature">De EKIN POWER</td>
-            </tr>
-            <tr>
-              <th>Mantenimiento incluido</th>
-              <td>Opcional</td>
-              <td><span class="yes">Sí</span></td>
-              <td class="is-feature"><span class="yes">Sí</span></td>
-            </tr>
-            <tr>
-              <th>Empiezas a ahorrar</th>
-              <td>Tras la inversión</td>
-              <td>Desde el inicio</td>
-              <td class="is-feature"><span class="yes">Desde el día 1</span></td>
-            </tr>
-            <tr>
-              <th>Ideal para</th>
-              <td>Máximo retorno a largo plazo</td>
-              <td>Cuidar tu liquidez</td>
-              <td class="is-feature">Ahorrar sin arriesgar capital</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="finmemo" id="finmemo">
+        <div class="fin-tabs">
+          <button class="fin-tab is-active" data-f="0">Compra · CAPEX</button>
+          <button class="fin-tab" data-f="1">Arrendamiento</button>
+          <button class="fin-tab" data-f="2">ESCO · Inversión cero</button>
+        </div>
+        <div class="fin-panel">
+          <div class="fin-bartop">
+            <span class="term-dot"></span>
+            <span class="fin-name" id="finName">CAPEX · COMPRA DIRECTA</span>
+            <span class="fin-badge" id="finBadge">MAX RETORNO</span>
+          </div>
+          <div class="fin-grid">
+            <div class="fin-metric"><span class="fm-k">Inversión inicial</span><div class="fm-bar"><i id="finInv"></i></div><span class="fm-v" id="finInvV">Alta</span></div>
+            <div class="fin-metric"><span class="fm-k">Ahorro capturado</span><div class="fm-bar good"><i id="finSav"></i></div><span class="fm-v" id="finSavV">100%</span></div>
+            <div class="fin-metric"><span class="fm-k">Riesgo asumido</span><div class="fm-bar warn"><i id="finRisk"></i></div><span class="fm-v" id="finRiskV">Medio</span></div>
+            <div class="fin-metric big"><span class="fm-k">Payback estimado</span><span class="fm-big" id="finPay">2–4 años</span></div>
+            <div class="fin-metric big"><span class="fm-k">TIR estimada</span><span class="fm-big green" id="finTir">18–25%</span></div>
+            <div class="fin-metric big"><span class="fm-k">Propiedad del activo</span><span class="fm-big" id="finOwn">Día 1</span></div>
+          </div>
+          <p class="fin-note" id="finNote">Ideal para quien busca el máximo retorno a largo plazo y puede invertir capital.</p>
+        </div>
       </div>
     </section>
 
