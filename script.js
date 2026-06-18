@@ -593,28 +593,106 @@ const _reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   });
 })();
 
-/* EKIN Intelligence · copiloto desplegable */
+/* EKIN Intelligence · copiloto energético-financiero con backend Claude */
 (function () {
   const dock = document.getElementById("eiDock");
   if (!dock) return;
   const launcher = document.getElementById("eiLauncher");
   const panel = document.getElementById("eiPanel");
   const closeBtn = document.getElementById("eiClose");
+  const thread = document.getElementById("eiThread");
+  const quick = document.getElementById("eiQuick");
+  const form = document.getElementById("eiForm");
+  const input = document.getElementById("eiText");
+
+  const history = [];
+  let busy = false;
+
   function setOpen(open) {
     dock.classList.toggle("is-open", open);
     launcher.setAttribute("aria-expanded", open ? "true" : "false");
     panel.setAttribute("aria-hidden", open ? "false" : "true");
+    if (open) setTimeout(() => input && input.focus(), 320);
   }
+
+  function scrollDown() { thread.scrollTop = thread.scrollHeight; }
+
+  function addRow(role, text) {
+    const row = document.createElement("div");
+    row.className = "ei-row ei-row--" + (role === "user" ? "user" : "bot");
+    if (role !== "user") {
+      const av = document.createElement("span");
+      av.className = "ei-avatar";
+      av.setAttribute("aria-hidden", "true");
+      row.appendChild(av);
+    }
+    const bubble = document.createElement("div");
+    bubble.className = "ei-bubble";
+    bubble.textContent = text;
+    row.appendChild(bubble);
+    thread.appendChild(row);
+    scrollDown();
+    return bubble;
+  }
+
+  function showTyping() {
+    const row = document.createElement("div");
+    row.className = "ei-row ei-row--bot";
+    row.innerHTML =
+      '<span class="ei-avatar" aria-hidden="true"></span>' +
+      '<div class="ei-bubble ei-typing"><i></i><i></i><i></i></div>';
+    thread.appendChild(row);
+    scrollDown();
+    return row;
+  }
+
+  async function send(text) {
+    if (busy || !text.trim()) return;
+    busy = true;
+    if (quick) quick.style.display = "none";
+    addRow("user", text);
+    history.push({ role: "user", content: text });
+    if (input) input.value = "";
+    const typing = showTyping();
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: history }),
+      });
+      const data = await res.json().catch(() => ({}));
+      typing.remove();
+      if (!res.ok || !data.reply) throw new Error(data.error || "bad_response");
+      addRow("bot", data.reply);
+      history.push({ role: "assistant", content: data.reply });
+    } catch (err) {
+      typing.remove();
+      addRow(
+        "bot",
+        "No puedo conectar con el motor de análisis ahora mismo. Escríbenos por WhatsApp (+52 56 4364 7693) o a contactekinpower@gmail.com y te respondemos personalmente."
+      );
+    } finally {
+      busy = false;
+      scrollDown();
+    }
+  }
+
   launcher.addEventListener("click", (e) => { e.stopPropagation(); setOpen(!dock.classList.contains("is-open")); });
   closeBtn.addEventListener("click", () => setOpen(false));
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") setOpen(false); });
-  dock.querySelectorAll(".ei-card").forEach((card) => {
-    card.addEventListener("click", () => {
-      const target = card.dataset.go && document.querySelector(card.dataset.go);
-      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
-      setOpen(false);
+
+  if (quick) {
+    quick.querySelectorAll(".ei-chip").forEach((chip) => {
+      chip.addEventListener("click", () => send(chip.dataset.q || chip.textContent));
     });
-  });
+  }
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      send(input.value);
+    });
+  }
+
   document.addEventListener("click", (e) => {
     if (dock.classList.contains("is-open") && !dock.contains(e.target)) setOpen(false);
   });

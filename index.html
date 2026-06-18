@@ -525,35 +525,31 @@
         </button>
       </header>
 
-      <div class="ei-body">
-        <div class="ei-intro">
-          <span class="ei-tag"><i></i> ONLINE · READY</span>
-          <p>I can help you assess savings, structure energy projects, compare investment models and identify high-impact opportunities.</p>
+      <div class="ei-body" id="eiBody">
+        <div class="ei-thread" id="eiThread">
+          <div class="ei-row ei-row--bot">
+            <span class="ei-avatar" aria-hidden="true"></span>
+            <div class="ei-bubble">
+              <span class="ei-tag"><i></i> ONLINE · READY</span>
+              I can help you assess savings, structure energy projects, compare investment models and identify high-impact opportunities.
+            </div>
+          </div>
         </div>
-
-        <div class="ei-actions">
-          <button class="ei-card" type="button" data-go="#calculadora">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M19 7l-6 6-3-3-4 4"/></svg>
-            <span>Analyze energy savings</span><i class="ei-chev">›</i>
-          </button>
-          <button class="ei-card" type="button" data-go="#btm">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 12h4l2-4 3 8 2-4h7"/></svg>
-            <span>Evaluate Behind The Meter project</span><i class="ei-chev">›</i>
-          </button>
-          <button class="ei-card" type="button" data-go="#btm">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 8l-3 5h6zM19 8l-3 5h6z"/><path d="M5 8h14"/></svg>
-            <span>Compare PPA / BESS / Solar options</span><i class="ei-chev">›</i>
-          </button>
-          <button class="ei-card" type="button" data-go="#calculadora">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7h-5M21 7v5"/></svg>
-            <span>Estimate ROI</span><i class="ei-chev">›</i>
-          </button>
-          <button class="ei-card" type="button" data-go="#contacto">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h2l2 5-2 1a12 12 0 0 0 5 5l1-2 5 2v2a2 2 0 0 1-2 2A16 16 0 0 1 4 5z"/></svg>
-            <span>Request advisory call</span><i class="ei-chev">›</i>
-          </button>
+        <div class="ei-quick" id="eiQuick">
+          <button class="ei-chip" type="button" data-q="Analyze my energy savings potential">Analyze energy savings</button>
+          <button class="ei-chip" type="button" data-q="Evaluate a Behind The Meter project for me">Evaluate a Behind The Meter project</button>
+          <button class="ei-chip" type="button" data-q="Compare PPA vs BESS vs Solar for a large consumer">Compare PPA / BESS / Solar</button>
+          <button class="ei-chip" type="button" data-q="Estimate ROI for a solar + storage project">Estimate ROI</button>
+          <button class="ei-chip" type="button" data-q="I'd like to request an advisory call">Request advisory call</button>
         </div>
       </div>
+
+      <form class="ei-input" id="eiForm" autocomplete="off">
+        <input id="eiText" type="text" placeholder="Ask about savings, BTM, PPAs, ROI…" aria-label="Message EKIN Intelligence" />
+        <button type="submit" class="ei-send" id="eiSend" aria-label="Send">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </form>
 
       <footer class="ei-foot">
         <span class="ei-foot-note">Turn energy data into investment decisions.</span>
