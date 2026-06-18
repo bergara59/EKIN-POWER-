@@ -483,28 +483,84 @@
     <p class="footer-note">© <span id="year"></span> EKIN POWER · Energía más inteligente. Costos más bajos.</p>
   </footer>
 
-  <!-- Botón flotante: mascota técnico (asistente energético) -->
-  <a class="wa-float" href="https://wa.me/525643647693" target="_blank" rel="noopener" aria-label="Habla con nuestro asistente por WhatsApp">
-    <span class="wa-bubble" aria-hidden="true">¡Hola! ¿Calculamos tu ahorro?</span>
-    <svg class="wa-mascot" viewBox="0 0 48 48" aria-hidden="true">
-      <!-- hombros / overol -->
-      <path d="M9 46v-3c0-6 6.7-9 15-9s15 3 15 9v3z" fill="#1b3a5c"/>
-      <path d="M24 34c-3 0-5.5 .4-7.5 1.1L24 44l7.5-8.9C29.5 34.4 27 34 24 34z" fill="#e9eef5"/>
-      <!-- cuello -->
-      <rect x="20.5" y="29" width="7" height="6" rx="2" fill="#f1c9a5"/>
-      <!-- cara -->
-      <circle cx="24" cy="22" r="11" fill="#f7d2ad"/>
-      <!-- casco de técnico -->
-      <path d="M11.5 20a12.5 12.5 0 0 1 25 0z" fill="#ffc21f"/>
-      <rect x="10" y="19.5" width="28" height="3.4" rx="1.7" fill="#ffb300"/>
-      <rect x="22.6" y="8.4" width="2.8" height="5" rx="1.4" fill="#ffd968"/>
-      <!-- ojos -->
-      <circle cx="20" cy="22" r="1.6" fill="#3a2c1c"/>
-      <circle cx="28" cy="22" r="1.6" fill="#3a2c1c"/>
-      <!-- sonrisa -->
-      <path d="M19.5 26.5a5 5 0 0 0 9 0" fill="none" stroke="#a05a39" stroke-width="1.8" stroke-linecap="round"/>
-    </svg>
-  </a>
+  <!-- EKIN Intelligence · copiloto energético-financiero -->
+  <div class="ei-dock" id="eiDock">
+    <span class="ei-tip" aria-hidden="true">
+      <strong>EKIN Intelligence</strong>
+      <em>Energy Investment Copilot</em>
+    </span>
+
+    <button class="ei-launcher" id="eiLauncher" aria-label="Ask EKIN Intelligence" aria-expanded="false" aria-controls="eiPanel">
+      <span class="ei-orb" aria-hidden="true">
+        <svg class="ei-orb-svg" viewBox="0 0 72 72">
+          <defs>
+            <radialGradient id="eiCore" cx="50%" cy="42%" r="58%">
+              <stop offset="0" stop-color="#eaffba"/>
+              <stop offset="34%" stop-color="#9bd62f"/>
+              <stop offset="100%" stop-color="#2f6e00" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <g class="ei-grid">
+            <circle cx="36" cy="36" r="29"/>
+            <ellipse cx="36" cy="36" rx="29" ry="11"/>
+            <ellipse cx="36" cy="36" rx="11" ry="29"/>
+            <line x1="7" y1="36" x2="65" y2="36"/>
+          </g>
+          <circle class="ei-core" cx="36" cy="34" r="17" fill="url(#eiCore)"/>
+          <circle class="ei-corepoint" cx="36" cy="34" r="3.4"/>
+        </svg>
+        <i class="ei-particle p1"></i><i class="ei-particle p2"></i><i class="ei-particle p3"></i>
+      </span>
+    </button>
+
+    <section class="ei-panel" id="eiPanel" role="dialog" aria-label="EKIN Intelligence" aria-hidden="true">
+      <header class="ei-head">
+        <span class="ei-head-orb" aria-hidden="true"></span>
+        <div class="ei-head-txt">
+          <h3>EKIN Intelligence</h3>
+          <p>Energy · Finance · Project Advisory</p>
+        </div>
+        <button class="ei-close" id="eiClose" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </header>
+
+      <div class="ei-body">
+        <div class="ei-intro">
+          <span class="ei-tag"><i></i> ONLINE · READY</span>
+          <p>I can help you assess savings, structure energy projects, compare investment models and identify high-impact opportunities.</p>
+        </div>
+
+        <div class="ei-actions">
+          <button class="ei-card" type="button" data-go="#calculadora">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M19 7l-6 6-3-3-4 4"/></svg>
+            <span>Analyze energy savings</span><i class="ei-chev">›</i>
+          </button>
+          <button class="ei-card" type="button" data-go="#btm">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 12h4l2-4 3 8 2-4h7"/></svg>
+            <span>Evaluate Behind The Meter project</span><i class="ei-chev">›</i>
+          </button>
+          <button class="ei-card" type="button" data-go="#btm">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 8l-3 5h6zM19 8l-3 5h6z"/><path d="M5 8h14"/></svg>
+            <span>Compare PPA / BESS / Solar options</span><i class="ei-chev">›</i>
+          </button>
+          <button class="ei-card" type="button" data-go="#calculadora">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7h-5M21 7v5"/></svg>
+            <span>Estimate ROI</span><i class="ei-chev">›</i>
+          </button>
+          <button class="ei-card" type="button" data-go="#contacto">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h2l2 5-2 1a12 12 0 0 0 5 5l1-2 5 2v2a2 2 0 0 1-2 2A16 16 0 0 1 4 5z"/></svg>
+            <span>Request advisory call</span><i class="ei-chev">›</i>
+          </button>
+        </div>
+      </div>
+
+      <footer class="ei-foot">
+        <span class="ei-foot-note">Turn energy data into investment decisions.</span>
+        <a class="ei-wa" href="https://wa.me/525643647693" target="_blank" rel="noopener">Talk to an advisor →</a>
+      </footer>
+    </section>
+  </div>
 
   <script src="script.js" defer></script>
 </body>

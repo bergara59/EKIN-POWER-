@@ -592,3 +592,30 @@ const _reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (cue) cue.innerHTML = open ? 'Ocultar <i>▾</i>' : 'Pulsa para desplegar <i>▸</i>';
   });
 })();
+
+/* EKIN Intelligence · copiloto desplegable */
+(function () {
+  const dock = document.getElementById("eiDock");
+  if (!dock) return;
+  const launcher = document.getElementById("eiLauncher");
+  const panel = document.getElementById("eiPanel");
+  const closeBtn = document.getElementById("eiClose");
+  function setOpen(open) {
+    dock.classList.toggle("is-open", open);
+    launcher.setAttribute("aria-expanded", open ? "true" : "false");
+    panel.setAttribute("aria-hidden", open ? "false" : "true");
+  }
+  launcher.addEventListener("click", (e) => { e.stopPropagation(); setOpen(!dock.classList.contains("is-open")); });
+  closeBtn.addEventListener("click", () => setOpen(false));
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") setOpen(false); });
+  dock.querySelectorAll(".ei-card").forEach((card) => {
+    card.addEventListener("click", () => {
+      const target = card.dataset.go && document.querySelector(card.dataset.go);
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+      setOpen(false);
+    });
+  });
+  document.addEventListener("click", (e) => {
+    if (dock.classList.contains("is-open") && !dock.contains(e.target)) setOpen(false);
+  });
+})();

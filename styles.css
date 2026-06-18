@@ -2599,3 +2599,197 @@ a { color: inherit; text-decoration: none; }
   .metodo-steps { transition: none; }
   .metodo-vault[data-open="true"] .metodo-step { animation: none; opacity: 1; transform: none; }
 }
+
+/* ============================================================
+   EKIN INTELLIGENCE · copiloto energético-financiero
+   ============================================================ */
+.ei-dock {
+  position: fixed;
+  right: clamp(1rem, 3vw, 2rem);
+  bottom: clamp(1rem, 3vw, 2rem);
+  z-index: 80;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.9rem;
+}
+
+/* ---- Núcleo (launcher) ---- */
+.ei-launcher {
+  position: relative;
+  width: clamp(60px, 16vw, 68px);
+  height: clamp(60px, 16vw, 68px);
+  border-radius: 50%;
+  border: 1px solid rgba(155, 214, 47, 0.35);
+  background: radial-gradient(120% 120% at 50% 30%, rgba(155,214,47,.10), rgba(12,11,9,.92));
+  cursor: pointer;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 0 0 rgba(155,214,47,.45), 0 18px 50px rgba(0,0,0,.55), inset 0 0 22px rgba(155,214,47,.12);
+  animation: eiPulse 4.6s ease-out infinite;
+  transition: transform .35s cubic-bezier(.22,1,.36,1), border-color .35s, box-shadow .35s;
+}
+.ei-launcher:hover { transform: translateY(-3px) scale(1.04); border-color: var(--volt); }
+@keyframes eiPulse {
+  0% { box-shadow: 0 0 0 0 rgba(155,214,47,.40), 0 18px 50px rgba(0,0,0,.55), inset 0 0 22px rgba(155,214,47,.12); }
+  60% { box-shadow: 0 0 0 16px rgba(155,214,47,0), 0 18px 50px rgba(0,0,0,.55), inset 0 0 22px rgba(155,214,47,.12); }
+  100% { box-shadow: 0 0 0 0 rgba(155,214,47,0), 0 18px 50px rgba(0,0,0,.55), inset 0 0 22px rgba(155,214,47,.12); }
+}
+.ei-orb { position: relative; width: 80%; height: 80%; display: block; }
+.ei-orb-svg { width: 100%; height: 100%; overflow: visible; }
+.ei-grid { fill: none; stroke: rgba(155,214,47,.34); stroke-width: 1; transform-origin: 36px 36px; animation: eiSpin 14s linear infinite; }
+@keyframes eiSpin { to { transform: rotate(360deg); } }
+.ei-core { transform-origin: 36px 34px; animation: eiBreathe 3.4s ease-in-out infinite; }
+@keyframes eiBreathe { 0%,100% { opacity: .82; transform: scale(.92); } 50% { opacity: 1; transform: scale(1.06); } }
+.ei-corepoint { fill: #f3ffd6; filter: drop-shadow(0 0 6px rgba(155,214,47,.95)); }
+.ei-particle {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 4px; height: 4px;
+  margin: -2px 0 0 -2px;
+  border-radius: 50%;
+  background: var(--volt-bright);
+  box-shadow: 0 0 6px rgba(155,214,47,.9);
+}
+.ei-particle.p1 { animation: eiOrbit 5.5s linear infinite; }
+.ei-particle.p2 { animation: eiOrbit 7.5s linear infinite reverse; opacity: .8; }
+.ei-particle.p3 { animation: eiOrbit 9.5s linear infinite; opacity: .6; }
+@keyframes eiOrbit {
+  from { transform: rotate(0) translateX(26px) rotate(0); }
+  to   { transform: rotate(360deg) translateX(26px) rotate(-360deg); }
+}
+
+/* ---- Tooltip hover ---- */
+.ei-tip {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  padding: 0.55rem 0.85rem;
+  background: rgba(20, 19, 15, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(155,214,47,.22);
+  border-radius: 12px;
+  opacity: 0;
+  transform: translateY(6px) scale(.96);
+  transform-origin: bottom right;
+  pointer-events: none;
+  transition: opacity .3s ease, transform .3s cubic-bezier(.22,1,.36,1);
+}
+.ei-tip strong { font-family: var(--font-display); font-weight: 700; font-size: 0.92rem; color: var(--text); letter-spacing: -0.01em; }
+.ei-tip em { font-family: var(--font-mono); font-style: normal; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--volt); }
+.ei-launcher:hover ~ .ei-tip,
+.ei-dock:not(.is-open) .ei-launcher:focus-visible ~ .ei-tip { opacity: 1; transform: translateY(0) scale(1); }
+.ei-dock.is-open .ei-tip { display: none; }
+
+/* ---- Panel dashboard ---- */
+.ei-panel {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 0.9rem);
+  width: min(360px, calc(100vw - 2rem));
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, rgba(20,19,15,.92), rgba(12,11,9,.94));
+  backdrop-filter: blur(18px) saturate(1.1);
+  -webkit-backdrop-filter: blur(18px) saturate(1.1);
+  border: 1px solid rgba(155,214,47,.22);
+  border-radius: 20px;
+  box-shadow: 0 30px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.02) inset;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(14px) scale(.97);
+  transform-origin: bottom right;
+  pointer-events: none;
+  transition: opacity .35s ease, transform .4s cubic-bezier(.22,1,.36,1);
+}
+.ei-dock.is-open .ei-panel { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+
+.ei-head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1rem 1.1rem;
+  border-bottom: 1px solid rgba(155,214,47,.14);
+  background: linear-gradient(180deg, rgba(155,214,47,.06), transparent);
+}
+.ei-head-orb {
+  flex: 0 0 auto;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 38%, #eaffba, #9bd62f 38%, rgba(47,110,0,0) 72%);
+  border: 1px solid rgba(155,214,47,.4);
+  box-shadow: 0 0 14px rgba(155,214,47,.5);
+  animation: eiBreathe 3.4s ease-in-out infinite;
+}
+.ei-head-txt h3 { font-family: var(--font-display); font-weight: 800; font-size: 1.02rem; letter-spacing: -0.01em; line-height: 1.1; }
+.ei-head-txt p { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 2px; }
+.ei-close {
+  margin-left: auto;
+  width: 30px; height: 30px;
+  display: grid; place-items: center;
+  border-radius: 9px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color .25s, border-color .25s, background .25s;
+}
+.ei-close svg { width: 16px; height: 16px; }
+.ei-close:hover { color: var(--text); border-color: var(--volt); background: rgba(155,214,47,.08); }
+
+.ei-body { padding: 1.1rem; display: flex; flex-direction: column; gap: 1rem; }
+.ei-intro { display: flex; flex-direction: column; gap: 0.55rem; }
+.ei-tag {
+  align-self: flex-start;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem; letter-spacing: 0.16em;
+  color: var(--volt);
+}
+.ei-tag i { width: 6px; height: 6px; border-radius: 50%; background: var(--volt); box-shadow: 0 0 8px var(--volt); animation: eiBlink 1.8s ease-in-out infinite; }
+@keyframes eiBlink { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+.ei-intro p { color: var(--text); font-size: 0.92rem; line-height: 1.5; }
+
+.ei-actions { display: flex; flex-direction: column; gap: 0.55rem; }
+.ei-card {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.72rem 0.85rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.06);
+  background: rgba(255,255,255,.025);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color .25s, background .25s, transform .25s;
+}
+.ei-card svg { flex: 0 0 auto; width: 19px; height: 19px; color: var(--volt); }
+.ei-card span { flex: 1; font-size: 0.88rem; line-height: 1.25; }
+.ei-chev { font-style: normal; color: var(--muted); font-size: 1.1rem; transition: transform .25s, color .25s; }
+.ei-card:hover { border-color: rgba(155,214,47,.4); background: rgba(155,214,47,.07); transform: translateX(3px); }
+.ei-card:hover .ei-chev { color: var(--volt); transform: translateX(3px); }
+
+.ei-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.85rem 1.1rem;
+  border-top: 1px solid rgba(155,214,47,.14);
+  background: rgba(0,0,0,.2);
+}
+.ei-foot-note { font-family: var(--font-serif); font-style: italic; font-size: 0.78rem; color: var(--muted); }
+.ei-wa { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.04em; color: var(--volt); white-space: nowrap; }
+.ei-wa:hover { color: var(--volt-bright); }
+
+@media (max-width: 480px) {
+  .ei-foot { flex-direction: column; align-items: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ei-launcher, .ei-grid, .ei-core, .ei-particle, .ei-head-orb, .ei-tag i { animation: none !important; }
+}
