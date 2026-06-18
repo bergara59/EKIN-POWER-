@@ -2203,3 +2203,166 @@ a { color: inherit; text-decoration: none; }
   .module, .ind-tab, .ind-panel, .board, .bess-screen, .impact-card,
   .compare-wrap, .calc, .client-card, .step, .livefeed-content, .fin-tab, .fin-panel { opacity: 1; transform: none; }
 }
+
+/* ===================== REDISEÑO MINIMALISTA ===================== */
+.hero-tags {
+  margin-top: 1.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.section-sub {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.5;
+  max-width: 62ch;
+}
+.lineas .section-title,
+.btm .section-title,
+.clientes .section-title { max-width: 24ch; }
+
+/* Líneas de negocio */
+.lineas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.2rem;
+}
+.linea-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 2rem 1.8rem 2.2rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  transition: border-color .3s ease, transform .3s ease;
+}
+.linea-card:hover { border-color: var(--volt); transform: translateY(-4px); }
+.linea-card--hero {
+  background: linear-gradient(180deg, rgba(155,214,47,.07), var(--surface));
+  border-color: rgba(155,214,47,.38);
+}
+.linea-num { font-family: var(--font-mono); font-size: 0.9rem; letter-spacing: 0.1em; color: var(--volt-deep); }
+.linea-tag {
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--volt);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+}
+.linea-h { font-family: var(--font-display); font-weight: 800; font-size: 1.35rem; line-height: 1.1; letter-spacing: -0.02em; }
+.linea-p { color: var(--muted); font-size: 1rem; line-height: 1.5; }
+.linea-line {
+  margin-top: auto;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--text);
+  font-size: 1.02rem;
+}
+
+/* Behind the Meter */
+.btm-flow {
+  list-style: none;
+  margin: 2.6rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+.btm-step {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  padding: 1.3rem 1.2rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.btm-n {
+  flex: 0 0 auto;
+  width: 2rem; height: 2rem;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: rgba(155,214,47,.12);
+  color: var(--volt);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.btm-step p { color: var(--text); font-size: 0.98rem; line-height: 1.4; }
+.btm-punch {
+  margin: 2.8rem auto 0;
+  text-align: center;
+  max-width: 42ch;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+.btm-punch em { font-family: var(--font-serif); font-style: italic; color: var(--volt); }
+.btm-cta, .metodo-cta { margin-top: 2.2rem; }
+
+/* Para quién */
+.clientes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+.cliente-card {
+  padding: 1.6rem 1.4rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  transition: border-color .3s ease, transform .3s ease;
+}
+.cliente-card:hover { border-color: var(--volt); transform: translateY(-3px); }
+.cliente-card h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; margin-bottom: 0.5rem; }
+.cliente-card p { color: var(--muted); font-size: 0.96rem; line-height: 1.45; }
+
+/* Método EKIN */
+.metodo-steps {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.metodo-step {
+  padding: 1.6rem 1.4rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--volt-deep);
+  border-radius: 14px;
+}
+.metodo-n { display: block; font-family: var(--font-mono); font-size: 1.5rem; font-weight: 700; color: var(--volt); margin-bottom: 0.6rem; }
+.metodo-step h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; margin-bottom: 0.4rem; }
+.metodo-step p { color: var(--muted); font-size: 0.95rem; line-height: 1.45; }
+
+/* Por qué EKIN */
+.porque-list {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: grid;
+  gap: 0.95rem;
+  max-width: 62ch;
+}
+.porque-list li {
+  position: relative;
+  padding-left: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+.porque-list li::before { content: "→"; position: absolute; left: 0; color: var(--volt); font-family: var(--font-mono); }
+
+.footer-loc { color: var(--muted); }
