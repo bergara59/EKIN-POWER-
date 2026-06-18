@@ -183,7 +183,7 @@ if (calcBill) {
   const calcNote = document.getElementById("calcNote");
   const nf = new Intl.NumberFormat("es-MX");
 
-  const updateBill = () => { out.textContent = "€" + nf.format(+calcBill.value); };
+  const updateBill = () => { out.textContent = "$" + nf.format(+calcBill.value); };
   calcBill.addEventListener("input", updateBill);
   updateBill();
 
@@ -205,10 +205,10 @@ if (calcBill) {
     const pLow = pHigh * 0.55;
     const pMid = (pLow + pHigh) / 2;
     const saving = Math.round(annual * pMid);
-    const kWh = annual / 0.16;                      // ~€/kWh
+    const kWh = annual / 2.8;                        // ~MXN/kWh gran consumidor
     const co2 = Math.round((kWh * pMid * 0.42) / 1000); // toneladas
     screen.dataset.state = "done";
-    animateNum(ccSave, saving, (v) => "€" + nf.format(v));
+    animateNum(ccSave, saving, (v) => "$" + nf.format(v));
     ccPct.textContent = Math.round(pLow * 100) + "–" + Math.round(pHigh * 100) + "%";
     animateNum(ccCo2, co2, (v) => nf.format(v) + " t");
     ccPay.textContent = "1.5–3 años";
@@ -503,3 +503,92 @@ document
     el.style.setProperty("--ri", (idx % 6).toString());
     observer.observe(el);
   });
+
+/* ============================================================
+   WIDGETS INTERACTIVOS (rediseño WOW)
+   ============================================================ */
+const _reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* Behind the Meter · stepper "flujo de valor" */
+(function () {
+  const stage = document.getElementById("btmStage");
+  if (!stage) return;
+  const nodes = Array.from(document.querySelectorAll("#btmRail .btm-node"));
+  const card = document.getElementById("btmCard");
+  const iconEl = document.getElementById("btmIcon");
+  const idxEl = document.getElementById("btmIdx");
+  const hEl = document.getElementById("btmH");
+  const pEl = document.getElementById("btmP");
+  const lbl = document.getElementById("btmStepLbl");
+  const prog = document.getElementById("btmProg");
+  const total = nodes.length;
+  const I = (d) => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + d + "</svg>";
+  const icons = {
+    bolt: I('<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>'),
+    scan: I('<path d="M3 8V5a2 2 0 0 1 2-2h3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M21 16v3a2 2 0 0 1-2 2h-3"/><path d="M7 14l3-4 3 3 4-6"/>'),
+    sun: I('<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.4 1.4M17.6 17.6 19 19M19 5l-1.4 1.4M6.4 17.6 5 19"/>'),
+    wallet: I('<rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 9V7a2 2 0 0 1 2-2h11M16 13h3"/>'),
+    trend: I('<path d="M3 17l6-6 4 4 8-8"/><path d="M21 7h-5M21 7v5"/>'),
+    sat: I('<circle cx="12" cy="12" r="3"/><path d="M12 5V3M12 21v-2M5 12H3M21 12h-2M7.5 7.5 6 6M18 18l-1.5-1.5M16.5 7.5 18 6M6 18l1.5-1.5"/>'),
+  };
+  let cur = 0, timer = null;
+  function render(i, animate) {
+    const n = nodes[i];
+    nodes.forEach((b, k) => { b.classList.toggle("is-active", k === i); b.classList.toggle("is-done", k < i); });
+    iconEl.innerHTML = icons[n.dataset.icon] || "";
+    idxEl.textContent = String(i + 1).padStart(2, "0");
+    hEl.textContent = n.dataset.h;
+    pEl.textContent = n.dataset.p;
+    lbl.textContent = String(i + 1).padStart(2, "0") + " / " + String(total).padStart(2, "0");
+    if (prog) prog.style.width = ((i + 1) / total) * 100 + "%";
+    if (animate && !_reduced) { card.classList.remove("flip"); void card.offsetWidth; card.classList.add("flip"); }
+    cur = i;
+  }
+  const go = (i) => render((i + total) % total, true);
+  function play() { if (_reduced) return; stop(); timer = setInterval(() => go(cur + 1), 3800); }
+  function stop() { if (timer) clearInterval(timer); timer = null; }
+  nodes.forEach((b) => b.addEventListener("click", () => { go(+b.dataset.i); play(); }));
+  render(0, false);
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver((es) => es.forEach((e) => (e.isIntersecting ? play() : stop())), { threshold: 0.3 }).observe(stage);
+  } else play();
+})();
+
+/* Para quién · mapa por sectores */
+(function () {
+  const wrap = document.getElementById("mapwrap");
+  if (!wrap) return;
+  const tabs = Array.from(document.querySelectorAll("#mapTabs .map-chip"));
+  const svg = document.getElementById("mxMap");
+  const mrTitle = document.getElementById("mrTitle");
+  const mrPain = document.getElementById("mrPain");
+  const mrEkin = document.getElementById("mrEkin");
+  const mrMetric = document.getElementById("mrMetric");
+  function activate(chip) {
+    tabs.forEach((t) => t.classList.toggle("is-active", t === chip));
+    const ids = chip.dataset.nodes.split(" ");
+    svg.querySelectorAll(".mnode").forEach((g) => g.classList.toggle("on", ids.includes(g.id.replace("n-", ""))));
+    mrTitle.textContent = chip.dataset.title;
+    mrPain.textContent = chip.dataset.pain;
+    mrEkin.textContent = chip.dataset.ekin;
+    mrMetric.textContent = chip.dataset.metric;
+  }
+  tabs.forEach((t) => t.addEventListener("click", () => activate(t)));
+  activate(tabs[0]);
+})();
+
+/* Método · bóveda desplegable */
+(function () {
+  const vault = document.getElementById("metodoVault");
+  if (!vault) return;
+  const trigger = document.getElementById("vaultTrigger");
+  const steps = document.getElementById("metodoSteps");
+  const cue = document.getElementById("vaultCue");
+  trigger.addEventListener("click", () => {
+    const open = vault.dataset.open !== "true";
+    vault.dataset.open = open ? "true" : "false";
+    trigger.setAttribute("aria-expanded", open ? "true" : "false");
+    steps.setAttribute("aria-hidden", open ? "false" : "true");
+    if (cue) cue.innerHTML = open ? 'Ocultar <i>▾</i>' : 'Pulsa para desplegar <i>▸</i>';
+  });
+})();
