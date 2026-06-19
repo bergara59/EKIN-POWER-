@@ -3043,3 +3043,17 @@ a { color: inherit; text-decoration: none; }
 @media (prefers-reduced-motion: reduce) {
   .aurora, .mk-num.beat, .pc-opt, .map-line, .map-radar, .exp-track, .platform-live { animation: none !important; }
 }
+
+/* Soluciones · diagnóstico como raíz */
+.sol-lead { max-width: 760px; margin: 0 auto; text-align: center; padding: clamp(1.8rem,5vw,2.6rem) clamp(1.4rem,4vw,2.4rem); background: linear-gradient(180deg, rgba(155,214,47,.10), var(--surface)); border: 1px solid rgba(155,214,47,.42); border-radius: 20px; box-shadow: 0 0 55px rgba(155,214,47,.12); }
+.sol-lead-tag { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--volt); }
+.sol-lead-h { font-family: var(--font-display); font-weight: 900; font-size: clamp(1.6rem,4.4vw,2.7rem); line-height: 1.04; letter-spacing: -0.02em; margin: 0.6rem 0; }
+.sol-lead-p { color: var(--muted); font-size: 1.05rem; line-height: 1.5; max-width: 52ch; margin: 0 auto; }
+.sol-lead-badge { display: inline-block; margin-top: 1.1rem; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--volt); border: 1px solid rgba(155,214,47,.35); border-radius: 999px; padding: 0.35rem 0.9rem; }
+.sol-branch { text-align: center; font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin: 1.8rem 0; }
+.pillar .pillar-n { color: var(--volt); font-size: 1.15rem; }
+.software-edge { margin-top: 1.3rem; font-family: var(--font-serif); font-style: italic; font-size: 1.06rem; color: var(--text); }
+
+/* Página "Por qué EKIN" */
+.porque-page { min-height: 72vh; }
+.porque-cta { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; margin-top: 2.8rem; }
