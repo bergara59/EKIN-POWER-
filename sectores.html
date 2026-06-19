@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapa de México · EKIN POWER</title>
+  <meta name="description" content="México leído por consumo de energía. Elige tu sector y mira el potencial de ahorro: hoteles, industria, retail, aeropuertos, fondos." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <header class="nav on-dark" id="top">
+    <a class="brand brand--nav" href="index.html" aria-label="EKIN POWER — inicio">
+      <span class="logo-word">e<svg class="logo-k" viewBox="0 0 128 140" aria-hidden="true"><defs><linearGradient id="kgNavM" x1="0" y1="140" x2="0" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2f6e00"/><stop offset=".55" stop-color="#5ba017"/><stop offset="1" stop-color="#86c93a"/></linearGradient><linearGradient id="kgNavT" x1="0" y1="84" x2="0" y2="20" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6fb023"/><stop offset="1" stop-color="#f3fae7"/></linearGradient></defs><polygon points="20,132 44,132 60,40 36,40" fill="url(#kgNavM)"/><polygon points="48,96 70,96 96,132 74,132" fill="url(#kgNavM)"/><polygon points="50,96 72,96 92,66 70,66" fill="url(#kgNavM)"/><polygon points="74,84 96,84 116,28 94,28" fill="url(#kgNavT)"/></svg>in</span><span class="logo-power">POWER</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#soluciones" class="nav-top">Soluciones</a>
+      <a href="index.html#casos" class="nav-top">Casos</a>
+      <div class="nav-drop" id="navDrop">
+        <button type="button" class="nav-top nav-drop-btn" id="navDropBtn" aria-expanded="false" aria-haspopup="true">Explorar <i>▾</i></button>
+        <div class="nav-menu" role="menu">
+          <a href="inversion.html" role="menuitem">Behind the Meter</a>
+          <a href="software.html" role="menuitem">Software propio</a>
+          <a href="sectores.html" role="menuitem">Mapa de México</a>
+          <a href="porque.html" role="menuitem">Por qué EKIN</a>
+          <a href="noticias.html" role="menuitem">Newsletter</a>
+        </div>
+      </div>
+      <a href="index.html#contacto" class="nav-cta">Agenda una reunión</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section sectores on-dark" id="sectores">
+      <div class="section-head reveal">
+        <p class="section-kicker">Sectores</p>
+        <h2 class="section-title">México, leído por <em>consumo de energía</em>.</h2>
+        <p class="section-sub">Elige un sector y mira dónde está el potencial de ahorro.</p>
+      </div>
+
+      <div class="mapwrap reveal" id="mapwrap">
+        <div class="map-tabs" id="mapTabs" role="tablist" aria-label="Sectores">
+          <button class="map-chip is-active" role="tab" data-nodes="cun cabo mer pto" data-title="Hoteles &amp; resorts" data-pain="La energía es uno de tus mayores costos por habitación." data-ekin="Solar + BESS que bajan tu costo por noche sin tocar la experiencia del huésped." data-metric="Ahorro típico 25–40%">Hoteles</button>
+          <button class="map-chip" role="tab" data-nodes="mty gdl cdmx baj" data-title="Industria &amp; manufactura" data-pain="Cada kWh entra directo en el costo de tu producto." data-ekin="Eficiencia + generación propia para proteger tu margen." data-metric="Ahorro típico 20–35%">Industria</button>
+          <button class="map-chip" role="tab" data-nodes="cdmx gdl mty ver pue" data-title="Retail &amp; supermercados" data-pain="Tu refrigeración no para nunca; tu factura tampoco." data-ekin="Gestión de demanda + solar para tu carga 24/7 multi-sede." data-metric="Ahorro típico 20–30%">Retail</button>
+          <button class="map-chip" role="tab" data-nodes="cdmx cun gdl mty tij" data-title="Aeropuertos &amp; crítico" data-pain="No puedes permitirte un corte de energía." data-ekin="Resiliencia con baterías y respaldo, sin sobrecostos." data-metric="Continuidad 24/7">Aeropuertos</button>
+          <button class="map-chip" role="tab" data-nodes="cdmx mty baj" data-title="Fondos e inversionistas" data-pain="Necesitas saber el riesgo antes de poner el capital." data-ekin="Due diligence energética independiente sobre el activo." data-metric="Decisiones con datos">Fondos</button>
+        </div>
+
+        <div class="map-stage">
+          <div class="map-svg-wrap" id="mapTilt">
+            <span class="map-atmos" aria-hidden="true"></span>
+            <span class="map-atmos map-atmos2" aria-hidden="true"></span>
+            <svg class="map-svg" id="mxMap" viewBox="0 0 920 600" role="img" aria-label="Mapa de operaciones EKIN POWER en México">
+              <defs>
+                <radialGradient id="mxGlow" cx="50%" cy="45%" r="60%">
+                  <stop offset="0" stop-color="rgba(155,214,47,.12)"/>
+                  <stop offset="100%" stop-color="rgba(155,214,47,0)"/>
+                </radialGradient>
+                <linearGradient id="mxFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="rgba(155,214,47,.10)"/>
+                  <stop offset="1" stop-color="rgba(155,214,47,.03)"/>
+                </linearGradient>
+              </defs>
+              <rect x="0" y="0" width="920" height="600" fill="url(#mxGlow)"/>
+              <!-- Silueta de México (estilizada): Baja + cuerpo continental + Yucatán -->
+              <path class="mx-baja" d="M70,150 C60,170 64,200 78,236 C92,272 118,300 150,316 C162,322 170,318 168,304 C150,300 132,286 118,260 C104,234 96,206 96,184 C96,168 90,156 70,150 Z"/>
+              <path class="mx-silhouette" d="M168,150
+                C210,138 250,150 296,150 C360,150 420,140 486,148 C548,156 596,150 632,150
+                C636,168 650,178 672,176 C690,200 668,214 686,224
+                C708,210 736,214 758,236 C780,214 806,222 820,248
+                C842,286 838,312 812,318 C826,338 812,356 786,348
+                C760,360 742,338 740,316 C724,300 700,304 686,318
+                C700,300 690,286 666,290 C636,296 610,300 582,316
+                C556,330 540,360 512,372 C480,392 470,428 446,470
+                C420,512 396,540 372,540 C352,540 344,506 338,470
+                C330,432 322,402 300,386 C268,362 236,344 214,322
+                C196,304 188,278 188,250 C188,222 178,196 168,176 Z"/>
+              <g class="map-lines" id="mapLines"></g>
+              <g class="mnode" id="n-tij"><circle cx="120" cy="170" r="6"/><text x="120" y="155">Tijuana</text></g>
+              <g class="mnode" id="n-cabo"><circle cx="150" cy="300" r="6"/><text x="150" y="320">Los Cabos</text></g>
+              <g class="mnode" id="n-mty"><circle cx="560" cy="195" r="6"/><text x="560" y="180">Monterrey</text></g>
+              <g class="mnode" id="n-gdl"><circle cx="360" cy="320" r="6"/><text x="360" y="305">Guadalajara</text></g>
+              <g class="mnode" id="n-baj"><circle cx="440" cy="295" r="6"/><text x="440" y="280">Bajío</text></g>
+              <g class="mnode" id="n-cdmx"><circle cx="490" cy="345" r="6"/><text x="490" y="365">CDMX</text></g>
+              <g class="mnode" id="n-pue"><circle cx="535" cy="360" r="6"/><text x="552" y="378">Puebla</text></g>
+              <g class="mnode" id="n-ver"><circle cx="600" cy="330" r="6"/><text x="612" y="348">Veracruz</text></g>
+              <g class="mnode" id="n-mer"><circle cx="775" cy="270" r="6"/><text x="775" y="255">Mérida</text></g>
+              <g class="mnode" id="n-cun"><circle cx="815" cy="290" r="6"/><text x="815" y="320">Cancún</text></g>
+              <g class="mnode" id="n-pto"><circle cx="755" cy="318" r="6"/><text x="740" y="338">R. Maya</text></g>
+            </svg>
+            <span class="map-radar" aria-hidden="true"></span>
+          </div>
+
+          <div class="map-readout" id="mapReadout">
+            <div class="mr-bar"><span class="term-dot"></span><span>EKIN · SECTOR INTEL</span></div>
+            <h3 class="mr-title" id="mrTitle">Hoteles &amp; resorts</h3>
+            <p class="mr-pain" id="mrPain">La energía es uno de tus mayores costos por habitación.</p>
+            <p class="mr-ekin" id="mrEkin">Solar + BESS que bajan tu costo por noche sin tocar la experiencia del huésped.</p>
+            <span class="mr-metric" id="mrMetric">Ahorro típico 25–40%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer on-dark">
+    <div class="footer-top">
+      <div class="footer-brand-block">
+        <span class="brand" aria-label="EKIN POWER">
+          <span class="logo-word">e<svg class="logo-k" viewBox="0 0 128 140" aria-hidden="true"><defs><linearGradient id="kgFootM" x1="0" y1="140" x2="0" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2f6e00"/><stop offset=".55" stop-color="#5ba017"/><stop offset="1" stop-color="#86c93a"/></linearGradient><linearGradient id="kgFootT" x1="0" y1="84" x2="0" y2="20" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6fb023"/><stop offset="1" stop-color="#f3fae7"/></linearGradient></defs><polygon points="20,132 44,132 60,40 36,40" fill="url(#kgFootM)"/><polygon points="48,96 70,96 96,132 74,132" fill="url(#kgFootM)"/><polygon points="50,96 72,96 92,66 70,66" fill="url(#kgFootM)"/><polygon points="74,84 96,84 116,28 94,28" fill="url(#kgFootT)"/></svg>in</span><span class="logo-power">POWER</span>
+        </span>
+        <p class="footer-tagline">Convertimos la energía en ventaja competitiva.</p>
+      </div>
+      <nav class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="porque.html">Por qué EKIN</a>
+        <a href="noticias.html">Newsletter</a>
+        <a href="mailto:contactekinpower@gmail.com">contactekinpower@gmail.com</a>
+        <a href="https://wa.me/525643647693" target="_blank" rel="noopener">WhatsApp</a>
+      </nav>
+    </div>
+    <p class="footer-note">© <span id="year"></span> EKIN POWER · Convertimos la energía en ventaja competitiva.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

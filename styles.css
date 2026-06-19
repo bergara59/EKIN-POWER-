@@ -3057,3 +3057,81 @@ a { color: inherit; text-decoration: none; }
 /* Página "Por qué EKIN" */
 .porque-page { min-height: 72vh; }
 .porque-cta { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; margin-top: 2.8rem; }
+
+/* ============================================================
+   REDISEÑO v4 · home limpia + pestañas
+   ============================================================ */
+
+/* Nav dropdown "Explorar" */
+.nav-drop { position: relative; }
+.nav-drop-btn { background: none; border: none; cursor: pointer; font: inherit; color: var(--muted); display: inline-flex; align-items: center; gap: 0.3rem; transition: color .2s; }
+.nav-drop-btn:hover { color: var(--text); }
+.nav-drop-btn i { font-style: normal; font-size: 0.8em; transition: transform .25s; }
+.nav-drop.open .nav-drop-btn i { transform: rotate(180deg); }
+.nav-menu { position: absolute; top: calc(100% + 0.7rem); right: 0; min-width: 230px; display: flex; flex-direction: column; padding: 0.5rem; background: rgba(20,19,15,.97); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(155,214,47,.22); border-radius: 14px; box-shadow: 0 26px 60px rgba(0,0,0,.55); opacity: 0; transform: translateY(-8px); pointer-events: none; transition: opacity .25s, transform .25s; z-index: 60; }
+.nav-drop.open .nav-menu, .nav-drop:hover .nav-menu { opacity: 1; transform: none; pointer-events: auto; }
+.nav-menu a { padding: 0.6rem 0.8rem; border-radius: 9px; color: var(--text) !important; font-size: 0.95rem; }
+.nav-menu a:hover { background: rgba(155,214,47,.1); color: var(--volt) !important; }
+@media (max-width: 760px) {
+  .nav-drop, .nav-menu { position: static; }
+  .nav-drop-btn { display: none; }
+  .nav-menu { opacity: 1; transform: none; pointer-events: auto; background: none; border: none; box-shadow: none; padding: 0; min-width: 0; backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .nav-menu a { padding: 0.7rem 0.6rem; }
+}
+
+/* Hero · gráfico fluctuante + frase de urgencia */
+.hero-flux { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 46%; z-index: 1; pointer-events: none; opacity: .9; }
+.hero-inner { position: relative; z-index: 2; }
+.hero-punch { font-family: var(--font-serif); font-style: italic; font-size: clamp(1.05rem, 2.4vw, 1.45rem); color: var(--text); margin-top: 1.1rem; max-width: 42ch; }
+.hero-punch em { color: var(--volt); font-style: italic; }
+
+/* Franja inferior · logos founders (ticker Wall Street) */
+.founders { border-top: 1px solid var(--line); padding: clamp(2rem,5vw,3rem) 0 clamp(2.4rem,6vw,3.4rem); overflow: hidden; }
+.founders-k { text-align: center; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.4rem; }
+.founders-marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.founders-track { display: flex; align-items: center; gap: 2.6rem; width: max-content; animation: marquee 34s linear infinite; }
+.flogo { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.1rem, 2.6vw, 1.7rem); letter-spacing: 0.02em; color: #cfd6e0; opacity: .42; filter: grayscale(1); white-space: nowrap; transition: opacity .3s, color .3s; }
+.flogo:hover { opacity: 1; color: var(--volt); }
+
+/* Tarjetas de capacidad 3D (flip al click) */
+.cap-hint { text-align: center; font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 2.4rem 0 1.2rem; }
+.cap3d-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1rem; }
+.cap3d { perspective: 1000px; background: none; border: none; padding: 0; cursor: pointer; height: 170px; font: inherit; }
+.cap3d-inner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .7s cubic-bezier(.22,1,.36,1); }
+.cap3d.is-flipped .cap3d-inner { transform: rotateY(180deg); }
+.cap3d-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border: 1px solid var(--line); border-radius: 16px; padding: 1.3rem 1.2rem; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; text-align: left; }
+.cap3d-front { background: linear-gradient(180deg, var(--surface-2), var(--surface)); }
+.cap3d:hover .cap3d-front { border-color: var(--volt); }
+.cap3d-i { font-size: 1.7rem; margin-bottom: 0.5rem; }
+.cap3d-front h4 { font-family: var(--font-display); font-weight: 800; font-size: 1.1rem; }
+.cap3d-hint { margin-top: auto; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--volt); }
+.cap3d-back { background: linear-gradient(180deg, rgba(155,214,47,.10), var(--surface)); border-color: rgba(155,214,47,.4); transform: rotateY(180deg); }
+.cap3d-back p { color: var(--text); font-size: 0.92rem; line-height: 1.45; }
+
+/* Mapa · atmósfera móvil + tilt 3D + vida */
+#mapTilt { transition: transform .25s ease-out; transform-style: preserve-3d; }
+.map-atmos { position: absolute; width: 70%; height: 70%; left: 8%; top: 6%; border-radius: 50%; background: radial-gradient(circle at 50% 50%, rgba(155,214,47,.16), transparent 65%); filter: blur(28px); pointer-events: none; animation: atmos 16s ease-in-out infinite alternate; z-index: 0; }
+.map-atmos2 { left: 40%; top: 30%; width: 55%; height: 55%; background: radial-gradient(circle at 50% 50%, rgba(91,160,23,.16), transparent 65%); animation-duration: 22s; animation-direction: alternate-reverse; }
+@keyframes atmos { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(10%,-8%) scale(1.18); } }
+.mx-silhouette { fill: url(#mxFill); stroke: rgba(155,214,47,.4); stroke-width: 1.6; filter: drop-shadow(0 0 16px rgba(155,214,47,.25)); animation: mxbreathe 5s ease-in-out infinite; transform-origin: center; }
+.mx-baja { fill: url(#mxFill); stroke: rgba(155,214,47,.4); stroke-width: 1.6; animation: mxbreathe 5s ease-in-out infinite; transform-origin: center; }
+@keyframes mxbreathe { 0%,100% { filter: drop-shadow(0 0 12px rgba(155,214,47,.2)); } 50% { filter: drop-shadow(0 0 26px rgba(155,214,47,.5)); } }
+
+/* Newsletter */
+.news-ticker { overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 0.8rem 0; margin: 0 0 2.4rem; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.news-ticker-track { display: flex; gap: 3rem; width: max-content; animation: marquee 60s linear infinite; }
+.news-ticker-track span { font-family: var(--font-mono); font-size: 0.82rem; color: var(--muted); white-space: nowrap; }
+.news-ticker-track span::before { content: "\25B8 "; color: var(--volt); }
+.news-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 1rem; }
+.news-card { display: flex; flex-direction: column; gap: 0.5rem; padding: 1.2rem 1.3rem; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; transition: border-color .3s, transform .3s; }
+.news-card:hover { border-color: var(--volt); transform: translateY(-3px); }
+.news-src { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--volt); }
+.news-title { font-family: var(--font-display); font-weight: 700; font-size: 1.02rem; line-height: 1.3; color: var(--text); }
+.news-date { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); margin-top: auto; }
+.news-loading { grid-column: 1 / -1; text-align: center; color: var(--muted); padding: 2.5rem 0; font-family: var(--font-mono); font-size: 0.9rem; }
+.news-foot { margin-top: 1.6rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--steel); text-align: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  .founders-track, .news-ticker-track, .map-atmos, .mx-silhouette, .mx-baja, .hero-flux { animation: none !important; }
+  .cap3d-inner { transition: none; }
+}

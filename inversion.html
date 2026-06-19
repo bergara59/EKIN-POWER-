@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Behind the Meter · EKIN POWER</title>
+  <meta name="description" content="Behind the Meter: generación y almacenamiento detrás del medidor. Solar, BESS, peak shaving, respaldo, arbitraje tarifario y PPA privado. Donde la energía se vuelve activo." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <header class="nav on-dark" id="top">
+    <a class="brand brand--nav" href="index.html" aria-label="EKIN POWER — inicio">
+      <span class="logo-word">e<svg class="logo-k" viewBox="0 0 128 140" aria-hidden="true"><defs><linearGradient id="kgNavM" x1="0" y1="140" x2="0" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2f6e00"/><stop offset=".55" stop-color="#5ba017"/><stop offset="1" stop-color="#86c93a"/></linearGradient><linearGradient id="kgNavT" x1="0" y1="84" x2="0" y2="20" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6fb023"/><stop offset="1" stop-color="#f3fae7"/></linearGradient></defs><polygon points="20,132 44,132 60,40 36,40" fill="url(#kgNavM)"/><polygon points="48,96 70,96 96,132 74,132" fill="url(#kgNavM)"/><polygon points="50,96 72,96 92,66 70,66" fill="url(#kgNavM)"/><polygon points="74,84 96,84 116,28 94,28" fill="url(#kgNavT)"/></svg>in</span><span class="logo-power">POWER</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#soluciones" class="nav-top">Soluciones</a>
+      <a href="index.html#casos" class="nav-top">Casos</a>
+      <div class="nav-drop" id="navDrop">
+        <button type="button" class="nav-top nav-drop-btn" id="navDropBtn" aria-expanded="false" aria-haspopup="true">Explorar <i>▾</i></button>
+        <div class="nav-menu" role="menu">
+          <a href="inversion.html" role="menuitem">Behind the Meter</a>
+          <a href="software.html" role="menuitem">Software propio</a>
+          <a href="sectores.html" role="menuitem">Mapa de México</a>
+          <a href="porque.html" role="menuitem">Por qué EKIN</a>
+          <a href="noticias.html" role="menuitem">Newsletter</a>
+        </div>
+      </div>
+      <a href="index.html#contacto" class="nav-cta">Agenda una reunión</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section inversion on-dark" id="inversion">
+      <div class="section-head reveal">
+        <p class="section-kicker">Behind the Meter</p>
+        <h2 class="section-title">Donde la energía se vuelve <em>activo</em>.</h2>
+        <p class="section-sub">Generación y almacenamiento detrás del medidor. Toca cada paso o déjalo correr.</p>
+      </div>
+
+      <div class="btm-stage reveal" id="btmStage">
+        <div class="btm-rail" id="btmRail" role="tablist" aria-label="Flujo Behind the Meter">
+          <button class="btm-node is-active" data-i="0" data-icon="bolt" data-h="Tu energía cuesta cara" data-p="Tu hotel o tu planta paga cada kWh a precio de mercado, mes tras mes." aria-label="Paso 1">1</button>
+          <button class="btm-node" data-i="1" data-icon="scan" data-h="Miramos tus números" data-p="Analizamos tu factura y tu curva de consumo para ver dónde se va tu dinero." aria-label="Paso 2">2</button>
+          <button class="btm-node" data-i="2" data-icon="sun" data-h="Diseñamos tu solución" data-p="Solar y baterías (BESS) dimensionadas a tu medida, no de catálogo." aria-label="Paso 3">3</button>
+          <button class="btm-node" data-i="3" data-icon="wallet" data-h="Eliges cómo financiarlo" data-p="Compra, leasing, PPA o inversión de terceros: el esquema que más te convenga." aria-label="Paso 4">4</button>
+          <button class="btm-node" data-i="4" data-icon="trend" data-h="Empiezas a ahorrar" data-p="Tu factura baja desde el arranque y tu proyecto genera retorno." aria-label="Paso 5">5</button>
+          <button class="btm-node" data-i="5" data-icon="sat" data-h="Tú controlas, nosotros operamos" data-p="Medimos, mantenemos y garantizamos el desempeño." aria-label="Paso 6">6</button>
+        </div>
+        <div class="btm-screen">
+          <div class="btm-screen-bar"><span class="term-dot"></span><span>EKIN · FLUJO DE VALOR</span><span class="btm-screen-step" id="btmStepLbl">01 / 06</span></div>
+          <div class="btm-card" id="btmCard">
+            <div class="btm-card-icon" id="btmIcon" aria-hidden="true"></div>
+            <div class="btm-card-body">
+              <span class="btm-card-i" id="btmIdx">01</span>
+              <h3 class="btm-card-h" id="btmH">Tu energía cuesta cara</h3>
+              <p class="btm-card-p" id="btmP">Tu hotel o tu planta paga cada kWh a precio de mercado, mes tras mes.</p>
+            </div>
+          </div>
+          <div class="btm-progress" aria-hidden="true"><i id="btmProg"></i></div>
+        </div>
+      </div>
+
+      <p class="cap-hint reveal">Toca cada capacidad para saber más ▾</p>
+      <div class="cap3d-grid reveal">
+        <button class="cap3d" type="button"><div class="cap3d-inner">
+          <div class="cap3d-face cap3d-front"><span class="cap3d-i">☀</span><h4>Solar onsite</h4><span class="cap3d-hint">+ info</span></div>
+          <div class="cap3d-face cap3d-back"><p>Generación en tu propio techo o terreno. Bajas tu kWh promedio y te proteges del precio de mercado.</p></div>
+        </div></button>
+        <button class="cap3d" type="button"><div class="cap3d-inner">
+          <div class="cap3d-face cap3d-front"><span class="cap3d-i">🔋</span><h4>BESS</h4><span class="cap3d-hint">+ info</span></div>
+          <div class="cap3d-face cap3d-back"><p>Baterías que almacenan energía barata y la entregan cuando cuesta cara. Recortan picos y respaldan tu operación.</p></div>
+        </div></button>
+        <button class="cap3d" type="button"><div class="cap3d-inner">
+          <div class="cap3d-face cap3d-front"><span class="cap3d-i">⚡</span><h4>Peak shaving</h4><span class="cap3d-hint">+ info</span></div>
+          <div class="cap3d-face cap3d-back"><p>Reducimos tu demanda máxima con BESS. El cargo por demanda suele ser de los más caros de tu factura.</p></div>
+        </div></button>
+        <button class="cap3d" type="button"><div class="cap3d-inner">
+          <div class="cap3d-face cap3d-front"><span class="cap3d-i">🛡</span><h4>Respaldo</h4><span class="cap3d-hint">+ info</span></div>
+          <div class="cap3d-face cap3d-back"><p>Continuidad ante cortes de red, sin depender de diésel. Crítico para hoteles, hospitales y procesos.</p></div>
+        </div></button>
+        <button class="cap3d" type="button"><div class="cap3d-inner">
+          <div class="cap3d-face cap3d-front"><span class="cap3d-i">📈</span><h4>Arbitraje tarifario</h4><span class="cap3d-hint">+ info</span></div>
+          <div class="cap3d-face cap3d-back"><p>Cargas energía cuando es barata y la usas en hora punta. Tu factura baja sin cambiar tu operación.</p></div>
+        </div></button>
+        <button class="cap3d" type="button"><div class="cap3d-inner">
+          <div class="cap3d-face cap3d-front"><span class="cap3d-i">📄</span><h4>PPA privado</h4><span class="cap3d-hint">+ info</span></div>
+          <div class="cap3d-face cap3d-back"><p>Compras energía a precio fijo a largo plazo, sin CAPEX. Previsibilidad total para tu presupuesto.</p></div>
+        </div></button>
+      </div>
+
+      <div class="btm-cta reveal"><a href="index.html#contacto" class="btn btn-primary">Evaluar un proyecto</a></div>
+    </section>
+  </main>
+
+  <footer class="footer on-dark">
+    <div class="footer-top">
+      <div class="footer-brand-block">
+        <span class="brand" aria-label="EKIN POWER">
+          <span class="logo-word">e<svg class="logo-k" viewBox="0 0 128 140" aria-hidden="true"><defs><linearGradient id="kgFootM" x1="0" y1="140" x2="0" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2f6e00"/><stop offset=".55" stop-color="#5ba017"/><stop offset="1" stop-color="#86c93a"/></linearGradient><linearGradient id="kgFootT" x1="0" y1="84" x2="0" y2="20" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6fb023"/><stop offset="1" stop-color="#f3fae7"/></linearGradient></defs><polygon points="20,132 44,132 60,40 36,40" fill="url(#kgFootM)"/><polygon points="48,96 70,96 96,132 74,132" fill="url(#kgFootM)"/><polygon points="50,96 72,96 92,66 70,66" fill="url(#kgFootM)"/><polygon points="74,84 96,84 116,28 94,28" fill="url(#kgFootT)"/></svg>in</span><span class="logo-power">POWER</span>
+        </span>
+        <p class="footer-tagline">Convertimos la energía en ventaja competitiva.</p>
+      </div>
+      <nav class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="porque.html">Por qué EKIN</a>
+        <a href="noticias.html">Newsletter</a>
+        <a href="mailto:contactekinpower@gmail.com">contactekinpower@gmail.com</a>
+        <a href="https://wa.me/525643647693" target="_blank" rel="noopener">WhatsApp</a>
+      </nav>
+    </div>
+    <p class="footer-note">© <span id="year"></span> EKIN POWER · Convertimos la energía en ventaja competitiva.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

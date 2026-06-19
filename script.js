@@ -728,3 +728,136 @@ const _reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (dock.classList.contains("is-open") && !dock.contains(e.target)) setOpen(false);
   });
 })();
+
+/* ============================================================
+   REDISEÑO v4 · interacciones
+   ============================================================ */
+
+/* Nav dropdown "Explorar" */
+(function () {
+  const drop = document.getElementById("navDrop");
+  if (!drop) return;
+  const btn = document.getElementById("navDropBtn");
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const open = drop.classList.toggle("open");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  document.addEventListener("click", (e) => {
+    if (!drop.contains(e.target)) { drop.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); }
+  });
+})();
+
+/* Tarjetas de capacidad 3D (flip al click) */
+(function () {
+  document.querySelectorAll(".cap3d").forEach((c) => {
+    c.addEventListener("click", () => c.classList.toggle("is-flipped"));
+  });
+})();
+
+/* Hero · gráfico fluctuante (línea viva tipo mercado) */
+(function () {
+  const cv = document.getElementById("heroFlux");
+  if (!cv) return;
+  const ctx = cv.getContext("2d");
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let w = 0, h = 0;
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = cv.clientWidth; h = cv.clientHeight;
+    cv.width = w * dpr; cv.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  const N = 90;
+  const data = new Array(N).fill(0.5);
+  function step() {
+    data.shift();
+    let v = data[data.length - 1] + (Math.random() - 0.5) * 0.13;
+    v = Math.max(0.18, Math.min(0.82, v));
+    data.push(v);
+  }
+  function draw() {
+    if (!w) return;
+    ctx.clearRect(0, 0, w, h);
+    const pts = data.map((v, i) => [(i / (N - 1)) * w, h - v * h]);
+    ctx.beginPath();
+    ctx.moveTo(0, h);
+    pts.forEach((p) => ctx.lineTo(p[0], p[1]));
+    ctx.lineTo(w, h); ctx.closePath();
+    const g = ctx.createLinearGradient(0, 0, 0, h);
+    g.addColorStop(0, "rgba(155,214,47,0.12)");
+    g.addColorStop(1, "rgba(155,214,47,0)");
+    ctx.fillStyle = g; ctx.fill();
+    ctx.beginPath();
+    pts.forEach((p, i) => (i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1])));
+    ctx.strokeStyle = "rgba(155,214,47,0.5)"; ctx.lineWidth = 1.5; ctx.stroke();
+  }
+  resize();
+  window.addEventListener("resize", resize);
+  if (reduced) { draw(); return; }
+  let acc = 0, last = 0;
+  function loop(t) {
+    if (!last) last = t;
+    acc += t - last; last = t;
+    if (acc > 90) { step(); acc = 0; }
+    draw();
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+
+/* Mapa · tilt 3D suave con el ratón */
+(function () {
+  const tilt = document.getElementById("mapTilt");
+  if (!tilt) return;
+  if (!window.matchMedia("(pointer:fine)").matches) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  tilt.addEventListener("mousemove", (e) => {
+    const r = tilt.getBoundingClientRect();
+    const px = (e.clientX - r.left) / r.width - 0.5;
+    const py = (e.clientY - r.top) / r.height - 0.5;
+    tilt.style.transform = `perspective(1000px) rotateY(${px * 7}deg) rotateX(${-py * 7}deg)`;
+  });
+  tilt.addEventListener("mouseleave", () => { tilt.style.transform = ""; });
+})();
+
+/* Newsletter · titulares del sector (vía /api/news) */
+(function () {
+  const list = document.getElementById("newsList");
+  if (!list) return;
+  const ticker = document.getElementById("newsTicker");
+  const foot = document.getElementById("newsFoot");
+  const fmt = (d) => { if (!d) return ""; const t = new Date(d); return isNaN(t) ? "" : t.toLocaleDateString("es-MX", { day: "2-digit", month: "short" }); };
+  fetch("/api/news")
+    .then((r) => r.json())
+    .then((data) => {
+      const items = (data && data.items) || [];
+      if (!items.length) {
+        list.innerHTML = '<div class="news-loading">No pudimos cargar titulares ahora mismo. Vuelve en un rato o escríbenos.</div>';
+        return;
+      }
+      list.innerHTML = "";
+      items.forEach((it) => {
+        const a = document.createElement("a");
+        a.className = "news-card"; a.href = it.link; a.target = "_blank"; a.rel = "noopener";
+        const s = document.createElement("span"); s.className = "news-src"; s.textContent = it.source || "Fuente";
+        const t = document.createElement("span"); t.className = "news-title"; t.textContent = it.title;
+        const d = document.createElement("span"); d.className = "news-date"; d.textContent = fmt(it.date);
+        a.append(s, t, d);
+        list.appendChild(a);
+      });
+      if (ticker) {
+        ticker.innerHTML = "";
+        const heads = items.slice(0, 10);
+        [...heads, ...heads].forEach((it) => {
+          const sp = document.createElement("span");
+          sp.textContent = it.title;
+          ticker.appendChild(sp);
+        });
+      }
+      if (foot && data.updated) foot.textContent = "Actualizado: " + new Date(data.updated).toLocaleString("es-MX");
+    })
+    .catch(() => {
+      list.innerHTML = '<div class="news-loading">No pudimos cargar titulares ahora mismo. Vuelve en un rato o escríbenos.</div>';
+    });
+})();
