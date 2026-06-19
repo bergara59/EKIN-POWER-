@@ -451,11 +451,14 @@ spyTargets.forEach((t) => spyObserver.observe(t));
 const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function animateCount(el) {
-  const target = parseInt(el.dataset.count, 10);
+  const raw = parseFloat(el.dataset.count);
+  const decimals = parseInt(el.dataset.decimal || "0", 10);
   const prefix = el.dataset.prefix || "";
   const suffix = el.dataset.suffix || "";
+  const target = decimals > 0 ? raw / Math.pow(10, decimals) : raw;
+  const fmt = (v) => prefix + v.toFixed(decimals) + suffix;
   if (prefersReduced) {
-    el.textContent = prefix + target + suffix;
+    el.textContent = fmt(target);
     return;
   }
   const duration = 1400;
@@ -463,7 +466,7 @@ function animateCount(el) {
   function tick(now) {
     const p = Math.min((now - start) / duration, 1);
     const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
-    el.textContent = prefix + Math.round(eased * target) + suffix;
+    el.textContent = fmt(eased * target);
     if (p < 1) requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
@@ -564,10 +567,38 @@ const _reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const mrPain = document.getElementById("mrPain");
   const mrEkin = document.getElementById("mrEkin");
   const mrMetric = document.getElementById("mrMetric");
+  const linesGroup = document.getElementById("mapLines");
+  const SVGNS = "http://www.w3.org/2000/svg";
+
+  function nodeCenter(id) {
+    const c = svg.querySelector("#n-" + id + " circle");
+    return c ? { x: +c.getAttribute("cx"), y: +c.getAttribute("cy") } : null;
+  }
+
+  function drawLines(ids) {
+    if (!linesGroup) return;
+    linesGroup.innerHTML = "";
+    // Hub = nodo central (CDMX) o el primero disponible
+    const hubId = ids.includes("cdmx") ? "cdmx" : ids[0];
+    const hub = nodeCenter(hubId);
+    if (!hub) return;
+    ids.forEach((id) => {
+      if (id === hubId) return;
+      const p = nodeCenter(id);
+      if (!p) return;
+      const ln = document.createElementNS(SVGNS, "line");
+      ln.setAttribute("x1", hub.x); ln.setAttribute("y1", hub.y);
+      ln.setAttribute("x2", p.x); ln.setAttribute("y2", p.y);
+      ln.setAttribute("class", "map-line");
+      linesGroup.appendChild(ln);
+    });
+  }
+
   function activate(chip) {
     tabs.forEach((t) => t.classList.toggle("is-active", t === chip));
     const ids = chip.dataset.nodes.split(" ");
     svg.querySelectorAll(".mnode").forEach((g) => g.classList.toggle("on", ids.includes(g.id.replace("n-", ""))));
+    drawLines(ids);
     mrTitle.textContent = chip.dataset.title;
     mrPain.textContent = chip.dataset.pain;
     mrEkin.textContent = chip.dataset.ekin;

@@ -1,63 +1,44 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--
   ============================================================
-  EKIN POWER — Landing de soluciones energéticas
+  EKIN POWER — Energy Investment Firm
   ============================================================
-  Cómo personalizar (búscalos con Ctrl+F):
-   1. Nombre de la marca: busca "EKIN POWER" / "EKIN".
-   2. Textos: están en español, cámbialos aquí mismo.
-   3. Correo / WhatsApp: busca "CONTACTO" más abajo.
-   4. Colores y tipografías: en styles.css (variables de arriba).
+   1. Marca: busca "EKIN POWER" / "EKIN".
+   2. Textos: en español, edítalos aquí.
+   3. Correo / WhatsApp: busca "contacto" / "wa.me".
+   4. Colores y tipografías: en styles.css (variables :root).
   ============================================================
 -->
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EKIN POWER · Soluciones Energéticas, Solar y BESS</title>
-  <meta name="description" content="EKIN POWER: soluciones energéticas para industria y comercio. Operación y mantenimiento, generación solar, almacenamiento BESS y modelos de financiamiento sin inversión inicial." />
+  <title>EKIN POWER · Inversión y eficiencia energética para grandes consumidores</title>
+  <meta name="description" content="EKIN POWER convierte la energía en ventaja competitiva. Ingeniería energética + análisis financiero + estructuración de inversión para industria, hoteles y fondos: diagnóstico, optimización de costos, due diligence técnica y soluciones Behind the Meter (Solar + BESS)." />
 
-  <!-- Ícono de la pestaña (favicon) -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
-  <!-- Vista previa al compartir el enlace (WhatsApp, redes, etc.) -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="EKIN POWER · Soluciones Energéticas, Solar y BESS" />
-  <meta property="og:description" content="Reducimos tu factura eléctrica con operación y mantenimiento, generación solar y almacenamiento BESS. Hasta 35% de ahorro." />
+  <meta property="og:title" content="EKIN POWER · Convertimos la energía en ventaja competitiva" />
+  <meta property="og:description" content="Reducimos el costo energético de activos industriales y hoteleros con estrategia técnica y financiera. Menos OPEX, más EBITDA, mejor valuación." />
   <meta property="og:url" content="https://www.ekinpower.com" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="canonical" href="https://www.ekinpower.com" />
 
-  <!-- Datos estructurados para Google: la empresa -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "EKIN POWER",
-    "description": "Soluciones energéticas para industria y comercio: operación y mantenimiento, generación solar y almacenamiento BESS.",
+    "description": "Firma de ingeniería energética y estructuración de inversión para grandes consumidores: diagnóstico, optimización de costos, due diligence técnica y soluciones Behind the Meter (Solar + BESS).",
     "url": "https://www.ekinpower.com",
     "email": "contactekinpower@gmail.com",
     "telephone": "+525643647693",
     "areaServed": "MX",
-    "knowsAbout": ["Eficiencia energética", "Generación solar", "BESS", "Operación y mantenimiento", "Modelos ESCO"]
+    "knowsAbout": ["Eficiencia energética", "Behind the Meter", "Generación solar", "BESS", "Due diligence técnica", "Estructuración de inversión energética", "Peak shaving", "PPA"]
   }
   </script>
 
-  <!-- Datos estructurados: preguntas frecuentes (rich results) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      { "@type": "Question", "name": "¿Cuánto puedo ahorrar en mi factura eléctrica?", "acceptedAnswer": { "@type": "Answer", "text": "Depende de tu consumo y tarifa, pero nuestros proyectos suelen lograr hasta un 35% de reducción." } },
-      { "@type": "Question", "name": "¿Qué es un sistema BESS?", "acceptedAnswer": { "@type": "Answer", "text": "Es un sistema de almacenamiento con baterías que guarda energía y la entrega cuando la necesitas: recorta picos, respalda tu operación y maximiza tu autoconsumo solar." } },
-      { "@type": "Question", "name": "¿Tengo que invertir mucho dinero al inicio?", "acceptedAnswer": { "@type": "Answer", "text": "No necesariamente. Ofrecemos compra directa (CAPEX), arrendamiento financiero e inversión cero (ESCO)." } },
-      { "@type": "Question", "name": "¿El diagnóstico tiene costo?", "acceptedAnswer": { "@type": "Answer", "text": "No. El diagnóstico inicial es gratuito y sin compromiso." } }
-    ]
-  }
-  </script>
-
-  <!-- Tipografías distintivas -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
@@ -67,23 +48,22 @@
 <body>
 
   <div class="grain" aria-hidden="true"></div>
+  <div class="aurora" aria-hidden="true"></div>
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
   <!-- ===================== NAVEGACIÓN ===================== -->
   <header class="nav on-dark" id="top">
-    <a class="brand" href="#top" aria-label="EKIN POWER — inicio">
+    <a class="brand brand--nav" href="#top" aria-label="EKIN POWER — inicio">
       <span class="logo-word">e<svg class="logo-k" viewBox="0 0 128 140" aria-hidden="true"><defs><linearGradient id="kgNavM" x1="0" y1="140" x2="0" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2f6e00"/><stop offset=".55" stop-color="#5ba017"/><stop offset="1" stop-color="#86c93a"/></linearGradient><linearGradient id="kgNavT" x1="0" y1="84" x2="0" y2="20" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6fb023"/><stop offset="1" stop-color="#f3fae7"/></linearGradient></defs><polygon points="20,132 44,132 60,40 36,40" fill="url(#kgNavM)"/><polygon points="48,96 70,96 96,132 74,132" fill="url(#kgNavM)"/><polygon points="50,96 72,96 92,66 70,66" fill="url(#kgNavM)"/><polygon points="74,84 96,84 116,28 94,28" fill="url(#kgNavT)"/></svg>in</span><span class="logo-power">POWER</span>
     </a>
-    <!-- Botón de menú para móvil -->
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-
     <nav class="nav-links" id="navLinks">
-      <a href="#lineas" class="nav-top">Líneas de negocio</a>
-      <a href="#btm" class="nav-top">Behind the Meter</a>
-      <a href="#clientes" class="nav-top">Para quién</a>
-      <a href="#porque" class="nav-top">Por qué EKIN</a>
+      <a href="#soluciones" class="nav-top">Soluciones</a>
+      <a href="#sectores" class="nav-top">Sectores</a>
+      <a href="#casos" class="nav-top">Casos</a>
+      <a href="#inversion" class="nav-top">Inversión</a>
       <a href="#contacto" class="nav-cta">Agenda una reunión</a>
     </nav>
   </header>
@@ -91,46 +71,29 @@
   <main>
     <!-- ===================== HERO ===================== -->
     <section class="hero on-dark">
-      <!-- Foto de fondo a pantalla completa con efecto de zoom lento -->
       <div class="hero-photo" aria-hidden="true">
-        <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=2400&q=72" alt="" fetchpriority="high" />
+        <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=2400&q=72" alt="" fetchpriority="high" />
       </div>
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-grid" aria-hidden="true"></div>
       <div class="hero-glow" aria-hidden="true"></div>
-      <div class="hero-orb" aria-hidden="true"></div>
 
       <div class="hero-inner">
         <div class="hero-copy">
-          <p class="eyebrow reveal">Energy Intelligence Firm · México</p>
+          <p class="eyebrow reveal">Energy Investment Firm · México</p>
           <h1 class="hero-title reveal" style="--d:1">
-            Energía más inteligente.
-            <span class="title-accent">Costos más bajos.</span>
+            Convertimos la energía
+            <span class="title-accent">en ventaja competitiva.</span>
           </h1>
           <p class="hero-sub reveal" style="--d:2">
-            Pagas menos por tu energía. Conviertes tu consumo en un activo financiero.
-            Decides tus inversiones con datos, no con corazonadas.
+            Reducimos el costo energético de activos industriales y hoteleros con estrategia
+            técnica y financiera. Menos OPEX. Más EBITDA. Mejor valuación.
           </p>
           <div class="hero-actions reveal" style="--d:3">
             <a href="#contacto" class="btn btn-primary">Agenda una reunión</a>
-            <a href="#lineas" class="btn btn-ghost">Ver líneas de negocio →</a>
+            <a href="#soluciones" class="btn btn-ghost">Ver soluciones →</a>
           </div>
-          <p class="hero-tags reveal" style="--d:4">Eficiencia energética &nbsp;|&nbsp; Solar + BESS &nbsp;|&nbsp; Due Diligence &nbsp;|&nbsp; Grandes Consumidores</p>
-
-          <div class="hero-stats reveal" style="--d:4">
-            <div class="stat">
-              <span class="stat-num" data-count="35" data-suffix="%">35%</span>
-              <span class="stat-label">reducción del recibo eléctrico</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num" data-count="100" data-suffix="%">100%</span>
-              <span class="stat-label">medido y verificado · IPMVP</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num">ESG</span>
-              <span class="stat-label">menos factura y menos huella</span>
-            </div>
-          </div>
+          <p class="hero-tags reveal" style="--d:4">Diagnóstico &nbsp;·&nbsp; Optimización de costos &nbsp;·&nbsp; Due Diligence &nbsp;·&nbsp; Behind the Meter</p>
         </div>
 
         <!-- Terminal de inteligencia energética -->
@@ -161,7 +124,7 @@
           <div class="term-grid">
             <div class="term-tile">
               <span class="tt-label">ENERGY COST INDEX</span>
-              <span class="tt-value"><span id="ttCost">142</span> <small>€/MWh</small></span>
+              <span class="tt-value"><span id="ttCost">142</span> <small>$/MWh</small></span>
               <svg class="tt-spark" viewBox="0 0 120 28" preserveAspectRatio="none"><polyline points="0,20 15,16 30,22 45,10 60,15 75,7 90,13 105,5 120,9"/></svg>
             </div>
             <div class="term-tile">
@@ -184,79 +147,93 @@
       </div>
     </section>
 
-    <!-- ===================== TICKER BURSÁTIL ===================== -->
+    <!-- ===================== TICKER ===================== -->
     <div class="ticker on-dark" aria-hidden="true">
-      <div class="ticker-track">
-        <span class="tk"><b>SAVINGS</b> <i class="up">▲ +35%</i></span>
-        <span class="tk"><b>BESS SOC</b> <i class="up">▲ 78%</i></span>
-        <span class="tk"><b>PEAK DEMAND</b> <i class="warn">▼ 1.42 MW</i></span>
-        <span class="tk"><b>TARIFF</b> <i class="up">▼ €142/MWh</i></span>
-        <span class="tk"><b>CO₂ AVOIDED</b> <i class="up">▲ 1.8 kt</i></span>
-        <span class="tk"><b>ROI</b> <i class="up">▲ 3.4x</i></span>
-        <span class="tk"><b>PAYBACK</b> <i class="up">▼ 22 mo</i></span>
-        <span class="tk"><b>LOAD FACTOR</b> <i class="up">▲ 0.74</i></span>
-        <span class="tk"><b>TREND</b> <i class="up">▲ BULLISH</i></span>
-        <!-- duplicado para bucle -->
-        <span class="tk"><b>SAVINGS</b> <i class="up">▲ +35%</i></span>
-        <span class="tk"><b>BESS SOC</b> <i class="up">▲ 78%</i></span>
-        <span class="tk"><b>PEAK DEMAND</b> <i class="warn">▼ 1.42 MW</i></span>
-        <span class="tk"><b>TARIFF</b> <i class="up">▼ €142/MWh</i></span>
-        <span class="tk"><b>CO₂ AVOIDED</b> <i class="up">▲ 1.8 kt</i></span>
-        <span class="tk"><b>ROI</b> <i class="up">▲ 3.4x</i></span>
-        <span class="tk"><b>PAYBACK</b> <i class="up">▼ 22 mo</i></span>
-        <span class="tk"><b>LOAD FACTOR</b> <i class="up">▲ 0.74</i></span>
-        <span class="tk"><b>TREND</b> <i class="up">▲ BULLISH</i></span>
+      <div class="ticker-track" id="tickerTrack">
+        <span class="tk"><b>SAVINGS</b> <i class="up">▲ hasta 35%</i></span>
+        <span class="tk"><b>PAYBACK</b> <i class="up">4–6 años</i></span>
+        <span class="tk"><b>BESS</b> <i class="up">peak shaving</i></span>
+        <span class="tk"><b>SOLAR</b> <i class="up">autoconsumo</i></span>
+        <span class="tk"><b>PPA</b> <i class="up">privado</i></span>
+        <span class="tk"><b>DUE DILIGENCE</b> <i class="up">técnica</i></span>
+        <span class="tk"><b>ARBITRAJE</b> <i class="up">tarifario</i></span>
+        <span class="tk"><b>IPMVP</b> <i class="up">100% medido</i></span>
       </div>
     </div>
 
-    <!-- ===================== BANDA EN VIVO (mercado energético) ===================== -->
-    <section class="livefeed on-dark" aria-label="Inteligencia energética en tiempo real">
-      <canvas class="livefeed-canvas" id="liveCanvas" aria-hidden="true"></canvas>
-      <div class="livefeed-overlay" aria-hidden="true"></div>
-      <div class="livefeed-content">
-        <span class="livefeed-kicker"><span class="term-dot"></span>EKIN LIVE · ENERGY MARKET</span>
-        <h2 class="livefeed-title">Leemos el mercado <em>en tiempo real</em>.</h2>
-        <p class="livefeed-sub">Precio horario, demanda, generación solar y estado de tus baterías — convertidos en decisiones.</p>
+    <!-- ===================== KPIs GIGANTES (laten) ===================== -->
+    <section class="megakpi on-dark" aria-label="Impacto">
+      <div class="megakpi-inner">
+        <div class="mk reveal">
+          <span class="mk-num beat" data-count="35" data-prefix="−" data-suffix="%">−35%</span>
+          <span class="mk-cap">costo energético<br>sin tocar tu operación</span>
+        </div>
+        <div class="mk reveal" style="--d:1">
+          <span class="mk-num beat" data-count="48" data-decimal="1" data-suffix=" años">4.8 años</span>
+          <span class="mk-cap">payback típico<br>Solar + BESS (caso modelo)</span>
+        </div>
+        <div class="mk reveal" style="--d:2">
+          <span class="mk-num beat" data-count="100" data-suffix="%">100%</span>
+          <span class="mk-cap">medido y verificado<br>estándar IPMVP</span>
+        </div>
       </div>
     </section>
 
-    <!-- ===================== LÍNEAS DE NEGOCIO ===================== -->
-    <section class="section lineas on-dark" id="lineas">
-      <div class="section-head reveal">
-        <p class="section-kicker">Lo que tú ganas</p>
-        <h2 class="section-title">Tres formas de <em>ganar</em> con tu energía.</h2>
+    <!-- ===================== PROPUESTA DE VALOR ÚNICA ===================== -->
+    <section class="section valor on-dark" id="quienes">
+      <div class="valor-inner reveal">
+        <p class="section-kicker">Por qué EKIN es distinto</p>
+        <h2 class="valor-title">No somos una consultora.<br><em>Somos tu área de energía completa.</em></h2>
+        <p class="valor-lead">
+          Combinamos ingeniería energética, análisis financiero y estructuración de inversión
+          para grandes consumidores. Analizamos tu consumo, diseñamos el ahorro vía Behind the Meter,
+          hacemos due diligence y operamos tu control energético como servicio.
+        </p>
+        <p class="valor-punch">Olvídate de todo. <strong>Lo hacemos por ti.</strong></p>
+        <p class="valor-soft">
+          <span class="valor-soft-k">Ventaja competitiva</span>
+          Software propio de diagnóstico, monitoreo, control y diseño de BESS. Por eso somos
+          más rápidos, más precisos y más competitivos que el resto.
+        </p>
       </div>
-      <div class="lineas-grid">
-        <article class="linea-card reveal" style="--d:1">
-          <span class="linea-num">01</span>
-          <span class="linea-tag">Eres gran consumidor</span>
-          <h3 class="linea-h">Pagas menos por tu energía</h3>
-          <p class="linea-p">Hotel, industria, supermercado o aeropuerto: bajas tu factura sin tocar tu operación.</p>
-          <p class="linea-line">Hoy pagas de más por tu energía. Eso cambia.</p>
+    </section>
+
+    <!-- ===================== SOLUCIONES (4 pilares) ===================== -->
+    <section class="section soluciones on-dark" id="soluciones">
+      <div class="section-head reveal">
+        <p class="section-kicker">Soluciones</p>
+        <h2 class="section-title">Cuatro formas de <em>ganar dinero</em> con tu energía.</h2>
+      </div>
+      <div class="pillar-grid">
+        <article class="pillar reveal" style="--d:1">
+          <span class="pillar-n">01</span>
+          <h3>Diagnóstico y Análisis</h3>
+          <p>Medimos dónde se va tu dinero. Datos, no suposiciones.</p>
         </article>
-        <article class="linea-card linea-card--hero reveal" style="--d:2">
-          <span class="linea-num">02</span>
-          <span class="linea-tag">Solar + BESS + Financiamiento</span>
-          <h3 class="linea-h">Tu consumo se vuelve un activo</h3>
-          <p class="linea-p">Solar y baterías a tu medida, con el esquema de financiamiento que mejor te encaje.</p>
-          <p class="linea-line">De gasto energético a activo financiero.</p>
+        <article class="pillar reveal" style="--d:2">
+          <span class="pillar-n">02</span>
+          <h3>Optimización de Costos Energéticos</h3>
+          <p>Bajamos tu factura sin afectar tu operación.</p>
         </article>
-        <article class="linea-card reveal" style="--d:3">
-          <span class="linea-num">03</span>
-          <span class="linea-tag">Eres inversionista</span>
-          <h3 class="linea-h">Inviertes con certeza</h3>
-          <p class="linea-p">Due diligence energética antes de comprar, financiar o refinanciar un activo.</p>
-          <p class="linea-line">Sabes dónde están los riesgos antes de firmar.</p>
+        <article class="pillar reveal" style="--d:3">
+          <span class="pillar-n">03</span>
+          <h3>Due Diligence Técnica</h3>
+          <p>Para invertir, comprar o financiar con certeza.</p>
+        </article>
+        <article class="pillar pillar--hero reveal" style="--d:4">
+          <span class="pillar-n">04</span>
+          <h3>Behind the Meter</h3>
+          <p>Solar + BESS: tu energía se convierte en activo.</p>
         </article>
       </div>
     </section>
 
-    <!-- ===================== BEHIND THE METER ===================== -->
-    <section class="section btm on-dark" id="btm">
+    <!-- ===================== INVERSIÓN · BEHIND THE METER ===================== -->
+    <section class="section inversion on-dark" id="inversion">
       <div class="section-head reveal">
-        <p class="section-kicker">Behind the Meter</p>
-        <h2 class="section-title">Tu energía deja de ser un gasto y empieza a <em>trabajar para ti</em>.</h2>
-        <p class="section-sub">Solar + baterías + el esquema de financiamiento que tú elijas. Toca cada paso o déjalo correr.</p>
+        <p class="section-kicker">Inversión · Behind the Meter</p>
+        <h2 class="section-title">Donde la energía se vuelve <em>activo</em>.</h2>
+        <p class="section-sub">Generación y almacenamiento detrás del medidor: ahorro, resiliencia y nuevos ingresos. Aquí está el negocio escalable.</p>
       </div>
 
       <div class="btm-stage reveal" id="btmStage">
@@ -282,119 +259,164 @@
         </div>
       </div>
 
+      <div class="cap-grid reveal">
+        <div class="cap"><span class="cap-i">☀</span><h4>Solar onsite</h4><p>Autoconsumo que baja tu kWh promedio.</p></div>
+        <div class="cap"><span class="cap-i">🔋</span><h4>BESS</h4><p>Baterías para recortar picos y respaldar.</p></div>
+        <div class="cap"><span class="cap-i">⚡</span><h4>Peak shaving</h4><p>Reduces el cargo por demanda máxima.</p></div>
+        <div class="cap"><span class="cap-i">🛡</span><h4>Respaldo</h4><p>Continuidad ante cortes, sin diésel.</p></div>
+        <div class="cap"><span class="cap-i">📈</span><h4>Arbitraje tarifario</h4><p>Cargas barato, descargas en hora punta.</p></div>
+        <div class="cap"><span class="cap-i">📄</span><h4>PPA privado</h4><p>Energía a precio fijo, sin CAPEX.</p></div>
+      </div>
+
       <p class="btm-punch reveal">No compras paneles. Compras <em>ahorro, resiliencia y control</em>.</p>
-      <div class="btm-cta reveal">
-        <a href="#calculadora" class="btn btn-primary">Calcular mi ahorro</a>
+      <div class="btm-cta reveal"><a href="#contacto" class="btn btn-primary">Evaluar un proyecto</a></div>
+    </section>
+
+    <!-- ===================== OPORTUNIDADES ===================== -->
+    <section class="section opps on-dark" id="oportunidades">
+      <div class="section-head reveal">
+        <p class="section-kicker">Oportunidades identificadas</p>
+        <h2 class="section-title">Dónde está el <em>valor</em> hoy.</h2>
+      </div>
+      <div class="opps-grid reveal">
+        <span class="opp">Behind the Meter</span>
+        <span class="opp">Repowering</span>
+        <span class="opp">PPA privado</span>
+        <span class="opp">BESS</span>
+        <span class="opp">Mercado eléctrico</span>
+        <span class="opp">Eficiencia industrial</span>
       </div>
     </section>
 
-    <!-- ===================== PARA QUIÉN ===================== -->
-    <section class="section clientes on-dark" id="clientes">
+    <!-- ===================== SOFTWARE PROPIO ===================== -->
+    <section class="section software on-dark" id="software">
+      <div class="software-grid">
+        <div class="software-copy reveal">
+          <p class="section-kicker">Nuestra ventaja</p>
+          <h2 class="section-title">Software propio.<br><em>Tu área de control energético, tercerizada.</em></h2>
+          <p class="section-sub">Diagnóstico, monitoreo, control y diseño de BESS en una sola plataforma. Operamos tu energía como servicio — tú ves resultados, no hojas de cálculo.</p>
+          <ul class="software-list">
+            <li>Diagnóstico automático de consumo y factura</li>
+            <li>Monitoreo y control en tiempo real</li>
+            <li>Diseño y dimensionamiento de BESS</li>
+            <li>Reporte de ahorro verificado (IPMVP)</li>
+          </ul>
+        </div>
+        <div class="platform reveal">
+          <div class="platform-bar"><span class="term-dot"></span><span>EKIN · CONTROL ROOM</span><span class="platform-live">● LIVE</span></div>
+          <div class="platform-curve">
+            <span class="pc-label">CURVA DE DEMANDA · 24H</span>
+            <svg viewBox="0 0 320 120" preserveAspectRatio="none" aria-hidden="true">
+              <polyline class="pc-base" points="0,95 30,92 60,88 90,70 120,55 150,40 180,35 210,48 240,62 270,80 300,90 320,93"/>
+              <polyline class="pc-opt" points="0,98 30,96 60,95 90,86 120,80 150,74 180,72 210,78 240,84 270,90 300,95 320,96"/>
+            </svg>
+            <div class="pc-legend"><span class="pc-l1">Sin optimizar</span><span class="pc-l2">Con EKIN</span></div>
+          </div>
+          <div class="platform-tiles">
+            <div class="pt"><span class="pt-k">DEMANDA</span><span class="pt-v">1.42 MW</span></div>
+            <div class="pt"><span class="pt-k">SOC BESS</span><span class="pt-v green">78%</span></div>
+            <div class="pt"><span class="pt-k">AHORRO MES</span><span class="pt-v green">▲ 31%</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SECTORES · MAPA DE MÉXICO ===================== -->
+    <section class="section sectores on-dark" id="sectores">
       <div class="section-head reveal">
-        <p class="section-kicker">Para quién</p>
-        <h2 class="section-title">Elige tu sector y mira <em>dónde encajas</em>.</h2>
+        <p class="section-kicker">Sectores</p>
+        <h2 class="section-title">México, leído por <em>consumo de energía</em>.</h2>
+        <p class="section-sub">Elige un sector y mira dónde está el potencial de ahorro.</p>
       </div>
 
       <div class="mapwrap reveal" id="mapwrap">
         <div class="map-tabs" id="mapTabs" role="tablist" aria-label="Sectores">
-          <button class="map-chip is-active" role="tab" data-nodes="cun cabo mer" data-title="Hoteles &amp; resorts" data-pain="Tu energía es uno de tus mayores costos por habitación." data-ekin="Solar + baterías que bajan tu costo por noche sin tocar la experiencia del huésped." data-metric="Ahorro típico 25–40%">Hoteles</button>
-          <button class="map-chip" role="tab" data-nodes="mty gdl cdmx" data-title="Industria &amp; manufactura" data-pain="Cada kWh entra directo en el costo de tu producto." data-ekin="Eficiencia + generación propia para proteger tu margen." data-metric="Ahorro típico 20–35%">Industria</button>
-          <button class="map-chip" role="tab" data-nodes="cdmx gdl mty ver" data-title="Supermercados &amp; retail" data-pain="Tu refrigeración no para nunca; tu factura tampoco." data-ekin="Gestión de demanda + solar para tu carga 24/7." data-metric="Ahorro típico 20–30%">Supermercados</button>
-          <button class="map-chip" role="tab" data-nodes="cdmx cun gdl mty tij" data-title="Aeropuertos &amp; operación crítica" data-pain="No puedes permitirte un corte de energía." data-ekin="Resiliencia con baterías y respaldo, sin sobrecostos." data-metric="Continuidad 24/7">Aeropuertos</button>
-          <button class="map-chip" role="tab" data-nodes="cdmx mty" data-title="Fondos e inversionistas" data-pain="Necesitas saber el riesgo antes de poner el capital." data-ekin="Due diligence energética independiente sobre el activo." data-metric="Decisiones con datos">Fondos</button>
-          <button class="map-chip" role="tab" data-nodes="tij mty gdl cdmx cabo ver mer cun" data-title="Desarrolladores energéticos" data-pain="Buscas proyectos sólidos y estructuras que cierren." data-ekin="Estructuramos y co-desarrollamos contigo, de punta a punta." data-metric="Cobertura nacional">Desarrolladores</button>
+          <button class="map-chip is-active" role="tab" data-nodes="cun cabo mer pto" data-title="Hoteles &amp; resorts" data-pain="La energía es uno de tus mayores costos por habitación." data-ekin="Solar + BESS que bajan tu costo por noche sin tocar la experiencia del huésped." data-metric="Ahorro típico 25–40%">Hoteles</button>
+          <button class="map-chip" role="tab" data-nodes="mty gdl cdmx baj" data-title="Industria &amp; manufactura" data-pain="Cada kWh entra directo en el costo de tu producto." data-ekin="Eficiencia + generación propia para proteger tu margen." data-metric="Ahorro típico 20–35%">Industria</button>
+          <button class="map-chip" role="tab" data-nodes="cdmx gdl mty ver pue" data-title="Retail &amp; supermercados" data-pain="Tu refrigeración no para nunca; tu factura tampoco." data-ekin="Gestión de demanda + solar para tu carga 24/7 multi-sede." data-metric="Ahorro típico 20–30%">Retail</button>
+          <button class="map-chip" role="tab" data-nodes="cdmx cun gdl mty tij" data-title="Aeropuertos &amp; crítico" data-pain="No puedes permitirte un corte de energía." data-ekin="Resiliencia con baterías y respaldo, sin sobrecostos." data-metric="Continuidad 24/7">Aeropuertos</button>
+          <button class="map-chip" role="tab" data-nodes="cdmx mty baj" data-title="Fondos e inversionistas" data-pain="Necesitas saber el riesgo antes de poner el capital." data-ekin="Due diligence energética independiente sobre el activo." data-metric="Decisiones con datos">Fondos</button>
         </div>
 
         <div class="map-stage">
-          <svg class="map-svg" id="mxMap" viewBox="0 0 920 560" role="img" aria-label="Mapa de operaciones EKIN POWER en México">
-            <defs>
-              <pattern id="mgrid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M40 0H0V40" fill="none" stroke="rgba(155,214,47,.06)" stroke-width="1"/>
-              </pattern>
-            </defs>
-            <rect x="0" y="0" width="920" height="560" fill="url(#mgrid)"/>
-            <g class="map-lines" stroke="rgba(155,214,47,.16)" stroke-width="1.4" fill="none">
-              <line x1="80" y1="90" x2="560" y2="150"/>
-              <line x1="80" y1="90" x2="180" y2="330"/>
-              <line x1="180" y1="330" x2="360" y2="310"/>
-              <line x1="360" y1="310" x2="480" y2="350"/>
-              <line x1="480" y1="350" x2="560" y2="150"/>
-              <line x1="360" y1="310" x2="560" y2="150"/>
-              <line x1="480" y1="350" x2="600" y2="360"/>
-              <line x1="600" y1="360" x2="800" y2="260"/>
-              <line x1="800" y1="260" x2="850" y2="300"/>
-              <line x1="560" y1="150" x2="800" y2="260"/>
-            </g>
-            <g class="mnode" id="n-tij"><circle cx="80" cy="90" r="7"/><text x="80" y="74">Tijuana</text></g>
-            <g class="mnode" id="n-mty"><circle cx="560" cy="150" r="7"/><text x="560" y="134">Monterrey</text></g>
-            <g class="mnode" id="n-gdl"><circle cx="360" cy="310" r="7"/><text x="360" y="294">Guadalajara</text></g>
-            <g class="mnode" id="n-cdmx"><circle cx="480" cy="350" r="7"/><text x="480" y="334">CDMX</text></g>
-            <g class="mnode" id="n-cabo"><circle cx="180" cy="330" r="7"/><text x="180" y="314">Los Cabos</text></g>
-            <g class="mnode" id="n-ver"><circle cx="600" cy="360" r="7"/><text x="600" y="384">Veracruz</text></g>
-            <g class="mnode" id="n-mer"><circle cx="800" cy="260" r="7"/><text x="800" y="244">Mérida</text></g>
-            <g class="mnode" id="n-cun"><circle cx="850" cy="300" r="7"/><text x="850" y="324">Cancún</text></g>
-          </svg>
+          <div class="map-svg-wrap">
+            <svg class="map-svg" id="mxMap" viewBox="0 0 920 600" role="img" aria-label="Mapa de operaciones EKIN POWER en México">
+              <defs>
+                <radialGradient id="mxGlow" cx="50%" cy="45%" r="60%">
+                  <stop offset="0" stop-color="rgba(155,214,47,.10)"/>
+                  <stop offset="100%" stop-color="rgba(155,214,47,0)"/>
+                </radialGradient>
+              </defs>
+              <rect x="0" y="0" width="920" height="600" fill="url(#mxGlow)"/>
+              <!-- Silueta estilizada de México -->
+              <path class="mx-silhouette" d="M70,150 L150,120 L210,140 L250,135 L300,150 L360,150 L430,140 L520,150 L600,160 L640,150 L690,165 L740,175 L720,205 L755,230 L770,210 L800,215 L820,250 L840,290 L815,300 L835,330 L805,345 L770,330 L740,360 L690,355 L660,330 L640,300 L600,300 L560,320 L520,360 L480,420 L440,470 L410,520 L380,540 L360,500 L340,440 L320,400 L290,380 L250,350 L210,330 L180,310 L150,300 L150,260 L120,240 L150,210 L120,190 L70,170 Z"/>
+              <path class="mx-baja" d="M70,150 L120,190 L150,210 L120,240 L150,260 L150,300 L120,300 L95,250 L78,200 Z"/>
+              <g class="map-lines" id="mapLines"></g>
+              <g class="mnode" id="n-tij"><circle cx="95" cy="155" r="6"/><text x="95" y="140">Tijuana</text></g>
+              <g class="mnode" id="n-cabo"><circle cx="150" cy="285" r="6"/><text x="150" y="305">Los Cabos</text></g>
+              <g class="mnode" id="n-mty"><circle cx="560" cy="175" r="6"/><text x="560" y="160">Monterrey</text></g>
+              <g class="mnode" id="n-gdl"><circle cx="380" cy="300" r="6"/><text x="380" y="285">Guadalajara</text></g>
+              <g class="mnode" id="n-baj"><circle cx="455" cy="270" r="6"/><text x="455" y="255">Bajío</text></g>
+              <g class="mnode" id="n-cdmx"><circle cx="500" cy="330" r="6"/><text x="500" y="350">CDMX</text></g>
+              <g class="mnode" id="n-pue"><circle cx="545" cy="345" r="6"/><text x="560" y="365">Puebla</text></g>
+              <g class="mnode" id="n-ver"><circle cx="610" cy="320" r="6"/><text x="615" y="340">Veracruz</text></g>
+              <g class="mnode" id="n-mer"><circle cx="790" cy="250" r="6"/><text x="790" y="235">Mérida</text></g>
+              <g class="mnode" id="n-cun"><circle cx="835" cy="270" r="6"/><text x="835" y="300">Cancún</text></g>
+              <g class="mnode" id="n-pto"><circle cx="760" cy="300" r="6"/><text x="745" y="320">R. Maya</text></g>
+            </svg>
+            <span class="map-radar" aria-hidden="true"></span>
+          </div>
 
-          <div class="map-readout" id="mapReadout" data-state="idle">
+          <div class="map-readout" id="mapReadout">
             <div class="mr-bar"><span class="term-dot"></span><span>EKIN · SECTOR INTEL</span></div>
             <h3 class="mr-title" id="mrTitle">Hoteles &amp; resorts</h3>
-            <p class="mr-pain" id="mrPain">Tu energía es uno de tus mayores costos por habitación.</p>
-            <p class="mr-ekin" id="mrEkin">Solar + baterías que bajan tu costo por noche sin tocar la experiencia del huésped.</p>
+            <p class="mr-pain" id="mrPain">La energía es uno de tus mayores costos por habitación.</p>
+            <p class="mr-ekin" id="mrEkin">Solar + BESS que bajan tu costo por noche sin tocar la experiencia del huésped.</p>
             <span class="mr-metric" id="mrMetric">Ahorro típico 25–40%</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===================== MÉTODO EKIN ===================== -->
-    <section class="section metodo on-dark" id="metodo">
+    <!-- ===================== CASOS DE NEGOCIO ===================== -->
+    <section class="section casos on-dark" id="casos">
       <div class="section-head reveal">
-        <p class="section-kicker">Método EKIN</p>
-        <h2 class="section-title">Cómo lo hacemos <em>contigo</em>.</h2>
+        <p class="section-kicker">Casos modelo</p>
+        <h2 class="section-title">Números, <em>no conceptos</em>.</h2>
+        <p class="section-sub">Escenarios representativos basados en proyectos tipo. Tu caso real lo calculamos contigo.</p>
+      </div>
+      <div class="case-grid">
+        <article class="case reveal" style="--d:1">
+          <header class="case-h"><span class="case-tag">Hotel · Cancún</span></header>
+          <div class="case-rows">
+            <div class="case-row"><span>Consumo anual</span><b>15 GWh</b></div>
+            <div class="case-row"><span>Proyecto</span><b>Solar + BESS</b></div>
+            <div class="case-row case-row--hi"><span>Ahorro</span><b class="green">$14 M MXN/año</b></div>
+            <div class="case-row"><span>ROI</span><b>4.8 años</b></div>
+          </div>
+        </article>
+        <article class="case reveal" style="--d:2">
+          <header class="case-h"><span class="case-tag">Industria · Bajío</span></header>
+          <div class="case-rows">
+            <div class="case-row"><span>Consumo anual</span><b>42 GWh</b></div>
+            <div class="case-row"><span>Proyecto</span><b>Solar + Peak shaving</b></div>
+            <div class="case-row case-row--hi"><span>Ahorro</span><b class="green">$31 M MXN/año</b></div>
+            <div class="case-row"><span>ROI</span><b>3.9 años</b></div>
+          </div>
+        </article>
+        <article class="case reveal" style="--d:3">
+          <header class="case-h"><span class="case-tag">Retail · Nacional</span></header>
+          <div class="case-rows">
+            <div class="case-row"><span>Consumo anual</span><b>60 GWh</b></div>
+            <div class="case-row"><span>Proyecto</span><b>PPA + eficiencia</b></div>
+            <div class="case-row case-row--hi"><span>Ahorro</span><b class="green">$38 M MXN/año</b></div>
+            <div class="case-row"><span>ROI</span><b>sin CAPEX</b></div>
+          </div>
+        </article>
       </div>
 
-      <div class="metodo-vault reveal" id="metodoVault" data-open="false">
-        <button class="vault-trigger" id="vaultTrigger" aria-expanded="false" aria-controls="metodoSteps">
-          <span class="vault-pulse" aria-hidden="true"></span>
-          <span class="vault-label">
-            <span class="vault-h">5 pasos. Cero improvisación.</span>
-            <span class="vault-sub">De tu primera factura a resultados medidos.</span>
-          </span>
-          <span class="vault-cue" id="vaultCue">Pulsa para desplegar <i>▸</i></span>
-        </button>
-        <ol class="metodo-steps" id="metodoSteps" aria-hidden="true">
-          <li class="metodo-step" style="--s:0"><span class="metodo-n">01</span><h3>Diagnóstico</h3><p>Entendemos tu consumo, tu factura y tu operación.</p></li>
-          <li class="metodo-step" style="--s:1"><span class="metodo-n">02</span><h3>Oportunidad</h3><p>Te decimos dónde y cuánto puedes ahorrar.</p></li>
-          <li class="metodo-step" style="--s:2"><span class="metodo-n">03</span><h3>Modelo financiero</h3><p>Pones números: tu ROI, tu payback, tu flujo de caja.</p></li>
-          <li class="metodo-step" style="--s:3"><span class="metodo-n">04</span><h3>Estructuración</h3><p>Armamos tu solución y el financiamiento que elijas.</p></li>
-          <li class="metodo-step" style="--s:4"><span class="metodo-n">05</span><h3>Ejecución y acompañamiento</h3><p>Lo ejecutamos contigo, medimos y respondemos por los resultados.</p></li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ===================== POR QUÉ EKIN ===================== -->
-    <section class="section porque on-dark" id="porque">
-      <div class="section-head reveal">
-        <p class="section-kicker">Por qué EKIN POWER</p>
-        <h2 class="section-title">Experiencia energética real. <em>Visión financiera.</em> Ejecución práctica.</h2>
-      </div>
-      <ul class="porque-list">
-        <li class="reveal" style="--d:1">Tienes la energía y las finanzas en la misma mesa, no en dos despachos.</li>
-        <li class="reveal" style="--d:2">Eliges tu esquema: con o sin inversión inicial de tu parte.</li>
-        <li class="reveal" style="--d:3">Llegas a inversionistas que tú solo no alcanzarías.</li>
-        <li class="reveal" style="--d:4">Cada resultado tuyo se mide y se verifica bajo estándar IPMVP.</li>
-        <li class="reveal" style="--d:5">Te hablamos claro: el idioma de tu CFO y de tu director de operaciones.</li>
-      </ul>
-    </section>
-
-    <!-- ===================== CALCULADORA EXPRESS ===================== -->
-    <section class="section calc-sec on-dark" id="calculadora">
-      <div class="section-head reveal">
-        <p class="section-kicker">Calculadora express</p>
-        <h2 class="section-title">¿Cuánto estás <em>pagando de más</em>?</h2>
-        <p class="section-sub">Mueve tu factura, elige tu sector y míralo en segundos. Sin dejar tus datos.</p>
-      </div>
-      <div class="calc reveal">
+      <!-- Calculadora express -->
+      <div class="calc reveal" id="calcBlock">
         <div class="calc-inputs">
           <label class="calc-field">
             <span class="calc-lab">Tu factura eléctrica mensual</span>
@@ -415,7 +437,6 @@
           </label>
           <button class="btn btn-primary" id="calcBtn" type="button">Calcular mi ahorro ▸</button>
         </div>
-
         <div class="calc-screen" id="calcScreen" data-state="idle">
           <div class="calc-bar"><span class="term-dot"></span><span class="calc-bar-t">EKIN · SAVINGS ENGINE</span></div>
           <div class="calc-grid">
@@ -429,12 +450,52 @@
       </div>
     </section>
 
+    <!-- ===================== POR QUÉ EKIN ===================== -->
+    <section class="section porque on-dark" id="porque">
+      <div class="section-head reveal">
+        <p class="section-kicker">Por qué EKIN</p>
+        <h2 class="section-title">Cinco razones. <em>Nada de relleno.</em></h2>
+      </div>
+      <div class="why-grid">
+        <div class="why reveal" style="--d:1"><span class="why-n">01</span><h3>Ingeniería</h3><p>Diseño técnico real, no PowerPoint.</p></div>
+        <div class="why reveal" style="--d:2"><span class="why-n">02</span><h3>Finanzas</h3><p>ROI, payback y flujo de caja.</p></div>
+        <div class="why reveal" style="--d:3"><span class="why-n">03</span><h3>Ejecución</h3><p>De la idea a la operación.</p></div>
+        <div class="why reveal" style="--d:4"><span class="why-n">04</span><h3>Independencia</h3><p>Sin atarte a un fabricante.</p></div>
+        <div class="why reveal" style="--d:5"><span class="why-n">05</span><h3>Experiencia internacional</h3><p>Energía a escala industrial.</p></div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCIA / TRAYECTORIA ===================== -->
+    <section class="section experiencia on-dark" id="experiencia">
+      <div class="exp-inner reveal">
+        <p class="section-kicker">Experiencia que respalda</p>
+        <h2 class="exp-title">Trayectoria del equipo en proyectos energéticos de <em>escala industrial</em>.</h2>
+        <p class="exp-sub">De parques eólicos de cientos de MW a portafolios hoteleros e industriales multi-sede. Dirección y proyectos en compañías líderes del sector:</p>
+      </div>
+      <div class="exp-marquee reveal" aria-hidden="true">
+        <div class="exp-track" id="expTrack">
+          <span>SGS</span><span>Nordex</span><span>Acciona</span><span>Acciona Energía</span><span>Enel</span><span>Vestas</span><span>Sempra</span><span>Grupo México</span><span>Grupo Dragón</span><span>Walmart</span><span>Kino Energía</span><span>Gemex</span>
+          <span>SGS</span><span>Nordex</span><span>Acciona</span><span>Acciona Energía</span><span>Enel</span><span>Vestas</span><span>Sempra</span><span>Grupo México</span><span>Grupo Dragón</span><span>Walmart</span><span>Kino Energía</span><span>Gemex</span>
+        </div>
+      </div>
+      <p class="exp-note reveal">Experiencia profesional del equipo fundador. No implica relación comercial vigente de cada marca con EKIN POWER.</p>
+    </section>
+
+    <!-- ===================== URGENCIA ===================== -->
+    <section class="urgency on-dark" aria-label="Urgencia">
+      <div class="urgency-inner reveal">
+        <h2 class="urgency-h">Cada mes sin optimización energética es <em>flujo de caja perdido</em>.</h2>
+        <p class="urgency-sub">La transición energética es ahora. No en 2040.</p>
+        <a href="#contacto" class="btn btn-primary">Empieza por tu diagnóstico</a>
+      </div>
+    </section>
+
     <!-- ===================== CTA / CONTACTO ===================== -->
     <section class="section cta" id="contacto">
       <div class="cta-inner">
         <p class="section-kicker">Hablemos</p>
-        <h2 class="cta-title">Hablemos de tu <em>consumo energético</em>.</h2>
-        <p class="cta-sub">Una reunión basta para saber cuánto puedes ahorrar y cómo estructurarlo.</p>
+        <h2 class="cta-title">Necesitas una reunión con <em>nosotros</em>.</h2>
+        <p class="cta-sub">Una conversación basta para saber cuánto puedes ahorrar y cómo estructurarlo.</p>
 
         <form class="contact-form" action="https://formspree.io/f/mvznlezk" method="POST">
           <input type="hidden" name="_subject" value="Nueva solicitud · EKIN POWER" />
@@ -451,11 +512,6 @@
         </form>
 
         <div class="cta-actions">
-          <a href="mailto:contactekinpower@gmail.com?subject=Analizar%20mi%20consumo" class="btn btn-ghost">Analizar mi consumo</a>
-          <a href="mailto:contactekinpower@gmail.com?subject=Evaluar%20un%20proyecto%20BTM" class="btn btn-ghost">Evaluar un proyecto BTM</a>
-          <a href="mailto:contactekinpower@gmail.com?subject=Solicitar%20due%20diligence" class="btn btn-ghost">Solicitar due diligence</a>
-        </div>
-        <div class="cta-actions">
           <a href="mailto:contactekinpower@gmail.com" class="btn btn-ghost">contactekinpower@gmail.com</a>
           <a href="https://wa.me/525643647693" class="btn btn-ghost">WhatsApp</a>
         </div>
@@ -470,8 +526,8 @@
         <span class="brand" aria-label="EKIN POWER">
           <span class="logo-word">e<svg class="logo-k" viewBox="0 0 128 140" aria-hidden="true"><defs><linearGradient id="kgFootM" x1="0" y1="140" x2="0" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2f6e00"/><stop offset=".55" stop-color="#5ba017"/><stop offset="1" stop-color="#86c93a"/></linearGradient><linearGradient id="kgFootT" x1="0" y1="84" x2="0" y2="20" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6fb023"/><stop offset="1" stop-color="#f3fae7"/></linearGradient></defs><polygon points="20,132 44,132 60,40 36,40" fill="url(#kgFootM)"/><polygon points="48,96 70,96 96,132 74,132" fill="url(#kgFootM)"/><polygon points="50,96 72,96 92,66 70,66" fill="url(#kgFootM)"/><polygon points="74,84 96,84 116,28 94,28" fill="url(#kgFootT)"/></svg>in</span><span class="logo-power">POWER</span>
         </span>
-        <p class="footer-tagline">Energía más inteligente. Costos más bajos.</p>
-        <p class="footer-slogan">Ahorro energético · Behind the Meter · Due Diligence</p>
+        <p class="footer-tagline">Convertimos la energía en ventaja competitiva.</p>
+        <p class="footer-slogan">Diagnóstico · Optimización · Due Diligence · Behind the Meter</p>
       </div>
       <nav class="footer-links">
         <a href="mailto:contactekinpower@gmail.com">contactekinpower@gmail.com</a>
@@ -480,7 +536,7 @@
         <span class="footer-loc">México</span>
       </nav>
     </div>
-    <p class="footer-note">© <span id="year"></span> EKIN POWER · Energía más inteligente. Costos más bajos.</p>
+    <p class="footer-note">© <span id="year"></span> EKIN POWER · Convertimos la energía en ventaja competitiva.</p>
   </footer>
 
   <!-- EKIN Intelligence · copiloto energético-financiero -->
