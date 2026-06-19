@@ -75,7 +75,7 @@ export default async function handler(req, res) {
     if (!upstream.ok) {
       const detail = await upstream.text();
       console.error("Anthropic error", upstream.status, detail);
-      res.status(502).json({ error: "upstream" });
+      res.status(502).json({ error: "upstream", status: upstream.status, detail: detail.slice(0, 300) });
       return;
     }
 
@@ -89,6 +89,6 @@ export default async function handler(req, res) {
     res.status(200).json({ reply: reply || "…" });
   } catch (err) {
     console.error("chat handler error", err);
-    res.status(500).json({ error: "server" });
+    res.status(500).json({ error: "server", detail: String((err && err.message) || err) });
   }
 }
