@@ -28,9 +28,17 @@ export default async function handler(req, res) {
     return;
   }
 
-  const apiKey = process.env.ANTHROPIC_API_KEY;
+  const apiKey = (process.env.ANTHROPIC_API_KEY || "").trim();
   if (!apiKey) {
     res.status(500).json({ error: "not_configured" });
+    return;
+  }
+  // La clave debe ser ASCII pura. Un "—" (autocorrección de guiones) la rompe.
+  if (/[^\x00-\x7F]/.test(apiKey)) {
+    res.status(500).json({
+      error: "bad_key",
+      detail: "ANTHROPIC_API_KEY contains a non-ASCII character (likely a “—” em dash from paste autocorrect). Re-paste the key as plain text.",
+    });
     return;
   }
 
