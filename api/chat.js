@@ -35,10 +35,8 @@ export default async function handler(req, res) {
   }
   // La clave debe ser ASCII pura. Un "—" (autocorrección de guiones) la rompe.
   if (/[^\x00-\x7F]/.test(apiKey)) {
-    res.status(500).json({
-      error: "bad_key",
-      detail: "ANTHROPIC_API_KEY contains a non-ASCII character (likely a “—” em dash from paste autocorrect). Re-paste the key as plain text.",
-    });
+    console.error("ANTHROPIC_API_KEY contains a non-ASCII character (likely an em dash from paste autocorrect).");
+    res.status(500).json({ error: "bad_key" });
     return;
   }
 
@@ -83,7 +81,7 @@ export default async function handler(req, res) {
     if (!upstream.ok) {
       const detail = await upstream.text();
       console.error("Anthropic error", upstream.status, detail);
-      res.status(502).json({ error: "upstream", status: upstream.status, detail: detail.slice(0, 300) });
+      res.status(502).json({ error: "upstream" });
       return;
     }
 
@@ -97,6 +95,6 @@ export default async function handler(req, res) {
     res.status(200).json({ reply: reply || "…" });
   } catch (err) {
     console.error("chat handler error", err);
-    res.status(500).json({ error: "server", detail: String((err && err.message) || err) });
+    res.status(500).json({ error: "server" });
   }
 }
