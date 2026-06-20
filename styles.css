@@ -3144,6 +3144,29 @@ a { color: inherit; text-decoration: none; }
 .av-note { text-align: center; margin-top: 1.8rem; font-family: var(--font-mono); font-size: 0.74rem; color: var(--steel); }
 @media (prefers-reduced-motion: reduce) { .av-fill { animation: none; } }
 
+/* El problema */
+.prob-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 1rem; }
+.prob { padding: 1.5rem 1.3rem; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; transition: border-color .3s, transform .3s; }
+.prob:hover { border-color: var(--amber); transform: translateY(-3px); }
+.prob-i { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
+.prob h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; margin-bottom: 0.3rem; }
+.prob p { color: var(--muted); font-size: 0.92rem; line-height: 1.45; }
+
+/* Método EKIN · flujo de 7 pasos */
+.me-flow { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: stretch; }
+.me-step { position: relative; flex: 1 1 110px; display: flex; flex-direction: column; align-items: center; gap: 0.6rem; padding: 1.3rem 0.8rem; background: var(--surface); border: 1px solid var(--line); border-top: 2px solid var(--volt-deep); border-radius: 12px; transition: border-color .3s, transform .3s; }
+.me-step:hover { border-color: var(--volt); transform: translateY(-3px); }
+.me-step:not(:last-child)::after { content: "→"; position: absolute; right: -0.55rem; top: 50%; transform: translateY(-50%); color: var(--volt); font-family: var(--font-mono); z-index: 1; }
+.me-n { width: 2rem; height: 2rem; display: grid; place-items: center; border-radius: 50%; background: rgba(155,214,47,.12); color: var(--volt); font-family: var(--font-mono); font-weight: 700; }
+.me-t { font-family: var(--font-display); font-weight: 700; font-size: 0.92rem; text-align: center; line-height: 1.15; }
+@media (max-width: 680px) { .me-step:not(:last-child)::after { display: none; } }
+
+/* Por qué no somos un instalador solar */
+.nosolar-inner { max-width: 60ch; margin: 0 auto; text-align: center; }
+.nosolar-h { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.7rem,4.4vw,2.8rem); line-height: 1.08; letter-spacing: -0.02em; margin-top: 0.6rem; }
+.nosolar-h em { font-family: var(--font-serif); font-style: italic; color: var(--volt); }
+.nosolar-p { color: var(--muted); font-size: 1.1rem; line-height: 1.55; margin-top: 1.2rem; }
+
 /* Tarjetas de capacidad 3D (flip al click) */
 .cap-hint { text-align: center; font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 2.4rem 0 1.2rem; }
 .cap3d-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1rem; }
