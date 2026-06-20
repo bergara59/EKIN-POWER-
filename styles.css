@@ -3090,8 +3090,23 @@ a { color: inherit; text-decoration: none; }
 .founders-k { text-align: center; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.4rem; }
 .founders-marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
 .founders-track { display: flex; align-items: center; gap: 2.6rem; width: max-content; animation: marquee 34s linear infinite; }
-.flogo { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.1rem, 2.6vw, 1.7rem); letter-spacing: 0.02em; color: #cfd6e0; opacity: .42; filter: grayscale(1); white-space: nowrap; transition: opacity .3s, color .3s; }
-.flogo:hover { opacity: 1; color: var(--volt); }
+.flogo { height: clamp(26px, 3.4vw, 40px); width: auto; object-fit: contain; opacity: .5; filter: grayscale(1) brightness(1.15); transition: opacity .3s, filter .3s; }
+.flogo:hover { opacity: 1; filter: none; }
+
+/* Soluciones · acordeón desplegable */
+.sol-acc { display: flex; flex-direction: column; gap: 0.8rem; max-width: 880px; margin: 0 auto; }
+.sol-item { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; transition: border-color .3s; }
+.sol-item:hover { border-color: rgba(155,214,47,.4); }
+.sol-item--hero { background: linear-gradient(180deg, rgba(155,214,47,.08), var(--surface)); border-color: rgba(155,214,47,.4); }
+.sol-head { width: 100%; display: flex; align-items: center; gap: 1rem; padding: 1.4rem 1.5rem; background: none; border: none; cursor: pointer; text-align: left; font: inherit; color: var(--text); }
+.sol-n { font-family: var(--font-mono); color: var(--volt-deep); font-size: 0.9rem; flex: 0 0 auto; }
+.sol-t { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.05rem, 2.6vw, 1.35rem); letter-spacing: -0.01em; flex: 1; line-height: 1.15; }
+.sol-plus { font-family: var(--font-mono); font-size: 1.6rem; color: var(--volt); flex: 0 0 auto; transition: transform .35s cubic-bezier(.22,1,.36,1); line-height: 1; }
+.sol-item[data-open="true"] .sol-plus { transform: rotate(45deg); }
+.sol-body { max-height: 0; overflow: hidden; transition: max-height .5s cubic-bezier(.22,1,.36,1); }
+.sol-item[data-open="true"] .sol-body { max-height: 320px; }
+.sol-body p { padding: 0 1.5rem 1.5rem; color: var(--muted); font-size: 1.02rem; line-height: 1.55; }
+.sol-body a { color: var(--volt); }
 
 /* Tarjetas de capacidad 3D (flip al click) */
 .cap-hint { text-align: center; font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 2.4rem 0 1.2rem; }

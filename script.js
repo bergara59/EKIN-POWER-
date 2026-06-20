@@ -861,3 +861,17 @@ const _reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       list.innerHTML = '<div class="news-loading">No pudimos cargar titulares ahora mismo. Vuelve en un rato o escríbenos.</div>';
     });
 })();
+
+/* Soluciones · acordeón */
+(function () {
+  const acc = document.getElementById("solAcc");
+  if (!acc) return;
+  acc.querySelectorAll(".sol-head").forEach((head) => {
+    head.addEventListener("click", () => {
+      const item = head.closest(".sol-item");
+      const open = item.dataset.open === "true";
+      item.dataset.open = open ? "false" : "true";
+      head.setAttribute("aria-expanded", open ? "false" : "true");
+    });
+  });
+})();
