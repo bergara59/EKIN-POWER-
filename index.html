@@ -307,22 +307,51 @@
     <!-- ===================== CTA / CONTACTO ===================== -->
     <section class="section cta" id="contacto">
       <div class="cta-inner">
-        <p class="section-kicker">Hablemos</p>
-        <h2 class="cta-title">Necesitas una reunión con <em>nosotros</em>.</h2>
-        <p class="cta-sub">Una conversación basta para saber cuánto puedes ahorrar y cómo estructurarlo.</p>
+        <p class="section-kicker">Diagnóstico gratis</p>
+        <h2 class="cta-title">Envíanos tus facturas y te decimos dónde está el <em>dinero escondido</em>.</h2>
+        <p class="cta-sub">Sin compromiso. Un analista revisa tu consumo y te devuelve el potencial de ahorro.</p>
 
-        <form class="contact-form" action="https://formspree.io/f/mvznlezk" method="POST">
-          <input type="hidden" name="_subject" value="Nueva solicitud · EKIN POWER" />
+        <form class="contact-form" action="https://formspree.io/f/mvznlezk" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="_subject" value="Diagnóstico solicitado · EKIN POWER" />
           <div class="form-row">
             <input type="text" name="nombre" placeholder="Tu nombre" required />
-            <input type="email" name="email" placeholder="Tu correo" required />
+            <input type="text" name="empresa" placeholder="Empresa" required />
           </div>
           <div class="form-row">
-            <input type="text" name="empresa" placeholder="Empresa" />
+            <input type="email" name="email" placeholder="Tu correo" required />
             <input type="tel" name="telefono" placeholder="Teléfono / WhatsApp" />
           </div>
-          <textarea name="mensaje" rows="3" placeholder="Cuéntanos sobre tu consumo o tu proyecto (kWh/mes, sedes, sector…)"></textarea>
-          <button type="submit" class="btn btn-primary form-submit">Agenda una reunión</button>
+          <div class="form-row">
+            <select name="sector" required>
+              <option value="" disabled selected>Sector</option>
+              <option>Hotel / resort</option>
+              <option>Industria / manufactura</option>
+              <option>Supermercado / retail</option>
+              <option>Hospital / clínica</option>
+              <option>Logística / centro de datos</option>
+              <option>Centro comercial</option>
+              <option>Fondo / asset manager</option>
+              <option>Otro</option>
+            </select>
+            <select name="tarifa">
+              <option value="" disabled selected>Tarifa CFE</option>
+              <option>GDMTH</option>
+              <option>GDMTO</option>
+              <option>DIST / DIT</option>
+              <option>PDBT</option>
+              <option>No la sé</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <input type="text" name="ubicacion" placeholder="Ubicación (ciudad / estado)" />
+            <input type="text" name="gasto_mensual" placeholder="Gasto eléctrico mensual aprox. (MXN)" />
+          </div>
+          <label class="file-field">
+            <span class="file-lab">Sube tu factura (opcional · PDF o imagen)</span>
+            <input type="file" name="factura" accept=".pdf,.jpg,.jpeg,.png" />
+          </label>
+          <textarea name="mensaje" rows="2" placeholder="Algo que debamos saber (kWh/mes, nº de sedes…)"></textarea>
+          <button type="submit" class="btn btn-primary form-submit">Quiero mi diagnóstico gratis</button>
         </form>
 
         <div class="cta-actions">
@@ -337,8 +366,8 @@
       <p class="founders-k">Experiencia de los founders</p>
       <div class="founders-marquee">
         <div class="founders-track" id="foundersTrack">
-          <img class="flogo" src="logos/sgs.svg" alt="SGS" /><img class="flogo" src="logos/nordex.svg" alt="Nordex" /><img class="flogo" src="logos/vestas.svg" alt="Vestas" /><img class="flogo" src="logos/enel.svg" alt="Enel" /><img class="flogo" src="logos/acciona.svg" alt="Acciona" /><img class="flogo" src="logos/sempra.svg" alt="Sempra" /><img class="flogo" src="logos/amazon.svg" alt="Amazon" /><img class="flogo" src="logos/walmart.svg" alt="Walmart" /><img class="flogo" src="logos/grupomexico.svg" alt="Grupo México" /><img class="flogo" src="logos/grupodragon.svg" alt="Grupo Dragón" /><img class="flogo" src="logos/kino.svg" alt="Kino Energía" /><img class="flogo" src="logos/gemex.svg" alt="Gemex" />
-          <img class="flogo" src="logos/sgs.svg" alt="" aria-hidden="true" /><img class="flogo" src="logos/nordex.svg" alt="" aria-hidden="true" /><img class="flogo" src="logos/vestas.svg" alt="" aria-hidden="true" /><img class="flogo" src="logos/enel.svg" alt="" aria-hidden="true" /><img class="flogo" src="logos/acciona.svg" alt="" aria-hidden="true" /><img class="flogo" src="logos/sempra.svg" alt="" aria-hidden="true" /><img class="flogo" src="logos/amazon.svg" alt="" aria-hidden="true" /><img class="flogo" src="logos/walmart.svg" alt="" aria-hidden="true" /><img class="flogo" src="logos/grupomexico.svg" alt="" aria-hidden="true" /><img class="flogo" src="logos/grupodragon.svg" alt="" aria-hidden="true" /><img class="flogo" src="logos/kino.svg" alt="" aria-hidden="true" /><img class="flogo" src="logos/gemex.svg" alt="" aria-hidden="true" />
+          <img class="flogo" src="logos/sgs.svg" data-domain="sgs.com" alt="SGS" /><img class="flogo" src="logos/nordex.svg" data-domain="nordex-online.com" alt="Nordex" /><img class="flogo" src="logos/vestas.svg" data-domain="vestas.com" alt="Vestas" /><img class="flogo" src="logos/enel.svg" data-domain="enel.com" alt="Enel" /><img class="flogo" src="logos/acciona.svg" data-domain="acciona.com" alt="Acciona" /><img class="flogo" src="logos/sempra.svg" data-domain="sempra.com" alt="Sempra" /><img class="flogo" src="logos/amazon.svg" data-domain="amazon.com" alt="Amazon" /><img class="flogo" src="logos/walmart.svg" data-domain="walmart.com" alt="Walmart" /><img class="flogo" src="logos/grupomexico.svg" data-domain="gmexico.com" alt="Grupo México" /><img class="flogo" src="logos/grupodragon.svg" alt="Grupo Dragón" /><img class="flogo" src="logos/kino.svg" alt="Kino Energía" /><img class="flogo" src="logos/gemex.svg" alt="Gemex" />
+          <img class="flogo" src="logos/sgs.svg" data-domain="sgs.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/nordex.svg" data-domain="nordex-online.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/vestas.svg" data-domain="vestas.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/enel.svg" data-domain="enel.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/acciona.svg" data-domain="acciona.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/sempra.svg" data-domain="sempra.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/amazon.svg" data-domain="amazon.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/walmart.svg" data-domain="walmart.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/grupomexico.svg" data-domain="gmexico.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/grupodragon.svg" alt="" aria-hidden="true" /><img class="flogo" src="logos/kino.svg" alt="" aria-hidden="true" /><img class="flogo" src="logos/gemex.svg" alt="" aria-hidden="true" />
         </div>
       </div>
     </section>

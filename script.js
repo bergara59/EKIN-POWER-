@@ -875,3 +875,14 @@ const _reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     });
   });
 })();
+
+/* Founders · intenta cargar el logo real (servicio público) con fallback al placeholder */
+(function () {
+  const imgs = document.querySelectorAll("#foundersTrack img.flogo[data-domain]");
+  imgs.forEach((img) => {
+    const url = "https://logo.clearbit.com/" + img.dataset.domain;
+    const probe = new Image();
+    probe.onload = () => { img.src = url; img.classList.add("flogo--real"); };
+    probe.src = url;
+  });
+})();
