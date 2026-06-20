@@ -3118,6 +3118,32 @@ a { color: inherit; text-decoration: none; }
 .file-field input[type="file"]::file-selector-button { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: #0c0b09; background: var(--volt); border: none; border-radius: 8px; padding: 0.45rem 0.8rem; margin-right: 0.8rem; cursor: pointer; }
 .flogo--real { background: transparent; }
 
+/* Modelos de negocio */
+.modelos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1rem; }
+.modelo { padding: 1.7rem 1.4rem; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; transition: border-color .3s, transform .3s; }
+.modelo:hover { border-color: var(--volt); transform: translateY(-4px); }
+.modelo--hero { background: linear-gradient(180deg, rgba(155,214,47,.08), var(--surface)); border-color: rgba(155,214,47,.4); }
+.modelo h3 { font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; letter-spacing: -0.01em; margin-bottom: 0.5rem; }
+.modelo p { color: var(--muted); font-size: 0.96rem; line-height: 1.5; }
+
+/* Cómo se ve el ahorro (antes/después) */
+.av-wrap { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(1.5rem,5vw,3.5rem); align-items: center; max-width: 980px; margin: 0 auto; }
+@media (max-width: 720px) { .av-wrap { grid-template-columns: 1fr; } }
+.av-bars { display: flex; align-items: flex-end; justify-content: center; gap: 1.6rem; height: 240px; }
+.av-bar { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; width: 90px; }
+.av-val { font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; margin-bottom: 0.5rem; }
+.av-fill { width: 100%; border-radius: 10px 10px 0 0; transform-origin: bottom; animation: growbar 1s cubic-bezier(.22,1,.36,1) both; }
+.av-fill--before { background: linear-gradient(180deg, var(--amber), rgba(255,176,32,.3)); }
+.av-fill--after { background: linear-gradient(180deg, var(--volt-bright), var(--volt-deep)); box-shadow: 0 0 30px rgba(155,214,47,.4); animation-delay: .25s; }
+@keyframes growbar { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+.av-cap { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 0.7rem; }
+.av-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+.av-m { display: flex; flex-direction: column; gap: 0.25rem; padding: 1rem 1.1rem; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; }
+.av-k { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.av-v { font-family: var(--font-display); font-weight: 800; font-size: 1.7rem; letter-spacing: -0.02em; }
+.av-note { text-align: center; margin-top: 1.8rem; font-family: var(--font-mono); font-size: 0.74rem; color: var(--steel); }
+@media (prefers-reduced-motion: reduce) { .av-fill { animation: none; } }
+
 /* Tarjetas de capacidad 3D (flip al click) */
 .cap-hint { text-align: center; font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 2.4rem 0 1.2rem; }
 .cap3d-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1rem; }
