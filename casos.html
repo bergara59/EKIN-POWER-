@@ -9,11 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=11" />
+  <link rel="stylesheet" href="styles.css?v=12" />
 </head>
 <body>
-  <div class="grain" aria-hidden="true"></div>
-  <div class="aurora" aria-hidden="true"></div>
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
   <header class="nav on-dark" id="top">
@@ -47,12 +45,42 @@
         <p class="section-sub">Escenarios representativos por tipo de activo. Tu cifra real, con tus facturas, en el EBITDA Scan.</p>
       </div>
 
+      <!-- ===== CASO MODELO DESTACADO ===== -->
+      <article class="case-hero reveal">
+        <div class="case-flag">Caso modelo · cifras ilustrativas · no es un cliente real</div>
+        <div class="case-hero-top">
+          <span class="case-tag">Hotel 4★ todo incluido · 320 hab. · Riviera Maya</span>
+          <span class="case-start">Punto de partida: <b>$28 M MXN/año</b> de gasto energético</span>
+        </div>
+        <div class="case-hero-grid">
+          <div class="lever-block">
+            <p class="lever-h">Dónde está el EBITDA atrapado</p>
+            <div class="lever-list">
+              <div class="lever"><span>Tarifa · demanda · factor de potencia</span><b class="green">+$1.9 M</b><i>sin CAPEX</i></div>
+              <div class="lever"><span>HVAC · ACS · recuperación de calor</span><b class="green">+$2.1 M</b><i>con CAPEX</i></div>
+              <div class="lever"><span>Agua · reúso</span><b class="green">+$0.6 M</b><i>CAPEX bajo</i></div>
+              <div class="lever"><span>Solar + BESS · Behind the Meter</span><b class="green">+$3.0 M</b><i>con CAPEX</i></div>
+              <div class="lever lever--total"><span>EBITDA capturado / año</span><b class="green">+$7.6 M</b><i>≈ 27% del gasto</i></div>
+            </div>
+          </div>
+          <div class="case-summary">
+            <div class="cs-stat"><span>EBITDA capturado</span><b class="green">+$7.6 M / año</b></div>
+            <div class="cs-stat"><span>Quick wins en 90 días</span><b>$1.9 M</b></div>
+            <div class="cs-stat"><span>CAPEX (palancas con inversión)</span><b>$20 M</b></div>
+            <div class="cs-stat"><span>Payback ponderado</span><b>3.5 años</b></div>
+            <div class="cs-stat cs-stat--out"><span>Uplift de valoración · a 11× EBITDA</span><b class="green">+$84 M</b></div>
+          </div>
+        </div>
+        <p class="case-hero-note">El mismo EBITDA recurrente, multiplicado por el múltiplo de salida, es valor de empresa. Tu cifra real se calcula con tus facturas en el EBITDA Scan.</p>
+      </article>
+
       <div class="megakpi-inner" style="padding-top:0">
-        <div class="mk reveal"><span class="mk-num beat" data-count="83" data-prefix="$" data-suffix=" M">$83 M</span><span class="mk-cap">EBITDA/año<br>en estos 3 casos modelo</span></div>
+        <div class="mk reveal"><span class="mk-num beat" data-count="83" data-prefix="$" data-suffix=" M">$83 M</span><span class="mk-cap">EBITDA/año<br>en escenarios modelo</span></div>
         <div class="mk reveal" style="--d:1"><span class="mk-num beat" data-count="117" data-suffix=" GWh">117 GWh</span><span class="mk-cap">consumo anual<br>analizado (modelo)</span></div>
         <div class="mk reveal" style="--d:2"><span class="mk-num beat" data-count="4" data-decimal="1" data-suffix=" años">4.0 años</span><span class="mk-cap">payback medio<br>ponderado</span></div>
       </div>
 
+      <p class="case-grid-k reveal">Más escenarios por tipo de activo</p>
       <div class="case-grid">
         <article class="case reveal" style="--d:1">
           <header class="case-h"><span class="case-tag">Hotel · Cancún</span></header>
@@ -142,6 +170,6 @@
     <p class="footer-note">© <span id="year"></span> EKIN POWER · Convertimos energía en EBITDA.</p>
   </footer>
 
-  <script src="script.js?v=11" defer></script>
+  <script src="script.js?v=12" defer></script>
 </body>
 </html>
