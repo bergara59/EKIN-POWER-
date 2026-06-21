@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /logo-export.html
 
 Sitemap: https://www.ekinpower.com/sitemap.xml

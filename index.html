@@ -14,18 +14,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EKIN POWER · ENERGY FINANCE, BESS</title>
-  <meta name="description" content="EKIN POWER · Energy Finance, BESS. Convertimos la energía en ventaja competitiva: diagnóstico, optimización de costos, due diligence técnica y soluciones Behind the Meter (Solar + BESS) para industria, hoteles y fondos." />
+  <meta name="description" content="EKIN POWER · Energy Finance, BESS. Convertimos energía en EBITDA: detectamos, validamos y capturamos el ahorro recuperable en tarifa, demanda, HVAC, agua y Behind the Meter (Solar + BESS) para hoteles, industria y fondos." />
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="EKIN POWER" />
   <meta property="og:title" content="EKIN POWER · ENERGY FINANCE, BESS" />
-  <meta property="og:description" content="Convertimos la energía en ventaja competitiva. Menos OPEX, más EBITDA, mejor valuación." />
+  <meta property="og:description" content="Convertimos energía en EBITDA. Menos OPEX, más EBITDA, mejor valuación." />
   <meta property="og:url" content="https://www.ekinpower.com" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="EKIN POWER · ENERGY FINANCE, BESS" />
-  <meta name="twitter:description" content="Convertimos la energía en ventaja competitiva. Menos OPEX, más EBITDA, mejor valuación." />
+  <meta name="twitter:description" content="Convertimos energía en EBITDA. Menos OPEX, más EBITDA, mejor valuación." />
   <link rel="canonical" href="https://www.ekinpower.com" />
 
   <script type="application/ld+json">
@@ -46,12 +46,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=10" />
+  <link rel="stylesheet" href="styles.css?v=11" />
 </head>
 <body>
 
-  <div class="grain" aria-hidden="true"></div>
-  <div class="aurora" aria-hidden="true"></div>
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
   <!-- ===================== NAVEGACIÓN ===================== -->
@@ -89,7 +87,6 @@
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-grid" aria-hidden="true"></div>
       <div class="hero-glow" aria-hidden="true"></div>
-      <canvas class="hero-flux" id="heroFlux" aria-hidden="true"></canvas>
 
       <div class="hero-inner">
         <div class="hero-copy">
@@ -121,8 +118,8 @@
           <div class="term-boot" id="termBoot"></div>
           <div class="term-chart">
             <div class="tc-head">
-              <span class="tc-label">EBITDA CAPTURADO · 12M</span>
-              <span class="tc-trend">▲ +EBITDA</span>
+              <span class="tc-label">EBITDA RECUPERABLE · ESCENARIO MODELO</span>
+              <span class="tc-trend">▲ ilustrativo</span>
             </div>
             <svg class="tc-svg" viewBox="0 0 320 90" preserveAspectRatio="none" aria-hidden="true">
               <defs>
@@ -211,6 +208,35 @@
       </div>
     </section>
 
+    <!-- ===================== PUENTE EBITDA → VALORACIÓN ===================== -->
+    <section class="section bridge on-dark" id="valoracion">
+      <div class="section-head reveal">
+        <p class="section-kicker">De ahorro a valoración</p>
+        <h2 class="section-title">El EBITDA capturado vale un <em>múltiplo</em>.</h2>
+        <p class="section-sub">Cada peso de gasto energético que eliminamos no baja una vez: sube tu EBITDA recurrente y, con él, el valor del activo.</p>
+      </div>
+      <div class="bridge-flow reveal">
+        <div class="bridge-step">
+          <span class="bridge-tag">01 · Hoy</span>
+          <span class="bridge-fig">Gasto energético</span>
+          <span class="bridge-cap">Tarifa, demanda, HVAC, ACS, agua: dinero que se fuga cada mes.</span>
+        </div>
+        <span class="bridge-arrow" aria-hidden="true">→</span>
+        <div class="bridge-step">
+          <span class="bridge-tag">02 · Captura</span>
+          <span class="bridge-fig green">+ EBITDA anual</span>
+          <span class="bridge-cap">Ahorro recurrente que detectamos, validamos y capturamos.</span>
+        </div>
+        <span class="bridge-arrow" aria-hidden="true">→</span>
+        <div class="bridge-step bridge-step--out">
+          <span class="bridge-tag">03 · Valor</span>
+          <span class="bridge-fig green">EBITDA × múltiplo</span>
+          <span class="bridge-cap">El mismo EBITDA, multiplicado por tu múltiplo de salida = valor de empresa creado.</span>
+        </div>
+      </div>
+      <p class="bridge-note">Esquema ilustrativo. Tu cifra real —EBITDA recuperable y uplift de valoración— se calcula con tus facturas en el EBITDA Scan.</p>
+    </section>
+
     <!-- ===================== SOLUCIONES (4 pilares) ===================== -->
     <section class="section soluciones on-dark" id="soluciones">
       <div class="section-head reveal">
@@ -222,7 +248,7 @@
         <article class="sol-item sol-item--hero" data-open="false">
           <button class="sol-head" type="button" aria-expanded="false">
             <span class="sol-n">01</span>
-            <span class="sol-t">EBITDA Scan™</span>
+            <span class="sol-t">EBITDA Scan</span>
             <span class="sol-plus" aria-hidden="true">+</span>
           </button>
           <div class="sol-body"><p>El punto de entrada. Con datos mínimos —tu última factura, ubicación, tamaño y ocupación— corremos un primer modelo de tu activo y te devolvemos:</p><ul class="sol-list"><li><strong>EBITDA recuperable estimado</strong> (rango preliminar)</li><li><strong>Opportunity Score</strong> del activo</li><li>Las <strong>3–5 oportunidades</strong> de mayor impacto</li><li><strong>Quick wins</strong> accionables ya</li></ul><p class="sol-foot">Rápido, confidencial y sin compromiso.</p></div>
@@ -230,7 +256,7 @@
         <article class="sol-item" data-open="false">
           <button class="sol-head" type="button" aria-expanded="false">
             <span class="sol-n">02</span>
-            <span class="sol-t">Energy Due Diligence™</span>
+            <span class="sol-t">Energy Due Diligence</span>
             <span class="sol-plus" aria-hidden="true">+</span>
           </button>
           <div class="sol-body"><p>Análisis profundo con 12 facturas, ocupación, inventario de equipos y operación. Entregamos:</p><ul class="sol-list"><li><strong>Mapa de EBITDA</strong> del activo, por oportunidad</li><li>Oportunidades <strong>validadas</strong> con business case preliminar</li><li><strong>Roadmap</strong> de captura a 90 días / 12 / 36 meses</li><li>Inversión, payback y modelo de financiación por iniciativa</li></ul><p class="sol-foot">La base para decidir con números, no con corazonadas.</p></div>
@@ -238,7 +264,7 @@
         <article class="sol-item" data-open="false">
           <button class="sol-head" type="button" aria-expanded="false">
             <span class="sol-n">03</span>
-            <span class="sol-t">Energy Intelligence Program™</span>
+            <span class="sol-t">Energy Intelligence Program</span>
             <span class="sol-plus" aria-hidden="true">+</span>
           </button>
           <div class="sol-body"><p>Tu <strong>Oficina Externa de EBITDA Energético</strong>, en modo recurrente. Cada mes o trimestre recibes un <strong>Monthly EBITDA Board</strong>:</p><ul class="sol-list"><li>EBITDA <strong>detectado</strong>, <strong>validado</strong> y <strong>capturado</strong></li><li>Backlog priorizado de oportunidades</li><li>Top decisiones recomendadas del periodo</li><li>Seguimiento de lo capturado vs. lo proyectado</li></ul><p class="sol-foot">Energía gestionada como un portafolio, no como una factura.</p></div>
@@ -246,26 +272,43 @@
         <article class="sol-item" data-open="false">
           <button class="sol-head" type="button" aria-expanded="false">
             <span class="sol-n">04</span>
-            <span class="sol-t">EBITDA Capture Projects™</span>
+            <span class="sol-t">EBITDA Capture Projects</span>
             <span class="sol-plus" aria-hidden="true">+</span>
           </button>
-          <div class="sol-body"><p>La ejecución de las oportunidades aprobadas, de punta a punta y con o sin CAPEX:</p><ul class="sol-list"><li>Tarifa, demanda máxima y factor de potencia</li><li>HVAC, ACS, refrigeración y lavandería</li><li>Agua, recuperación de calor y automatización</li><li>Solar, BESS y microred (Behind the Meter)</li></ul><p class="sol-foot">Solo lo que tiene sentido económico. <a href="inversion.html">Ver Behind the Meter →</a></p></div>
+          <div class="sol-body"><p>La ejecución de las oportunidades aprobadas, de punta a punta y con o sin CAPEX:</p><ul class="sol-list"><li>Tarifa, demanda máxima y factor de potencia</li><li>HVAC, ACS, refrigeración y lavandería</li><li>Agua, recuperación de calor y automatización</li><li>Solar, BESS y microred (Behind the Meter)</li></ul><p class="sol-foot">Implementación por fases: sin parar el hotel ni afectar al huésped. Solo lo que tiene sentido económico. <a href="inversion.html">Ver Behind the Meter →</a></p></div>
         </article>
       </div>
     </section>
 
-    <!-- ===================== POR QUÉ NO SOMOS UN INSTALADOR SOLAR ===================== -->
-    <section class="section nosolar on-dark" id="nosolar">
-      <div class="nosolar-inner reveal">
-        <p class="section-kicker">No somos lo que crees</p>
-        <h2 class="nosolar-h">No vendemos energía, auditorías ni paneles. <em>Vendemos EBITDA.</em></h2>
-        <p class="nosolar-p">Primero detectamos dónde se pierde el dinero. Luego decidimos si la mejor jugada es tarifa, demanda, HVAC, agua, solar o BESS. La tecnología es la consecuencia, no el punto de partida.</p>
+    <!-- ===================== MODELO COMERCIAL · ALINEACIÓN ===================== -->
+    <section class="section model on-dark" id="modelo">
+      <div class="section-head reveal">
+        <p class="section-kicker">Cómo se trabaja con EKIN</p>
+        <h2 class="section-title">Empezar es barato. Ejecutar, <em>con o sin CAPEX</em>.</h2>
+      </div>
+      <div class="model-grid reveal">
+        <div class="model-card">
+          <span class="model-n">Entrada</span>
+          <h3>Sin compromiso</h3>
+          <p>El EBITDA Scan es rápido y confidencial. Decides avanzar solo si los números lo justifican.</p>
+        </div>
+        <div class="model-card">
+          <span class="model-n">CAPEX</span>
+          <h3>El esquema que prefieras</h3>
+          <p>Compra, leasing, PPA o inversión de terceros. No forzamos un único modelo: estructuramos el que encaje en tu balance.</p>
+        </div>
+        <div class="model-card">
+          <span class="model-n">Alineación</span>
+          <h3>Medido, no prometido</h3>
+          <p>Trabajamos por impacto: lo capturado se mide contra lo proyectado, oportunidad por oportunidad.</p>
+        </div>
       </div>
     </section>
 
     <!-- ===================== EXPERIENCIA FOUNDERS · TICKER LOGOS ===================== -->
     <section class="founders on-dark" aria-label="Experiencia de los founders">
-      <p class="founders-k">Experiencia de los founders</p>
+      <p class="founders-k">Dónde se formó nuestro equipo</p>
+      <p class="founders-note">Organizaciones donde los founders han trabajado o ejecutado proyectos. No son clientes de EKIN POWER.</p>
       <div class="founders-marquee">
         <div class="founders-track" id="foundersTrack">
           <img class="flogo" src="logos/sgs.svg" data-domain="sgs.com" alt="SGS" /><img class="flogo" src="logos/nordex.svg" data-domain="nordex-online.com" alt="Nordex" /><img class="flogo" src="logos/vestas.svg" data-domain="vestas.com" alt="Vestas" /><img class="flogo" src="logos/enel.svg" data-domain="enel.com" alt="Enel" /><img class="flogo" src="logos/acciona.svg" data-domain="acciona.com" alt="Acciona" /><img class="flogo" src="logos/sempra.svg" data-domain="sempra.com" alt="Sempra" /><img class="flogo" src="logos/amazon.svg" data-domain="amazon.com" alt="Amazon" /><img class="flogo" src="logos/walmart.svg" data-domain="walmart.com" alt="Walmart" /><img class="flogo" src="logos/homedepot.svg" data-domain="homedepot.com" alt="The Home Depot" /><img class="flogo" src="logos/grupomexico.svg" data-domain="gmexico.com" alt="Grupo México" /><img class="flogo" src="logos/grupodragon.svg" alt="Grupo Dragón" /><img class="flogo" src="logos/kino.svg" alt="Kino Energía" /><img class="flogo" src="logos/gemex.svg" alt="Gemex" />
@@ -283,7 +326,7 @@
     <!-- ===================== CTA / CONTACTO ===================== -->
     <section class="section cta" id="contacto">
       <div class="cta-inner">
-        <p class="section-kicker">EBITDA Scan™</p>
+        <p class="section-kicker">EBITDA Scan</p>
         <h2 class="cta-title">Empieza con una factura. Descubre cuánto <em>EBITDA</em> dejas sobre la mesa.</h2>
         <p class="cta-sub">Diagnóstico preliminar y sin compromiso. Con datos mínimos te devolvemos el EBITDA recuperable estimado.</p>
 
@@ -291,25 +334,30 @@
           <input type="hidden" name="_subject" value="EBITDA Scan solicitado · EKIN POWER" />
           <div class="form-row">
             <input type="text" name="nombre" placeholder="Tu nombre" required />
-            <input type="text" name="hotel" placeholder="Hotel / grupo" required />
-          </div>
-          <div class="form-row">
             <input type="email" name="email" placeholder="Tu correo" required />
-            <input type="tel" name="telefono" placeholder="Teléfono / WhatsApp" />
           </div>
           <div class="form-row">
+            <input type="text" name="hotel" placeholder="Hotel / grupo" required />
             <input type="text" name="ubicacion" placeholder="Ubicación (Cancún, Riviera Maya…)" />
-            <input type="text" name="habitaciones" placeholder="Nº de habitaciones" />
           </div>
-          <div class="form-row">
-            <input type="text" name="ocupacion" placeholder="Ocupación aprox. (%)" />
-            <input type="text" name="gasto_mensual" placeholder="Gasto eléctrico mensual aprox. (MXN)" />
-          </div>
-          <label class="file-field">
-            <span class="file-lab">Sube tu última factura CFE (PDF o imagen)</span>
-            <input type="file" name="factura" accept=".pdf,.jpg,.jpeg,.png" />
-          </label>
-          <textarea name="mensaje" rows="2" placeholder="Algo que debamos saber (sedes, equipos, operación…)"></textarea>
+
+          <details class="form-extra">
+            <summary>Datos opcionales — aceleran tu Scan</summary>
+            <div class="form-row">
+              <input type="tel" name="telefono" placeholder="Teléfono / WhatsApp" />
+              <input type="text" name="habitaciones" placeholder="Nº de habitaciones" />
+            </div>
+            <div class="form-row">
+              <input type="text" name="ocupacion" placeholder="Ocupación aprox. (%)" />
+              <input type="text" name="gasto_mensual" placeholder="Gasto eléctrico mensual aprox. (MXN)" />
+            </div>
+            <label class="file-field">
+              <span class="file-lab">Sube tu última factura CFE (PDF o imagen)</span>
+              <input type="file" name="factura" accept=".pdf,.jpg,.jpeg,.png" />
+            </label>
+            <textarea name="mensaje" rows="2" placeholder="Algo que debamos saber (sedes, equipos, operación…)"></textarea>
+          </details>
+
           <button type="submit" class="btn btn-primary form-submit">Solicitar EBITDA Scan</button>
         </form>
 
@@ -328,7 +376,7 @@
         <span class="brand" aria-label="EKIN POWER">
           <span class="logo-word">e<svg class="logo-k" viewBox="0 0 128 140" aria-hidden="true"><defs><linearGradient id="kgFootM" x1="0" y1="140" x2="0" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2f6e00"/><stop offset=".55" stop-color="#5ba017"/><stop offset="1" stop-color="#86c93a"/></linearGradient><linearGradient id="kgFootT" x1="0" y1="84" x2="0" y2="20" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6fb023"/><stop offset="1" stop-color="#f3fae7"/></linearGradient></defs><polygon points="20,132 44,132 60,40 36,40" fill="url(#kgFootM)"/><polygon points="48,96 70,96 96,132 74,132" fill="url(#kgFootM)"/><polygon points="50,96 72,96 92,66 70,66" fill="url(#kgFootM)"/><polygon points="74,84 96,84 116,28 94,28" fill="url(#kgFootT)"/></svg>in</span><span class="logo-power">POWER</span>
         </span>
-        <p class="footer-tagline">Convertimos la energía en ventaja competitiva.</p>
+        <p class="footer-tagline">Convertimos energía en EBITDA.</p>
       </div>
       <nav class="footer-links">
         <a href="porque.html">Por qué EKIN</a>
@@ -338,14 +386,14 @@
         <span class="footer-loc">México</span>
       </nav>
     </div>
-    <p class="footer-note">© <span id="year"></span> EKIN POWER · Convertimos la energía en ventaja competitiva.</p>
+    <p class="footer-note">© <span id="year"></span> EKIN POWER · Convertimos energía en EBITDA.</p>
   </footer>
 
   <!-- EKIN Intelligence · copiloto energético-financiero -->
   <div class="ei-dock" id="eiDock">
     <span class="ei-tip" aria-hidden="true">
       <strong>EKIN Intelligence</strong>
-      <em>Energy Investment Copilot</em>
+      <em>Copiloto de inversión energética</em>
     </span>
 
     <button class="ei-launcher" id="eiLauncher" aria-label="Ask EKIN Intelligence" aria-expanded="false" aria-controls="eiPanel">
@@ -376,7 +424,7 @@
         <span class="ei-head-orb" aria-hidden="true"></span>
         <div class="ei-head-txt">
           <h3>EKIN Intelligence</h3>
-          <p>Energy · Finance · Project Advisory</p>
+          <p>Energía · Finanzas · Asesoría de proyectos</p>
         </div>
         <button class="ei-close" id="eiClose" aria-label="Close">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
@@ -388,34 +436,34 @@
           <div class="ei-row ei-row--bot">
             <span class="ei-avatar" aria-hidden="true"></span>
             <div class="ei-bubble">
-              <span class="ei-tag"><i></i> ONLINE · READY</span>
-              I can help you assess savings, structure energy projects, compare investment models and identify high-impact opportunities.
+              <span class="ei-tag"><i></i> EN LÍNEA · LISTO</span>
+              Te ayudo a estimar ahorros, estructurar proyectos energéticos, comparar modelos de inversión e identificar oportunidades de alto impacto.
             </div>
           </div>
         </div>
         <div class="ei-quick" id="eiQuick">
-          <button class="ei-chip" type="button" data-q="Analyze my energy savings potential">Analyze energy savings</button>
-          <button class="ei-chip" type="button" data-q="Evaluate a Behind The Meter project for me">Evaluate a Behind The Meter project</button>
-          <button class="ei-chip" type="button" data-q="Compare PPA vs BESS vs Solar for a large consumer">Compare PPA / BESS / Solar</button>
-          <button class="ei-chip" type="button" data-q="Estimate ROI for a solar + storage project">Estimate ROI</button>
-          <button class="ei-chip" type="button" data-q="I'd like to request an advisory call">Request advisory call</button>
+          <button class="ei-chip" type="button" data-q="Analiza mi potencial de ahorro energético">Analizar ahorro energético</button>
+          <button class="ei-chip" type="button" data-q="Evalúa un proyecto Behind the Meter para mí">Evaluar proyecto Behind the Meter</button>
+          <button class="ei-chip" type="button" data-q="Compara PPA vs BESS vs Solar para un gran consumidor">Comparar PPA / BESS / Solar</button>
+          <button class="ei-chip" type="button" data-q="Estima el retorno de un proyecto solar + almacenamiento">Estimar retorno (ROI)</button>
+          <button class="ei-chip" type="button" data-q="Quiero solicitar una reunión de asesoría">Solicitar reunión de asesoría</button>
         </div>
       </div>
 
       <form class="ei-input" id="eiForm" autocomplete="off">
-        <input id="eiText" type="text" placeholder="Ask about savings, BTM, PPAs, ROI…" aria-label="Message EKIN Intelligence" />
+        <input id="eiText" type="text" placeholder="Pregunta sobre ahorro, BTM, PPAs, ROI…" aria-label="Escribe a EKIN Intelligence" />
         <button type="submit" class="ei-send" id="eiSend" aria-label="Send">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </button>
       </form>
 
       <footer class="ei-foot">
-        <span class="ei-foot-note">Turn energy data into investment decisions.</span>
-        <a class="ei-wa" href="https://wa.me/525643647693" target="_blank" rel="noopener">Talk to an advisor →</a>
+        <span class="ei-foot-note">Convierte tus datos de energía en decisiones de inversión.</span>
+        <a class="ei-wa" href="https://wa.me/525643647693" target="_blank" rel="noopener">Habla con un asesor →</a>
       </footer>
     </section>
   </div>
 
-  <script src="script.js?v=10" defer></script>
+  <script src="script.js?v=11" defer></script>
 </body>
 </html>
