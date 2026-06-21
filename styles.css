@@ -3193,18 +3193,21 @@ a { color: inherit; text-decoration: none; }
 .sol-foot { margin-top: 0.8rem; font-family: var(--font-serif); font-style: italic; color: var(--text); }
 .sol-item[data-open="true"] .sol-body { max-height: 520px; }
 
-/* === Mapa de México · elevación holográfica === */
-.map-svg-wrap { background: radial-gradient(120% 120% at 50% 30%, rgba(155,214,47,.05), transparent 60%), #0a0907; }
-.mx-silhouette, .mx-baja { fill: rgba(155,214,47,.035); stroke: rgba(155,214,47,.5); stroke-width: 1.1; filter: drop-shadow(0 0 10px rgba(155,214,47,.35)); }
-.mnode circle { fill: rgba(12,11,9,.9); stroke: rgba(155,214,47,.3); stroke-width: 1.5; transition: all .4s; }
-.mnode.on circle { fill: var(--volt); stroke: var(--volt-bright); animation: nodeVibe 1.4s ease-in-out infinite; }
-@keyframes nodeVibe {
-  0%, 100% { r: 6; filter: drop-shadow(0 0 4px rgba(155,214,47,.6)); }
-  50% { r: 8.5; filter: drop-shadow(0 0 16px rgba(155,214,47,1)); }
-}
-.mnode.on text { fill: var(--volt-bright); }
-.mnode text { fill: var(--muted); font-family: var(--font-mono); font-size: 12px; text-anchor: middle; }
-.map-line { stroke: var(--volt); stroke-width: 1.5; opacity: .6; filter: drop-shadow(0 0 5px rgba(155,214,47,.6)); }
+/* === Mapa de México · institucional / sobrio (sin glow ni vibración) === */
+.map-radar, .map-atmos, .map-atmos2 { display: none !important; }
+.map-svg-wrap { background:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px) 0 0 / 100% 38px,
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px) 0 0 / 38px 100%,
+    #0a0a0c; }
+.mx-silhouette, .mx-baja { fill: rgba(138,135,125,.06); stroke: rgba(190,196,204,.45); stroke-width: 1; filter: none; animation: none !important; }
+.mnode circle { fill: #0a0a0c; stroke: rgba(190,196,204,.5); stroke-width: 1.4; transition: fill .3s, stroke .3s; }
+.mnode text { fill: var(--steel); font-family: var(--font-mono); font-size: 11px; letter-spacing: .04em; text-anchor: middle; opacity: .55; transition: opacity .3s, fill .3s; }
+.mnode.on circle { fill: var(--volt); stroke: var(--volt); animation: nodeOn 2.4s ease-in-out infinite; }
+.mnode.on text { fill: var(--text); opacity: 1; }
+@keyframes nodeOn { 0%,100% { filter: drop-shadow(0 0 0 rgba(155,214,47,0)); } 50% { filter: drop-shadow(0 0 5px rgba(155,214,47,.7)); } }
+.map-line { stroke: rgba(155,214,47,.45); stroke-width: 1; opacity: .8; filter: none; animation: none; }
+.map-svg #mxMap rect, .map-svg > rect { display: none; }
+.map-readout { border-left: 2px solid var(--volt); }
 @media (prefers-reduced-motion: reduce) { .mnode.on circle { animation: none; } }
 
 /* El problema */
