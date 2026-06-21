@@ -8,3 +8,6 @@ Thumbs.db
 
 # Dependencias (por si más adelante usas Node)
 node_modules/
+
+# EKIN OS — app interna con su propio repositorio git
+ekin-os/
