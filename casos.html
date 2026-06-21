@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casos · Números, no conceptos · EKIN POWER</title>
+  <meta name="description" content="EBITDA recuperable en escenarios modelo de grandes consumidores. Números, no conceptos. Estima el tuyo." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <header class="nav on-dark" id="top">
+    <a class="brand brand--nav" href="index.html" aria-label="EKIN POWER — inicio">
+      <span class="logo-word">e<svg class="logo-k" viewBox="0 0 128 140" aria-hidden="true"><defs><linearGradient id="kgNavM" x1="0" y1="140" x2="0" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2f6e00"/><stop offset=".55" stop-color="#5ba017"/><stop offset="1" stop-color="#86c93a"/></linearGradient><linearGradient id="kgNavT" x1="0" y1="84" x2="0" y2="20" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6fb023"/><stop offset="1" stop-color="#f3fae7"/></linearGradient></defs><polygon points="20,132 44,132 60,40 36,40" fill="url(#kgNavM)"/><polygon points="48,96 70,96 96,132 74,132" fill="url(#kgNavM)"/><polygon points="50,96 72,96 92,66 70,66" fill="url(#kgNavM)"/><polygon points="74,84 96,84 116,28 94,28" fill="url(#kgNavT)"/></svg>in</span><span class="logo-power">POWER</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#soluciones" class="nav-top">Soluciones</a>
+      <a href="casos.html" class="nav-top">Casos</a>
+      <div class="nav-drop" id="navDrop">
+        <button type="button" class="nav-top nav-drop-btn" id="navDropBtn" aria-expanded="false" aria-haspopup="true">Explorar <i>▾</i></button>
+        <div class="nav-menu" role="menu">
+          <a href="inversion.html" role="menuitem">Behind the Meter</a>
+          <a href="oportunidades.html" role="menuitem">Oportunidades</a>
+          <a href="software.html" role="menuitem">EKIN OS</a>
+          <a href="sectores.html" role="menuitem">Mapa de México</a>
+          <a href="porque.html" role="menuitem">Por qué EKIN</a>
+          <a href="noticias.html" role="menuitem">Newsletter</a>
+        </div>
+      </div>
+      <a href="index.html#contacto" class="nav-cta">Agenda una reunión</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section casos on-dark" id="casos">
+      <div class="section-head reveal">
+        <p class="section-kicker">Casos modelo</p>
+        <h2 class="section-title">Números, <em>no conceptos</em>.</h2>
+        <p class="section-sub">Escenarios representativos por tipo de activo. Tu cifra real, con tus facturas, en el EBITDA Scan.</p>
+      </div>
+
+      <div class="megakpi-inner" style="padding-top:0">
+        <div class="mk reveal"><span class="mk-num beat" data-count="83" data-prefix="$" data-suffix=" M">$83 M</span><span class="mk-cap">EBITDA/año<br>en estos 3 casos modelo</span></div>
+        <div class="mk reveal" style="--d:1"><span class="mk-num beat" data-count="117" data-suffix=" GWh">117 GWh</span><span class="mk-cap">consumo anual<br>analizado (modelo)</span></div>
+        <div class="mk reveal" style="--d:2"><span class="mk-num beat" data-count="4" data-decimal="1" data-suffix=" años">4.0 años</span><span class="mk-cap">payback medio<br>ponderado</span></div>
+      </div>
+
+      <div class="case-grid">
+        <article class="case reveal" style="--d:1">
+          <header class="case-h"><span class="case-tag">Hotel · Cancún</span></header>
+          <div class="case-rows">
+            <div class="case-row"><span>Consumo anual</span><b>15 GWh</b></div>
+            <div class="case-row"><span>Palancas</span><b>Tarifa + Solar + BESS</b></div>
+            <div class="case-row case-row--hi"><span>EBITDA / año</span><b class="green">$14 M MXN</b></div>
+            <div class="case-row"><span>Payback</span><b>4.8 años</b></div>
+          </div>
+        </article>
+        <article class="case reveal" style="--d:2">
+          <header class="case-h"><span class="case-tag">Industria · Bajío</span></header>
+          <div class="case-rows">
+            <div class="case-row"><span>Consumo anual</span><b>42 GWh</b></div>
+            <div class="case-row"><span>Palancas</span><b>Demanda + Solar</b></div>
+            <div class="case-row case-row--hi"><span>EBITDA / año</span><b class="green">$31 M MXN</b></div>
+            <div class="case-row"><span>Payback</span><b>3.9 años</b></div>
+          </div>
+        </article>
+        <article class="case reveal" style="--d:3">
+          <header class="case-h"><span class="case-tag">Retail · Nacional</span></header>
+          <div class="case-rows">
+            <div class="case-row"><span>Consumo anual</span><b>60 GWh</b></div>
+            <div class="case-row"><span>Palancas</span><b>PPA + Eficiencia</b></div>
+            <div class="case-row case-row--hi"><span>EBITDA / año</span><b class="green">$38 M MXN</b></div>
+            <div class="case-row"><span>Payback</span><b>sin CAPEX</b></div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Calculadora EBITDA -->
+      <div class="calc reveal" id="calcBlock">
+        <div class="calc-inputs">
+          <label class="calc-field">
+            <span class="calc-lab">Tu factura eléctrica mensual</span>
+            <input type="range" id="calcBill" min="20000" max="3000000" step="10000" value="250000" />
+            <output class="calc-out" id="calcBillOut">$250,000</output>
+          </label>
+          <label class="calc-field">
+            <span class="calc-lab">Tu sector</span>
+            <select id="calcSector">
+              <option value="0.28">Hotel / resort</option>
+              <option value="0.30">Manufactura / fábrica</option>
+              <option value="0.33">Supermercado / retail</option>
+              <option value="0.27">Centro logístico</option>
+              <option value="0.32">Planta de proceso</option>
+              <option value="0.24">Aeropuerto / crítico</option>
+              <option value="0.22">Oficinas corporativas</option>
+            </select>
+          </label>
+          <button class="btn btn-primary" id="calcBtn" type="button">Estimar mi EBITDA ▸</button>
+        </div>
+        <div class="calc-screen" id="calcScreen" data-state="idle">
+          <div class="calc-bar"><span class="term-dot"></span><span class="calc-bar-t">EKIN · EBITDA ENGINE</span></div>
+          <div class="calc-grid">
+            <div class="calc-cell"><span class="cc-k">EBITDA ANUAL EST.</span><span class="cc-v" id="ccSave">—</span></div>
+            <div class="calc-cell"><span class="cc-k">% FACTURA</span><span class="cc-v green" id="ccPct">—</span></div>
+            <div class="calc-cell"><span class="cc-k">CO₂ EVITADO</span><span class="cc-v" id="ccCo2">—</span></div>
+            <div class="calc-cell"><span class="cc-k">PAYBACK EST.</span><span class="cc-v" id="ccPay">—</span></div>
+          </div>
+          <p class="calc-note" id="calcNote">Ajusta tu factura y tu sector, y pulsa <b>Estimar</b>. Cifras orientativas, sujetas a validación.</p>
+        </div>
+      </div>
+
+      <div class="porque-cta reveal">
+        <a href="index.html#contacto" class="btn btn-primary">Solicitar EBITDA Scan</a>
+        <a href="index.html" class="btn btn-ghost">← Volver al inicio</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer on-dark">
+    <div class="footer-top">
+      <div class="footer-brand-block">
+        <span class="brand" aria-label="EKIN POWER">
+          <span class="logo-word">e<svg class="logo-k" viewBox="0 0 128 140" aria-hidden="true"><defs><linearGradient id="kgFootM" x1="0" y1="140" x2="0" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2f6e00"/><stop offset=".55" stop-color="#5ba017"/><stop offset="1" stop-color="#86c93a"/></linearGradient><linearGradient id="kgFootT" x1="0" y1="84" x2="0" y2="20" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6fb023"/><stop offset="1" stop-color="#f3fae7"/></linearGradient></defs><polygon points="20,132 44,132 60,40 36,40" fill="url(#kgFootM)"/><polygon points="48,96 70,96 96,132 74,132" fill="url(#kgFootM)"/><polygon points="50,96 72,96 92,66 70,66" fill="url(#kgFootM)"/><polygon points="74,84 96,84 116,28 94,28" fill="url(#kgFootT)"/></svg>in</span><span class="logo-power">POWER</span>
+        </span>
+        <p class="footer-tagline">Convertimos energía en EBITDA.</p>
+      </div>
+      <nav class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="oportunidades.html">Oportunidades</a>
+        <a href="mailto:contactekinpower@gmail.com">contactekinpower@gmail.com</a>
+        <a href="https://wa.me/525643647693" target="_blank" rel="noopener">WhatsApp</a>
+      </nav>
+    </div>
+    <p class="footer-note">© <span id="year"></span> EKIN POWER · Convertimos energía en EBITDA.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

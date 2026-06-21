@@ -259,10 +259,10 @@ if (termBoot) {
     const ttCost = document.getElementById("ttCost");
     const ttSoc = document.getElementById("ttSoc");
     const ttSocBar = document.getElementById("ttSocBar");
-    let soc = 78, cost = 142;
+    let soc = 385, cost = 1980;
     setInterval(() => {
-      soc = Math.max(70, Math.min(88, soc + (Math.random() * 6 - 3)));
-      cost = Math.max(128, Math.min(156, cost + (Math.random() * 8 - 4)));
+      soc = Math.max(360, Math.min(410, soc + (Math.random() * 10 - 5)));
+      cost = Math.max(1850, Math.min(2150, cost + (Math.random() * 70 - 35)));
       if (ttSoc) ttSoc.textContent = Math.round(soc);
       if (ttSocBar) ttSocBar.style.width = Math.round(soc) + "%";
       if (ttCost) ttCost.textContent = Math.round(cost);
@@ -884,5 +884,51 @@ const _reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const probe = new Image();
     probe.onload = () => { img.src = url; img.classList.add("flogo--real"); };
     probe.src = url;
+  });
+})();
+
+/* Método EKIN · stepper desplegable (clic → detalle, sin redirigir) */
+(function () {
+  const stage = document.getElementById("meStage");
+  if (!stage) return;
+  const steps = Array.from(document.querySelectorAll("#meRail .me-step"));
+  const idx = document.getElementById("meIdx");
+  const h = document.getElementById("meH");
+  const p = document.getElementById("meP");
+  function show(i) {
+    steps.forEach((b, k) => b.classList.toggle("is-active", k === i));
+    const b = steps[i];
+    if (!b) return;
+    idx.textContent = String(i + 1).padStart(2, "0");
+    h.textContent = b.dataset.h;
+    p.textContent = b.dataset.p;
+  }
+  steps.forEach((b) => b.addEventListener("click", (e) => { e.preventDefault(); show(+b.dataset.i); }));
+  show(0);
+})();
+
+/* Founders · briefing desplegable */
+(function () {
+  const bio = document.getElementById("foundersBio");
+  if (!bio) return;
+  const btn = document.getElementById("foundersBioBtn");
+  btn.addEventListener("click", () => {
+    const open = bio.dataset.open !== "true";
+    bio.dataset.open = open ? "true" : "false";
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+})();
+
+/* Oportunidades · acordeón desplegable (página aparte) */
+(function () {
+  const acc = document.getElementById("oppAcc");
+  if (!acc) return;
+  acc.querySelectorAll(".sol-head").forEach((head) => {
+    head.addEventListener("click", () => {
+      const item = head.closest(".sol-item");
+      const open = item.dataset.open === "true";
+      item.dataset.open = open ? "false" : "true";
+      head.setAttribute("aria-expanded", open ? "false" : "true");
+    });
   });
 })();

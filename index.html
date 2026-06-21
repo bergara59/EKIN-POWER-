@@ -64,11 +64,12 @@
     </button>
     <nav class="nav-links" id="navLinks">
       <a href="#soluciones" class="nav-top">Soluciones</a>
-      <a href="#casos" class="nav-top">Casos</a>
+      <a href="casos.html" class="nav-top">Casos</a>
       <div class="nav-drop" id="navDrop">
         <button type="button" class="nav-top nav-drop-btn" id="navDropBtn" aria-expanded="false" aria-haspopup="true">Explorar <i>▾</i></button>
         <div class="nav-menu" role="menu">
           <a href="inversion.html" role="menuitem">Behind the Meter</a>
+          <a href="oportunidades.html" role="menuitem">Oportunidades</a>
           <a href="software.html" role="menuitem">EKIN OS</a>
           <a href="sectores.html" role="menuitem">Mapa de México</a>
           <a href="porque.html" role="menuitem">Por qué EKIN</a>
@@ -92,14 +93,14 @@
 
       <div class="hero-inner">
         <div class="hero-copy">
-          <p class="eyebrow reveal">EBITDA Intelligence · Hoteles &amp; resorts · México</p>
+          <p class="eyebrow reveal">EBITDA Intelligence · Grandes consumidores de energía · México</p>
           <h1 class="hero-title reveal" style="--d:1">
             Convertimos energía
             <span class="title-accent">en EBITDA.</span>
           </h1>
           <p class="hero-sub reveal" style="--d:2">
-            Identificamos, priorizamos y acompañamos la captura del dinero que tu hotel pierde
-            en energía, agua, operación e infraestructura. Menos informes. Más decisiones.
+            Identificamos, priorizamos y acompañamos la captura del dinero que tu operación pierde
+            en energía, agua, demanda e infraestructura. Menos informes. Más decisiones.
           </p>
           <p class="hero-punch reveal" style="--d:3">
             No vendemos tecnología. <em>Encontramos dinero recuperable.</em>
@@ -120,8 +121,8 @@
           <div class="term-boot" id="termBoot"></div>
           <div class="term-chart">
             <div class="tc-head">
-              <span class="tc-label">SAVINGS TREND · 12M</span>
-              <span class="tc-trend">▲ BULLISH</span>
+              <span class="tc-label">EBITDA CAPTURADO · 12M</span>
+              <span class="tc-trend">▲ +EBITDA</span>
             </div>
             <svg class="tc-svg" viewBox="0 0 320 90" preserveAspectRatio="none" aria-hidden="true">
               <defs>
@@ -137,24 +138,24 @@
           </div>
           <div class="term-grid">
             <div class="term-tile">
-              <span class="tt-label">ENERGY COST INDEX</span>
-              <span class="tt-value"><span id="ttCost">142</span> <small>$/MWh</small></span>
+              <span class="tt-label">PML CENACE · ref.</span>
+              <span class="tt-value"><span id="ttCost">1980</span> <small>$/MWh</small></span>
               <svg class="tt-spark" viewBox="0 0 120 28" preserveAspectRatio="none"><polyline points="0,20 15,16 30,22 45,10 60,15 75,7 90,13 105,5 120,9"/></svg>
             </div>
             <div class="term-tile">
-              <span class="tt-label">BESS STATE OF CHARGE</span>
-              <span class="tt-value blue"><span id="ttSoc">78</span><small>%</small></span>
-              <span class="tt-track"><i id="ttSocBar"></i></span>
-            </div>
-            <div class="term-tile is-alert">
-              <span class="tt-label">PEAK DEMAND ALERT</span>
-              <span class="tt-value amber">1.42 <small>MW</small></span>
-              <span class="tt-sub">demand charge risk</span>
+              <span class="tt-label">CARGO DE DEMANDA</span>
+              <span class="tt-value amber"><span id="ttSoc">385</span> <small>$/kW</small></span>
+              <span class="tt-sub">tarifa GDMTH ref.</span>
             </div>
             <div class="term-tile">
-              <span class="tt-label">SAVINGS POTENTIAL</span>
+              <span class="tt-label">DEMANDA PICO</span>
+              <span class="tt-value">1.42 <small>MW</small></span>
+              <span class="tt-sub">activo tipo · hotelería</span>
+            </div>
+            <div class="term-tile">
+              <span class="tt-label">EBITDA RECUPERABLE</span>
               <span class="tt-value green">▲ 18–35<small>%</small></span>
-              <span class="tt-sub">peak shaving + solar</span>
+              <span class="tt-sub">del gasto energético</span>
             </div>
           </div>
         </div>
@@ -201,12 +202,12 @@
         <p class="section-sub">Tu hotel no tiene un problema de energía visible: tiene un problema económico oculto.</p>
       </div>
       <div class="prob-grid">
-        <div class="prob reveal" style="--d:1"><span class="prob-i">🧾</span><h3>Tarifa incorrecta</h3><p>Estás en el esquema CFE equivocado, pagando de más cada mes.</p></div>
-        <div class="prob reveal" style="--d:2"><span class="prob-i">⚡</span><h3>Demanda máxima</h3><p>El pico de kW que nadie vigila dispara tu factura.</p></div>
-        <div class="prob reveal" style="--d:3"><span class="prob-i">❄</span><h3>HVAC fuera de punto</h3><p>Climatización operando lejos de su óptimo económico.</p></div>
-        <div class="prob reveal" style="--d:4"><span class="prob-i">♨</span><h3>ACS ineficiente</h3><p>Calientas agua quemando dinero que no ves.</p></div>
-        <div class="prob reveal" style="--d:5"><span class="prob-i">💧</span><h3>Agua que cuesta energía</h3><p>Fugas y reúso ignorados: agua = energía = dinero.</p></div>
-        <div class="prob reveal" style="--d:6"><span class="prob-i">🔋</span><h3>Behind the Meter sin estructurar</h3><p>Solar y BESS rentables que nadie ha modelado aún.</p></div>
+        <div class="prob reveal" style="--d:1"><span class="prob-code">LEAK 01</span><h3>Tarifa incorrecta</h3><p>Estás en el esquema CFE equivocado, pagando de más cada mes.</p><span class="prob-bar" aria-hidden="true"><i></i></span></div>
+        <div class="prob reveal" style="--d:2"><span class="prob-code">LEAK 02</span><h3>Demanda máxima</h3><p>El pico de kW que nadie vigila dispara tu factura.</p><span class="prob-bar" aria-hidden="true"><i></i></span></div>
+        <div class="prob reveal" style="--d:3"><span class="prob-code">LEAK 03</span><h3>HVAC fuera de punto</h3><p>Climatización operando lejos de su óptimo económico.</p><span class="prob-bar" aria-hidden="true"><i></i></span></div>
+        <div class="prob reveal" style="--d:4"><span class="prob-code">LEAK 04</span><h3>ACS ineficiente</h3><p>Calientas agua quemando dinero que no ves.</p><span class="prob-bar" aria-hidden="true"><i></i></span></div>
+        <div class="prob reveal" style="--d:5"><span class="prob-code">LEAK 05</span><h3>Agua = energía = $</h3><p>Fugas y reúso ignorados que también cuestan energía.</p><span class="prob-bar" aria-hidden="true"><i></i></span></div>
+        <div class="prob reveal" style="--d:6"><span class="prob-code">LEAK 06</span><h3>Behind the Meter sin estructurar</h3><p>Solar y BESS rentables que nadie ha modelado aún.</p><span class="prob-bar" aria-hidden="true"><i></i></span></div>
       </div>
     </section>
 
@@ -224,7 +225,7 @@
             <span class="sol-t">EBITDA Scan™</span>
             <span class="sol-plus" aria-hidden="true">+</span>
           </button>
-          <div class="sol-body"><p>El punto de entrada. Con datos mínimos —tu última factura CFE, nombre del hotel, ubicación, habitaciones y ocupación— te devolvemos el <strong>EBITDA recuperable estimado</strong>, un Opportunity Score, las top oportunidades y los quick wins. Rápido y sin compromiso.</p></div>
+          <div class="sol-body"><p>El punto de entrada. Con datos mínimos —tu última factura, ubicación, tamaño y ocupación— corremos un primer modelo de tu activo y te devolvemos:</p><ul class="sol-list"><li><strong>EBITDA recuperable estimado</strong> (rango preliminar)</li><li><strong>Opportunity Score</strong> del activo</li><li>Las <strong>3–5 oportunidades</strong> de mayor impacto</li><li><strong>Quick wins</strong> accionables ya</li></ul><p class="sol-foot">Rápido, confidencial y sin compromiso.</p></div>
         </article>
         <article class="sol-item" data-open="false">
           <button class="sol-head" type="button" aria-expanded="false">
@@ -232,7 +233,7 @@
             <span class="sol-t">Energy Due Diligence™</span>
             <span class="sol-plus" aria-hidden="true">+</span>
           </button>
-          <div class="sol-body"><p>Análisis profundo con 12 facturas, ocupación, inventario de equipos y operación. Entregamos el <strong>mapa de EBITDA</strong>, oportunidades validadas y un roadmap a 90 días / 12 / 36 meses con business cases preliminares.</p></div>
+          <div class="sol-body"><p>Análisis profundo con 12 facturas, ocupación, inventario de equipos y operación. Entregamos:</p><ul class="sol-list"><li><strong>Mapa de EBITDA</strong> del activo, por oportunidad</li><li>Oportunidades <strong>validadas</strong> con business case preliminar</li><li><strong>Roadmap</strong> de captura a 90 días / 12 / 36 meses</li><li>Inversión, payback y modelo de financiación por iniciativa</li></ul><p class="sol-foot">La base para decidir con números, no con corazonadas.</p></div>
         </article>
         <article class="sol-item" data-open="false">
           <button class="sol-head" type="button" aria-expanded="false">
@@ -240,7 +241,7 @@
             <span class="sol-t">Energy Intelligence Program™</span>
             <span class="sol-plus" aria-hidden="true">+</span>
           </button>
-          <div class="sol-body"><p>Tu <strong>Oficina Externa de EBITDA Energético</strong>. Cada mes o trimestre recibes un Monthly EBITDA Board: EBITDA detectado, validado, capturado y en backlog, más el pipeline de decisiones recomendadas.</p></div>
+          <div class="sol-body"><p>Tu <strong>Oficina Externa de EBITDA Energético</strong>, en modo recurrente. Cada mes o trimestre recibes un <strong>Monthly EBITDA Board</strong>:</p><ul class="sol-list"><li>EBITDA <strong>detectado</strong>, <strong>validado</strong> y <strong>capturado</strong></li><li>Backlog priorizado de oportunidades</li><li>Top decisiones recomendadas del periodo</li><li>Seguimiento de lo capturado vs. lo proyectado</li></ul><p class="sol-foot">Energía gestionada como un portafolio, no como una factura.</p></div>
         </article>
         <article class="sol-item" data-open="false">
           <button class="sol-head" type="button" aria-expanded="false">
@@ -248,127 +249,55 @@
             <span class="sol-t">EBITDA Capture Projects™</span>
             <span class="sol-plus" aria-hidden="true">+</span>
           </button>
-          <div class="sol-body"><p>La ejecución de las oportunidades priorizadas: tarifas, demanda máxima, HVAC, ACS, agua, lavandería, refrigeración, solar, BESS, microred y automatización. Solo lo que tiene sentido económico. <a href="inversion.html">Ver Behind the Meter →</a></p></div>
+          <div class="sol-body"><p>La ejecución de las oportunidades aprobadas, de punta a punta y con o sin CAPEX:</p><ul class="sol-list"><li>Tarifa, demanda máxima y factor de potencia</li><li>HVAC, ACS, refrigeración y lavandería</li><li>Agua, recuperación de calor y automatización</li><li>Solar, BESS y microred (Behind the Meter)</li></ul><p class="sol-foot">Solo lo que tiene sentido económico. <a href="inversion.html">Ver Behind the Meter →</a></p></div>
         </article>
       </div>
     </section>
 
-    <!-- ===================== OPORTUNIDADES DE EBITDA ===================== -->
-    <section class="section modelos on-dark" id="oportunidades">
+    <!-- ===================== MÉTODO EKIN (desplegable) ===================== -->
+    <section class="section metodo-ekin on-dark" id="metodo">
       <div class="section-head reveal">
-        <p class="section-kicker">Oportunidades de EBITDA</p>
-        <h2 class="section-title">No es tecnología. Es <em>EBITDA atrapado</em>.</h2>
-        <p class="section-sub">Organizamos tu activo por oportunidades económicas, no por equipos.</p>
+        <p class="section-kicker">Cómo capturamos EBITDA</p>
+        <h2 class="section-title">Detectar. Priorizar. <em>Capturar.</em></h2>
       </div>
-      <div class="modelos-grid">
-        <article class="modelo reveal" style="--d:1"><h3>Tarifas y facturación</h3><p>El dinero más rápido de recuperar.</p></article>
-        <article class="modelo reveal" style="--d:2"><h3>Demanda máxima</h3><p>El pico que infla tu factura cada mes.</p></article>
-        <article class="modelo reveal" style="--d:3"><h3>HVAC</h3><p>Climatización fuera de su óptimo económico.</p></article>
-        <article class="modelo reveal" style="--d:4"><h3>ACS</h3><p>Agua caliente que quema margen.</p></article>
-        <article class="modelo reveal" style="--d:1"><h3>Agua</h3><p>Fugas y reúso: agua = energía = dinero.</p></article>
-        <article class="modelo reveal" style="--d:2"><h3>Lavandería</h3><p>Cargas térmicas y eléctricas mal gestionadas.</p></article>
-        <article class="modelo modelo--hero reveal" style="--d:3"><h3>Solar + BESS</h3><p>Behind the Meter estructurado como activo.</p></article>
-        <article class="modelo reveal" style="--d:4"><h3>Automatización</h3><p>Control que sostiene el ahorro en el tiempo.</p></article>
+      <div class="me-stage reveal" id="meStage">
+        <ol class="me-flow" id="meRail" role="tablist" aria-label="Método EKIN">
+          <li><button type="button" class="me-step is-active" data-i="0" data-h="Detectamos" data-p="Leemos tus facturas, curvas de carga y operación. Nuestro modelo localiza dónde se escapa el dinero: tarifa, demanda, factor de potencia, HVAC, ACS, agua." aria-label="Detectamos"><span class="me-n">1</span><span class="me-t">Detectamos</span></button></li>
+          <li><button type="button" class="me-step" data-i="1" data-h="Priorizamos" data-p="Ordenamos cada oportunidad por EBITDA recuperable, esfuerzo y riesgo. Primero los quick wins; después lo estructural." aria-label="Priorizamos"><span class="me-n">2</span><span class="me-t">Priorizamos</span></button></li>
+          <li><button type="button" class="me-step" data-i="2" data-h="Decidimos" data-p="Convertimos cada oportunidad en un business case: inversión, payback, retorno y modelo de financiación. Tú decides con números." aria-label="Decidimos"><span class="me-n">3</span><span class="me-t">Decidimos</span></button></li>
+          <li><button type="button" class="me-step" data-i="3" data-h="Ejecutamos" data-p="Implementamos lo aprobado de punta a punta, con o sin CAPEX, gestionando proveedores y obra. Sin que tu operación se detenga." aria-label="Ejecutamos"><span class="me-n">4</span><span class="me-t">Ejecutamos</span></button></li>
+          <li><button type="button" class="me-step" data-i="4" data-h="Medimos" data-p="Verificamos el EBITDA capturado con estándar IPMVP y lo reportamos cada mes. Lo que no se mide, no cuenta." aria-label="Medimos"><span class="me-n">5</span><span class="me-t">Medimos</span></button></li>
+        </ol>
+        <div class="me-detail">
+          <span class="me-d-i" id="meIdx">01</span>
+          <h3 class="me-d-h" id="meH">Detectamos</h3>
+          <p class="me-d-p" id="meP">Leemos tus facturas, curvas de carga y operación. Nuestro modelo localiza dónde se escapa el dinero: tarifa, demanda, factor de potencia, HVAC, ACS, agua.</p>
+        </div>
       </div>
     </section>
 
-    <!-- ===================== CÓMO SE VE EL AHORRO ===================== -->
-    <section class="section ahorroviz on-dark" id="ahorro">
-      <div class="section-head reveal">
-        <p class="section-kicker">Cómo se ve el EBITDA</p>
-        <h2 class="section-title">El dinero que dejas <em>sobre la mesa</em>.</h2>
+    <!-- ===================== POR QUÉ NO SOMOS UN INSTALADOR SOLAR ===================== -->
+    <section class="section nosolar on-dark" id="nosolar">
+      <div class="nosolar-inner reveal">
+        <p class="section-kicker">No somos lo que crees</p>
+        <h2 class="nosolar-h">No vendemos energía, auditorías ni paneles. <em>Vendemos EBITDA.</em></h2>
+        <p class="nosolar-p">Primero detectamos dónde se pierde el dinero. Luego decidimos si la mejor jugada es tarifa, demanda, HVAC, agua, solar o BESS. La tecnología es la consecuencia, no el punto de partida.</p>
       </div>
-      <div class="av-wrap reveal">
-        <div class="av-bars">
-          <div class="av-bar">
-            <span class="av-val">$420k</span>
-            <div class="av-fill av-fill--before" style="height:100%"></div>
-            <span class="av-cap">ANTES / mes</span>
-          </div>
-          <div class="av-bar">
-            <span class="av-val green">$273k</span>
-            <div class="av-fill av-fill--after" style="height:65%"></div>
-            <span class="av-cap">CON EKIN</span>
-          </div>
-        </div>
-        <div class="av-metrics">
-          <div class="av-m"><span class="av-k">EBITDA mensual</span><span class="av-v green" data-count="147" data-prefix="$" data-suffix="k">$147k</span></div>
-          <div class="av-m"><span class="av-k">% del gasto energético</span><span class="av-v" data-count="35" data-suffix="%">35%</span></div>
-          <div class="av-m"><span class="av-k">Payback estimado</span><span class="av-v">4.8 años</span></div>
-          <div class="av-m"><span class="av-k">Quick wins</span><span class="av-v" data-count="6">6</span></div>
-        </div>
-      </div>
-      <p class="av-note reveal">Ejemplo ilustrativo. Tu cifra real, con tus facturas, en el diagnóstico.</p>
     </section>
 
-    <!-- ===================== CASOS DE NEGOCIO ===================== -->
-    <section class="section casos on-dark" id="casos">
-      <div class="section-head reveal">
-        <p class="section-kicker">Casos modelo</p>
-        <h2 class="section-title">Números, <em>no conceptos</em>.</h2>
-        <p class="section-sub">Escenarios representativos basados en proyectos tipo. Tu caso real lo calculamos contigo.</p>
-      </div>
-      <div class="case-grid">
-        <article class="case reveal" style="--d:1">
-          <header class="case-h"><span class="case-tag">Hotel · Cancún</span></header>
-          <div class="case-rows">
-            <div class="case-row"><span>Consumo anual</span><b>15 GWh</b></div>
-            <div class="case-row"><span>Proyecto</span><b>Solar + BESS</b></div>
-            <div class="case-row case-row--hi"><span>EBITDA / año</span><b class="green">$14 M MXN/año</b></div>
-            <div class="case-row"><span>ROI</span><b>4.8 años</b></div>
-          </div>
-        </article>
-        <article class="case reveal" style="--d:2">
-          <header class="case-h"><span class="case-tag">Industria · Bajío</span></header>
-          <div class="case-rows">
-            <div class="case-row"><span>Consumo anual</span><b>42 GWh</b></div>
-            <div class="case-row"><span>Proyecto</span><b>Solar + Peak shaving</b></div>
-            <div class="case-row case-row--hi"><span>EBITDA / año</span><b class="green">$31 M MXN/año</b></div>
-            <div class="case-row"><span>ROI</span><b>3.9 años</b></div>
-          </div>
-        </article>
-        <article class="case reveal" style="--d:3">
-          <header class="case-h"><span class="case-tag">Retail · Nacional</span></header>
-          <div class="case-rows">
-            <div class="case-row"><span>Consumo anual</span><b>60 GWh</b></div>
-            <div class="case-row"><span>Proyecto</span><b>PPA + eficiencia</b></div>
-            <div class="case-row case-row--hi"><span>EBITDA / año</span><b class="green">$38 M MXN/año</b></div>
-            <div class="case-row"><span>ROI</span><b>sin CAPEX</b></div>
-          </div>
-        </article>
-      </div>
-
-      <!-- Calculadora express -->
-      <div class="calc reveal" id="calcBlock">
-        <div class="calc-inputs">
-          <label class="calc-field">
-            <span class="calc-lab">Tu factura eléctrica mensual</span>
-            <input type="range" id="calcBill" min="20000" max="3000000" step="10000" value="250000" />
-            <output class="calc-out" id="calcBillOut">$250,000</output>
-          </label>
-          <label class="calc-field">
-            <span class="calc-lab">Tu sector</span>
-            <select id="calcSector">
-              <option value="0.28">Hotel / resort</option>
-              <option value="0.30">Manufactura / fábrica</option>
-              <option value="0.33">Supermercado / retail</option>
-              <option value="0.27">Centro logístico</option>
-              <option value="0.32">Planta de proceso</option>
-              <option value="0.24">Aeropuerto / crítico</option>
-              <option value="0.22">Oficinas corporativas</option>
-            </select>
-          </label>
-          <button class="btn btn-primary" id="calcBtn" type="button">Estimar mi EBITDA ▸</button>
+    <!-- ===================== EXPERIENCIA FOUNDERS · TICKER LOGOS ===================== -->
+    <section class="founders on-dark" aria-label="Experiencia de los founders">
+      <p class="founders-k">Experiencia de los founders</p>
+      <div class="founders-marquee">
+        <div class="founders-track" id="foundersTrack">
+          <img class="flogo" src="logos/sgs.svg" data-domain="sgs.com" alt="SGS" /><img class="flogo" src="logos/nordex.svg" data-domain="nordex-online.com" alt="Nordex" /><img class="flogo" src="logos/vestas.svg" data-domain="vestas.com" alt="Vestas" /><img class="flogo" src="logos/enel.svg" data-domain="enel.com" alt="Enel" /><img class="flogo" src="logos/acciona.svg" data-domain="acciona.com" alt="Acciona" /><img class="flogo" src="logos/sempra.svg" data-domain="sempra.com" alt="Sempra" /><img class="flogo" src="logos/amazon.svg" data-domain="amazon.com" alt="Amazon" /><img class="flogo" src="logos/walmart.svg" data-domain="walmart.com" alt="Walmart" /><img class="flogo" src="logos/homedepot.svg" data-domain="homedepot.com" alt="The Home Depot" /><img class="flogo" src="logos/grupomexico.svg" data-domain="gmexico.com" alt="Grupo México" /><img class="flogo" src="logos/grupodragon.svg" alt="Grupo Dragón" /><img class="flogo" src="logos/kino.svg" alt="Kino Energía" /><img class="flogo" src="logos/gemex.svg" alt="Gemex" />
+          <img class="flogo" src="logos/sgs.svg" data-domain="sgs.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/nordex.svg" data-domain="nordex-online.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/vestas.svg" data-domain="vestas.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/enel.svg" data-domain="enel.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/acciona.svg" data-domain="acciona.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/sempra.svg" data-domain="sempra.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/amazon.svg" data-domain="amazon.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/walmart.svg" data-domain="walmart.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/homedepot.svg" data-domain="homedepot.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/grupomexico.svg" data-domain="gmexico.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/grupodragon.svg" alt="" aria-hidden="true" /><img class="flogo" src="logos/kino.svg" alt="" aria-hidden="true" /><img class="flogo" src="logos/gemex.svg" alt="" aria-hidden="true" />
         </div>
-        <div class="calc-screen" id="calcScreen" data-state="idle">
-          <div class="calc-bar"><span class="term-dot"></span><span class="calc-bar-t">EKIN · EBITDA ENGINE</span></div>
-          <div class="calc-grid">
-            <div class="calc-cell"><span class="cc-k">EBITDA ANUAL EST.</span><span class="cc-v" id="ccSave">—</span></div>
-            <div class="calc-cell"><span class="cc-k">% FACTURA</span><span class="cc-v green" id="ccPct">—</span></div>
-            <div class="calc-cell"><span class="cc-k">CO₂ EVITADO</span><span class="cc-v" id="ccCo2">—</span></div>
-            <div class="calc-cell"><span class="cc-k">PAYBACK EST.</span><span class="cc-v" id="ccPay">—</span></div>
-          </div>
-          <p class="calc-note" id="calcNote">Ajusta tu factura y tu sector, y pulsa <b>Calcular</b>. Cifras orientativas.</p>
+      </div>
+      <div class="founders-bio" id="foundersBio" data-open="false">
+        <button class="founders-bio-btn" id="foundersBioBtn" type="button" aria-expanded="false">Sobre los founders <i>+</i></button>
+        <div class="founders-bio-body">
+          <p>Equipo liderado por un perfil de <strong>abogado económico</strong> con maestrías en energía y finanzas, y más de una década en <strong>posiciones de dirección</strong> dentro del sector renovable en Latinoamérica. Trayectoria estructurando y ejecutando proyectos energéticos de escala industrial —de generación renovable a grandes consumidores— combinando criterio legal, financiero y técnico con alcance regional <strong>LATAM</strong>.</p>
         </div>
       </div>
     </section>
@@ -409,57 +338,6 @@
         <div class="cta-actions">
           <a href="mailto:contactekinpower@gmail.com" class="btn btn-ghost">contactekinpower@gmail.com</a>
           <a href="https://wa.me/525643647693" class="btn btn-ghost">WhatsApp</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== MÉTODO EKIN ===================== -->
-    <section class="section metodo-ekin on-dark" id="metodo">
-      <div class="section-head reveal">
-        <p class="section-kicker">Cómo capturamos EBITDA</p>
-        <h2 class="section-title">Detectar. Priorizar. <em>Capturar.</em></h2>
-      </div>
-      <ol class="me-flow reveal">
-        <li class="me-step"><span class="me-n">1</span><span class="me-t">Detectamos</span></li>
-        <li class="me-step"><span class="me-n">2</span><span class="me-t">Priorizamos</span></li>
-        <li class="me-step"><span class="me-n">3</span><span class="me-t">Decidimos</span></li>
-        <li class="me-step"><span class="me-n">4</span><span class="me-t">Ejecutamos</span></li>
-        <li class="me-step"><span class="me-n">5</span><span class="me-t">Medimos</span></li>
-      </ol>
-    </section>
-
-    <!-- ===================== POR QUÉ NO SOMOS UN INSTALADOR SOLAR ===================== -->
-    <section class="section nosolar on-dark" id="nosolar">
-      <div class="nosolar-inner reveal">
-        <p class="section-kicker">No somos lo que crees</p>
-        <h2 class="nosolar-h">No vendemos energía, auditorías ni paneles. <em>Vendemos EBITDA.</em></h2>
-        <p class="nosolar-p">Primero detectamos dónde se pierde el dinero. Luego decidimos si la mejor jugada es tarifa, demanda, HVAC, agua, solar o BESS. La tecnología es la consecuencia, no el punto de partida.</p>
-      </div>
-    </section>
-
-    <!-- ===================== CLIENTE IDEAL ===================== -->
-    <section class="section clienteideal on-dark" id="para-quien">
-      <div class="section-head reveal">
-        <p class="section-kicker">Para quién</p>
-        <h2 class="section-title">Pensado para activos <em>intensivos en energía</em>.</h2>
-      </div>
-      <div class="opps-grid reveal">
-        <span class="opp">Hoteles &amp; resorts</span>
-        <span class="opp">Grupos hoteleros</span>
-        <span class="opp">Dueños de activos</span>
-        <span class="opp">Operadores</span>
-        <span class="opp">Fondos / asset managers</span>
-        <span class="opp">Industria &amp; retail</span>
-      </div>
-    </section>
-
-    <!-- ===================== EXPERIENCIA FOUNDERS · TICKER LOGOS ===================== -->
-    <section class="founders on-dark" aria-label="Experiencia de los founders">
-      <p class="founders-k">Experiencia de los founders</p>
-      <div class="founders-marquee">
-        <div class="founders-track" id="foundersTrack">
-          <img class="flogo" src="logos/sgs.svg" data-domain="sgs.com" alt="SGS" /><img class="flogo" src="logos/nordex.svg" data-domain="nordex-online.com" alt="Nordex" /><img class="flogo" src="logos/vestas.svg" data-domain="vestas.com" alt="Vestas" /><img class="flogo" src="logos/enel.svg" data-domain="enel.com" alt="Enel" /><img class="flogo" src="logos/acciona.svg" data-domain="acciona.com" alt="Acciona" /><img class="flogo" src="logos/sempra.svg" data-domain="sempra.com" alt="Sempra" /><img class="flogo" src="logos/amazon.svg" data-domain="amazon.com" alt="Amazon" /><img class="flogo" src="logos/walmart.svg" data-domain="walmart.com" alt="Walmart" /><img class="flogo" src="logos/homedepot.svg" data-domain="homedepot.com" alt="The Home Depot" /><img class="flogo" src="logos/grupomexico.svg" data-domain="gmexico.com" alt="Grupo México" /><img class="flogo" src="logos/grupodragon.svg" alt="Grupo Dragón" /><img class="flogo" src="logos/kino.svg" alt="Kino Energía" /><img class="flogo" src="logos/gemex.svg" alt="Gemex" />
-          <img class="flogo" src="logos/sgs.svg" data-domain="sgs.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/nordex.svg" data-domain="nordex-online.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/vestas.svg" data-domain="vestas.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/enel.svg" data-domain="enel.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/acciona.svg" data-domain="acciona.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/sempra.svg" data-domain="sempra.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/amazon.svg" data-domain="amazon.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/walmart.svg" data-domain="walmart.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/homedepot.svg" data-domain="homedepot.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/grupomexico.svg" data-domain="gmexico.com" alt="" aria-hidden="true" /><img class="flogo" src="logos/grupodragon.svg" alt="" aria-hidden="true" /><img class="flogo" src="logos/kino.svg" alt="" aria-hidden="true" /><img class="flogo" src="logos/gemex.svg" alt="" aria-hidden="true" />
         </div>
       </div>
     </section>
