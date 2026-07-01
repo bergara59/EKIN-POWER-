@@ -13,19 +13,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EKIN POWER · ENERGY FINANCE, BESS</title>
-  <meta name="description" content="EKIN POWER · Energy Finance, BESS. Convertimos energía en EBITDA: detectamos, validamos y capturamos el ahorro recuperable en tarifa, demanda, HVAC, agua y Behind the Meter (Solar + BESS) para hoteles, industria y fondos." />
+  <title>EKIN POWER · Convertimos energía en EBITDA</title>
+  <meta name="description" content="EKIN POWER convierte el gasto energético de grandes consumidores en EBITDA recuperable. Detectamos, priorizamos y capturamos el dinero que tu operación pierde en energía, demanda, agua e infraestructura. Empieza con una factura: EBITDA Scan." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0a0d09" />
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="EKIN POWER" />
-  <meta property="og:title" content="EKIN POWER · ENERGY FINANCE, BESS" />
-  <meta property="og:description" content="Convertimos energía en EBITDA. Menos OPEX, más EBITDA, mejor valuación." />
+  <meta property="og:locale" content="es_MX" />
+  <meta property="og:title" content="EKIN POWER · Convertimos energía en EBITDA" />
+  <meta property="og:description" content="No vendemos energía, auditorías ni paneles. Encontramos el dinero recuperable de tu operación. EBITDA recuperable: 18–35% del gasto energético." />
   <meta property="og:url" content="https://www.ekinpower.com" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&h=630&q=75" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="EKIN POWER · ENERGY FINANCE, BESS" />
-  <meta name="twitter:description" content="Convertimos energía en EBITDA. Menos OPEX, más EBITDA, mejor valuación." />
+  <meta name="twitter:title" content="EKIN POWER · Convertimos energía en EBITDA" />
+  <meta name="twitter:description" content="No vendemos energía, auditorías ni paneles. Encontramos el dinero recuperable de tu operación. EBITDA recuperable: 18–35% del gasto energético." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&h=630&q=75" />
   <link rel="canonical" href="https://www.ekinpower.com" />
 
   <script type="application/ld+json">
@@ -33,7 +40,7 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "EKIN POWER",
-    "description": "Firma de ingeniería energética y estructuración de inversión para grandes consumidores: diagnóstico, optimización de costos, due diligence técnica y soluciones Behind the Meter (Solar + BESS).",
+    "description": "Firma que convierte el gasto energético de grandes consumidores en EBITDA recuperable: detección, priorización y captura de oportunidades en tarifa, demanda, HVAC, agua e infraestructura, incluyendo soluciones Behind the Meter cuando tienen sentido económico.",
     "url": "https://www.ekinpower.com",
     "email": "contactekinpower@gmail.com",
     "telephone": "+525643647693",
@@ -46,7 +53,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=12" />
+  <link rel="stylesheet" href="styles.css?v=13" />
 </head>
 <body>
 
@@ -82,7 +89,11 @@
     <!-- ===================== HERO ===================== -->
     <section class="hero on-dark">
       <div class="hero-photo" aria-hidden="true">
-        <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=2400&q=72" alt="" fetchpriority="high" />
+        <img
+          src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1600&q=72"
+          srcset="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=800&q=70 800w, https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1280&q=72 1280w, https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1920&q=72 1920w, https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=2400&q=72 2400w"
+          sizes="100vw"
+          alt="" fetchpriority="high" decoding="async" />
       </div>
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-grid" aria-hidden="true"></div>
@@ -359,6 +370,7 @@
           </details>
 
           <button type="submit" class="btn btn-primary form-submit">Solicitar EBITDA Scan</button>
+          <p class="form-trust">Confidencial · Respuesta en 48&nbsp;h hábiles · Sin compromiso · Solo <strong>nombre, hotel y correo</strong> son obligatorios</p>
         </form>
 
         <div class="cta-actions">
@@ -396,7 +408,7 @@
       <em>Copiloto de inversión energética</em>
     </span>
 
-    <button class="ei-launcher" id="eiLauncher" aria-label="Ask EKIN Intelligence" aria-expanded="false" aria-controls="eiPanel">
+    <button class="ei-launcher" id="eiLauncher" aria-label="Preguntar a EKIN Intelligence" aria-expanded="false" aria-controls="eiPanel">
       <span class="ei-orb" aria-hidden="true">
         <svg class="ei-orb-svg" viewBox="0 0 72 72">
           <defs>
@@ -424,9 +436,9 @@
         <span class="ei-head-orb" aria-hidden="true"></span>
         <div class="ei-head-txt">
           <h3>EKIN Intelligence</h3>
-          <p>Energía · Finanzas · Asesoría de proyectos</p>
+          <p>Energía · Finanzas · Inversión</p>
         </div>
-        <button class="ei-close" id="eiClose" aria-label="Close">
+        <button class="ei-close" id="eiClose" aria-label="Cerrar">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
         </button>
       </header>
@@ -437,29 +449,29 @@
             <span class="ei-avatar" aria-hidden="true"></span>
             <div class="ei-bubble">
               <span class="ei-tag"><i></i> EN LÍNEA · LISTO</span>
-              Te ayudo a estimar ahorros, estructurar proyectos energéticos, comparar modelos de inversión e identificar oportunidades de alto impacto.
+              Puedo ayudarte a estimar tu EBITDA recuperable, priorizar oportunidades, comparar modelos de inversión y estructurar proyectos energéticos.
             </div>
           </div>
         </div>
         <div class="ei-quick" id="eiQuick">
-          <button class="ei-chip" type="button" data-q="Analiza mi potencial de ahorro energético">Analizar ahorro energético</button>
-          <button class="ei-chip" type="button" data-q="Evalúa un proyecto Behind the Meter para mí">Evaluar proyecto Behind the Meter</button>
-          <button class="ei-chip" type="button" data-q="Compara PPA vs BESS vs Solar para un gran consumidor">Comparar PPA / BESS / Solar</button>
-          <button class="ei-chip" type="button" data-q="Estima el retorno de un proyecto solar + almacenamiento">Estimar retorno (ROI)</button>
-          <button class="ei-chip" type="button" data-q="Quiero solicitar una reunión de asesoría">Solicitar reunión de asesoría</button>
+          <button class="ei-chip" type="button" data-q="Estima mi EBITDA recuperable a partir de mi gasto energético">Estimar mi EBITDA recuperable</button>
+          <button class="ei-chip" type="button" data-q="Evalúa un proyecto Behind the Meter (solar + BESS) para mi activo">Evaluar un proyecto Behind the Meter</button>
+          <button class="ei-chip" type="button" data-q="Compara PPA vs BESS vs solar para un gran consumidor en México">Comparar PPA / BESS / Solar</button>
+          <button class="ei-chip" type="button" data-q="¿Cómo funciona el EBITDA Scan y qué datos necesito?">¿Qué es el EBITDA Scan?</button>
+          <button class="ei-chip" type="button" data-q="Quiero solicitar una reunión con un asesor de EKIN">Agendar una reunión</button>
         </div>
       </div>
 
       <form class="ei-input" id="eiForm" autocomplete="off">
-        <input id="eiText" type="text" placeholder="Pregunta sobre ahorro, BTM, PPAs, ROI…" aria-label="Escribe a EKIN Intelligence" />
-        <button type="submit" class="ei-send" id="eiSend" aria-label="Send">
+        <input id="eiText" type="text" placeholder="Pregunta sobre EBITDA, tarifas, BTM, PPAs, ROI…" aria-label="Escribe a EKIN Intelligence" />
+        <button type="submit" class="ei-send" id="eiSend" aria-label="Enviar">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </button>
       </form>
 
       <footer class="ei-foot">
         <span class="ei-foot-note">Convierte tus datos de energía en decisiones de inversión.</span>
-        <a class="ei-wa" href="https://wa.me/525643647693" target="_blank" rel="noopener">Habla con un asesor →</a>
+        <a class="ei-wa" href="https://wa.me/525643647693" target="_blank" rel="noopener">Hablar con un asesor →</a>
       </footer>
     </section>
   </div>
